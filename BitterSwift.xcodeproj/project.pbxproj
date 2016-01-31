@@ -74,7 +74,8 @@
 				46AEA0171C5EB111003E7AF9 /* BitterSwift.h */,
 				46AEA0191C5EB111003E7AF9 /* Info.plist */,
 			);
-			path = BitterSwift;
+			name = BitterSwift;
+			path = Sources/BitterSwift;
 			sourceTree = "<group>";
 		};
 		46AEA0221C5EB111003E7AF9 /* BitterSwiftTests */ = {
@@ -83,7 +84,8 @@
 				46AEA0231C5EB111003E7AF9 /* BitterSwiftTests.swift */,
 				46AEA0251C5EB112003E7AF9 /* Info.plist */,
 			);
-			path = BitterSwiftTests;
+			name = BitterSwiftTests;
+			path = Sources/BitterSwiftTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +314,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = BitterSwift/Info.plist;
+				INFOPLIST_FILE = Sources/BitterSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uraimo.BitterSwift;
@@ -328,7 +330,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = BitterSwift/Info.plist;
+				INFOPLIST_FILE = Sources/BitterSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uraimo.BitterSwift;
