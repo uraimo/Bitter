@@ -6,8 +6,7 @@
 //  Copyright © 2016 Umberto Raimondi. All rights reserved.
 //
 
-//MARK: Int types extensions
-
+// MARK: Int types extensions
 
 extension Int{
     public var toU8: UInt8{ get{return UInt8(truncatingBitPattern:self)} }
@@ -22,6 +21,7 @@ extension Int{
     public var to64: Int64{get{
         return Int64(self) //No difference if the platform is 32 or 64
         }}
+    public static var allOnes:Int{return Int(bitPattern: UInt.max)}
 }
 extension UInt{
     public var toU8: UInt8{ get{return UInt8(truncatingBitPattern:self)} }
@@ -36,6 +36,7 @@ extension UInt{
     public var to64: Int64{get{
         return Int64(self) //No difference if the platform is 32 or 64
         }}
+    public static var allOnes:UInt{return UInt.max}
 }
 
 extension Int8 {
@@ -51,6 +52,7 @@ extension Int8 {
     public var to64: Int64{get{
         return Int64(self) //No difference if the platform is 32 or 64
         }}
+    public static var allOnes:Int8{return Int8(bitPattern: UInt8.max)}
 }
 extension UInt8 {
     public var toU8: UInt8{ get{return self} }
@@ -65,6 +67,7 @@ extension UInt8 {
     public var to64: Int64{get{
         return Int64(self) //No difference if the platform is 32 or 64
         }}
+    public static var allOnes:UInt8{return UInt8.max}
 }
 
 extension Int16 {
@@ -80,6 +83,7 @@ extension Int16 {
     public var to64: Int64{get{
         return Int64(self) //No difference if the platform is 32 or 64
         }}
+    public static var allOnes:Int16{return Int16(bitPattern: UInt16.max)}
 }
 extension UInt16 {
     public var toU8: UInt8{ get{return UInt8(truncatingBitPattern:self)} }
@@ -94,6 +98,7 @@ extension UInt16 {
     public var to64: Int64{get{
         return Int64(self) //No difference if the platform is 32 or 64
         }}
+    public static var allOnes:UInt16{return UInt16.max}
 }
 
 extension Int32 {
@@ -109,6 +114,7 @@ extension Int32 {
     public var to64: Int64{get{
         return Int64(self) //No difference if the platform is 32 or 64
         }}
+    public static var allOnes:Int32{return Int32(bitPattern: UInt32.max)}
 }
 extension UInt32 {
     public var toU8: UInt8{ get{return UInt8(truncatingBitPattern:self)} }
@@ -123,6 +129,7 @@ extension UInt32 {
     public var to64: Int64{get{
         return Int64(self) //No difference if the platform is 32 or 64
         }}
+    public static var allOnes:UInt32{return UInt32.max}
 }
 
 extension Int64 {
@@ -138,6 +145,7 @@ extension Int64 {
     public var to64: Int64{get{
         return self //No difference if the platform is 32 or 64
         }}
+    public static var allOnes:Int64{return Int64(bitPattern: UInt64.max)}
 }
 extension UInt64 {
     public var toU8: UInt8{ get{return UInt8(truncatingBitPattern:self)} }
@@ -152,10 +160,10 @@ extension UInt64 {
     public var to64: Int64{get{
         return Int64(bitPattern:self) //No difference if the platform is 32 or 64
         }}
+    public static var allOnes:UInt64{return UInt64.max}
 }
 
-
-//MARK: Operators
+// MARK: Operators
 
 prefix operator ~~ {}
 
