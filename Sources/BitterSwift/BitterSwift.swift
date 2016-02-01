@@ -25,6 +25,7 @@ extension Int{
     public static var size:Int{return strideof(self)}
     subscript(index: Int) -> Int {
         get {
+            precondition(index<Int.size,"Byte set index out of range")
             if(Int.size == 8){
                 return Int(bitPattern: UInt((self.toU64 & (0xFF << index.toU64)) >> index.toU64) )
             }else{
@@ -32,6 +33,7 @@ extension Int{
             }
         }
         set(newValue) {
+            precondition(index<Int.size,"Byte set index out of range")
             if(Int.size == 8){
                 self = Int(bitPattern: UInt(self.toU64 | (newValue.toU64 << index.toU64)) )
             }else{
@@ -57,14 +59,16 @@ extension UInt{
     public static var size:Int{return strideof(self)}
     subscript(index: Int) -> UInt {
         get {
-            if(Int.size == 8){
+            precondition(index<Int.size,"Byte set index out of range")
+            if(UInt.size == 8){
                 return UInt(self.toU64 & (0xFF << index.toU64) >> index.toU64)
             }else{
                 return UInt(self.toU32 & (0xFF << index.toU32) >> index.toU32)
             }
         }
         set(newValue) {
-            if(Int.size == 8){
+            precondition(index<Int.size,"Byte set index out of range")
+            if(UInt.size == 8){
                 self = UInt(self.toU64 | (newValue.toU64 << index.toU64))
             }else{
                 self = UInt(self.toU32 | (newValue.toU32 << index.toU32))
@@ -90,9 +94,11 @@ extension Int8 {
     public static var size:Int{return strideof(self)}
     subscript(index: Int) -> Int8 {
         get {
+            precondition(index<Int8.size,"Byte set index out of range")
             return ((self.toU8 & (0xFF << index.toU8)) >> index.toU8).to8
         }
         set(newValue) {
+            precondition(index<Int8.size,"Byte set index out of range")
             self = (self.toU8 | (newValue.toU8 << index.toU8)).to8
         }
     }
@@ -114,9 +120,11 @@ extension UInt8 {
     public static var size:Int{return strideof(self)}
     subscript(index: Int) -> UInt8 {
         get {
+            precondition(index<Int8.size,"Byte set index out of range")
             return self & (0xFF << index.toU8) >> index.toU8
         }
         set(newValue) {
+            precondition(index<Int8.size,"Byte set index out of range")
             self = self | (newValue.toU8 << index.toU8)
         }
     }
@@ -139,9 +147,11 @@ extension Int16 {
     public static var size:Int{return strideof(self)}
     subscript(index: Int) -> Int16 {
         get {
+            precondition(index<Int16.size,"Byte set index out of range")
             return ((self.toU16 & (0xFF << index.toU16)) >> index.toU16).to16
         }
         set(newValue) {
+            precondition(index<Int16.size,"Byte set index out of range")
             self = (self.toU16 | (newValue.toU16 << index.toU16)).to16
         }
     }
@@ -163,9 +173,11 @@ extension UInt16 {
     public static var size:Int{return strideof(self)}
     subscript(index: Int) -> UInt16 {
         get {
+            precondition(index<Int16.size,"Byte set index out of range")
             return self & (0xFF << index.toU16) >> index.toU16
         }
         set(newValue) {
+            precondition(index<Int16.size,"Byte set index out of range")
             self = self | (newValue.toU16 << index.toU16)
         }
     }
@@ -188,9 +200,11 @@ extension Int32 {
     public static var size:Int{return strideof(self)}
     subscript(index: Int) -> Int32 {
         get {
+            precondition(index<Int32.size,"Byte set index out of range")
             return ((self.toU32 & (0xFF << index.toU32)) >> index.toU32).to32
         }
         set(newValue) {
+            precondition(index<Int32.size,"Byte set index out of range")
             self = (self.toU32 | (newValue.toU32 << index.toU32)).to32
         }
     }
@@ -212,9 +226,11 @@ extension UInt32 {
     public static var size:Int{return strideof(self)}
     subscript(index: Int) -> UInt32 {
         get {
+            precondition(index<Int32.size,"Byte set index out of range")
             return self & (0xFF << index.toU32) >> index.toU32
         }
         set(newValue) {
+            precondition(index<Int32.size,"Byte set index out of range")
             self = self | (newValue.toU32 << index.toU32)
         }
     }
@@ -237,9 +253,11 @@ extension Int64 {
     public static var size:Int{return strideof(self)}
     subscript(index: Int) -> Int64 {
         get {
+            precondition(index<Int64.size,"Byte set index out of range")
             return ((self.toU64 & (0xFF << index.toU64)) >> index.toU64).to64
         }
         set(newValue) {
+            precondition(index<Int64.size,"Byte set index out of range")
             self = (self.toU64 | (newValue.toU64 << index.toU64)).to64
         }
     }
@@ -261,9 +279,11 @@ extension UInt64 {
     public static var size:Int{return strideof(self)}
     subscript(index: Int) -> UInt64 {
         get {
+            precondition(index<Int64.size,"Byte set index out of range")
             return self & (0xFF << index.toU64) >> index.toU64
         }
         set(newValue) {
+            precondition(index<Int64.size,"Byte set index out of range")
             self = self | (newValue.toU64 << index.toU64)
         }
     }
