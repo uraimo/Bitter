@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46AEA0181C5EB111003E7AF9 /* BitterSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 46AEA0171C5EB111003E7AF9 /* BitterSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4680264A1C5FBBCA0086AED1 /* BitterSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468026491C5FBBCA0086AED1 /* BitterSwift.swift */; };
 		46AEA01F1C5EB111003E7AF9 /* BitterSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AEA0141C5EB111003E7AF9 /* BitterSwift.framework */; };
 		46AEA0241C5EB111003E7AF9 /* BitterSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AEA0231C5EB111003E7AF9 /* BitterSwiftTests.swift */; };
 /* End PBXBuildFile section */
@@ -23,8 +23,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		468026491C5FBBCA0086AED1 /* BitterSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitterSwift.swift; sourceTree = "<group>"; };
 		46AEA0141C5EB111003E7AF9 /* BitterSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BitterSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		46AEA0171C5EB111003E7AF9 /* BitterSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitterSwift.h; sourceTree = "<group>"; };
 		46AEA0191C5EB111003E7AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46AEA01E1C5EB111003E7AF9 /* BitterSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitterSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AEA0231C5EB111003E7AF9 /* BitterSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitterSwiftTests.swift; sourceTree = "<group>"; };
@@ -71,8 +71,8 @@
 		46AEA0161C5EB111003E7AF9 /* BitterSwift */ = {
 			isa = PBXGroup;
 			children = (
-				46AEA0171C5EB111003E7AF9 /* BitterSwift.h */,
 				46AEA0191C5EB111003E7AF9 /* Info.plist */,
+				468026491C5FBBCA0086AED1 /* BitterSwift.swift */,
 			);
 			name = BitterSwift;
 			path = Sources/BitterSwift;
@@ -95,7 +95,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46AEA0181C5EB111003E7AF9 /* BitterSwift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4680264A1C5FBBCA0086AED1 /* BitterSwift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +310,7 @@
 		46AEA0291C5EB112003E7AF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -320,12 +321,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.uraimo.BitterSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		46AEA02A1C5EB112003E7AF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
