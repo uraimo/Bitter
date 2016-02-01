@@ -1,15 +1,15 @@
 //
-//  BitterSwiftTests.swift
-//  BitterSwiftTests
+//  BitterTests.swift
+//  BitterTests
 //
 //  Created by Umberto Raimondi on 31/01/16.
 //  Copyright © 2016 Umberto Raimondi. All rights reserved.
 //
 
 import XCTest
-@testable import BitterSwift
+@testable import Bitter
 
-class BitterSwiftTests: XCTestCase {
+class BitterTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

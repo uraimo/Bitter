@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:BitterSwift.xcodeproj">
+      location = "container:/Users/mainuser/Projects/OpenSource/Bitter/Bitter.xcodeproj">
    </FileRef>
 </Workspace>

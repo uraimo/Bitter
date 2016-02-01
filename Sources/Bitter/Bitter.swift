@@ -1,6 +1,6 @@
 //
-//  BitterSwift.swift
-//  BitterSwift
+//  Bitter.swift
+//  Bitter
 //
 //  Created by Umberto Raimondi on 01/02/16.
 //  Copyright © 2016 Umberto Raimondi. All rights reserved.

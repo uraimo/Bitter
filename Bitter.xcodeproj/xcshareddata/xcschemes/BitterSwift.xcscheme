@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "46AEA0131C5EB111003E7AF9"
-               BuildableName = "BitterSwift.framework"
-               BlueprintName = "BitterSwift"
-               ReferencedContainer = "container:BitterSwift.xcodeproj">
+               BuildableName = "Bitter.framework"
+               BlueprintName = "Bitter"
+               ReferencedContainer = "container:Bitter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "46AEA01D1C5EB111003E7AF9"
-               BuildableName = "BitterSwiftTests.xctest"
-               BlueprintName = "BitterSwiftTests"
-               ReferencedContainer = "container:BitterSwift.xcodeproj">
+               BuildableName = "Bitter.xctest"
+               BlueprintName = "BitterTests"
+               ReferencedContainer = "container:Bitter.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46AEA0131C5EB111003E7AF9"
-            BuildableName = "BitterSwift.framework"
-            BlueprintName = "BitterSwift"
-            ReferencedContainer = "container:BitterSwift.xcodeproj">
+            BuildableName = "Bitter.framework"
+            BlueprintName = "Bitter"
+            ReferencedContainer = "container:Bitter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46AEA0131C5EB111003E7AF9"
-            BuildableName = "BitterSwift.framework"
-            BlueprintName = "BitterSwift"
-            ReferencedContainer = "container:BitterSwift.xcodeproj">
+            BuildableName = "Bitter.framework"
+            BlueprintName = "Bitter"
+            ReferencedContainer = "container:Bitter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -83,9 +83,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46AEA0131C5EB111003E7AF9"
-            BuildableName = "BitterSwift.framework"
-            BlueprintName = "BitterSwift"
-            ReferencedContainer = "container:BitterSwift.xcodeproj">
+            BuildableName = "Bitter.framework"
+            BlueprintName = "Bitter"
+            ReferencedContainer = "container:Bitter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

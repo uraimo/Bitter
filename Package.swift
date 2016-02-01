@@ -1,8 +1,8 @@
 import PackageDescription
 
 let package = Package(
-    name: "BitterSwift",
+    name: "Bitter",
     targets: [
-        Target(name: "BitterSwiftTests", dependencies: [.Target(name: "BitterSwift")])
+        Target(name: "BitterTests", dependencies: [.Target(name: "Bitter")])
     ]
 )
