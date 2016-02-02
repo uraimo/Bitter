@@ -48,7 +48,7 @@ let package = Package(
 
 ## Usage
 
-Let's what Bitter provides:
+Let's see what Bitter provides:
 
 #### Int type conversion
 
@@ -56,7 +56,7 @@ Every time you want to convert an Int containing a bit pattern to a smaller Int 
 
 Bit pattern truncating conversions can be easily performed using the constructor `init(truncatingBitPattern:)`, but if you need to do this a lot, your code will become unreadable fast.
 
-With Bitter, every *IntN/UIntN* type gains a few methods that allows to perform truncating bit pattern conversions to smaller Int types or simple bit pattern conversion for bigger and same size/different signedness Int types: **.to8,toU8,to16,toU16,to32,toU32,to64,toU64**.
+With Bitter, every *IntN/UIntN* type gains a few methods that allows to perform truncating bit pattern conversions to smaller Int types or simple bit pattern conversion for bigger and same size/different signedness Int types: **.to8, toU8, to16, toU16, to32, toU32, to64, toU64**.
 The toU*n* methods perform a conversion to unsigned Int while the number refers to the size of the type, e.g.  *.toU16* will convert the current integer to an *UInt16* truncating the bit pattern if necessary.
 
 Let's see an example:
@@ -94,9 +94,9 @@ The subscript index start from the LSB to the MSB for little endian multi-byte I
 
 Bitter also adds a few other extensions to Int types:
 
-    * Double negation operator `~~`: This new operator has the same function that **!!** has in C or similar languages, it converts every integer value not equal to 0 to 1 and keeps the value 0 the same. 
-    * `size` static property for Int types: Shorthand for `strideof(Int*n*)`  
-    * `.allOnes` static property: We already have `.allZeros` in `BitwiseOperationsType`, now we have this too.
+* Double negation operator `~~`: This new operator has the same function that **!!** has in C or similar languages, it converts every integer value not equal to 0 to 1 and keeps the value 0 the same. 
+* `size` static property for Int types: Shorthand for `strideof(Int*n*)`  
+* `.allOnes` static property: We already have `.allZeros` in `BitwiseOperationsType`, now we have this too.
 
 ## TODO
 
