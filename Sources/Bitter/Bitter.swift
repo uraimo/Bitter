@@ -23,7 +23,7 @@ extension Int{
         }
     public static var allOnes:Int{return Int(bitPattern: UInt.max)}
     public static var size:Int{return strideof(self)}
-    subscript(index: Int) -> Int {
+    public subscript(index: Int) -> Int {
         get {
             precondition(index<Int.size,"Byte set index out of range")
             if(Int.size == 8){
@@ -57,7 +57,7 @@ extension UInt{
         }
     public static var allOnes:UInt{return UInt.max}
     public static var size:Int{return strideof(self)}
-    subscript(index: Int) -> UInt {
+    public subscript(index: Int) -> UInt {
         get {
             precondition(index<Int.size,"Byte set index out of range")
             if(UInt.size == 8){
@@ -92,7 +92,7 @@ extension Int8 {
         }
     public static var allOnes:Int8{return Int8(bitPattern: UInt8.max)}
     public static var size:Int{return strideof(self)}
-    subscript(index: Int) -> Int8 {
+    public subscript(index: Int) -> Int8 {
         get {
             precondition(index<Int8.size,"Byte set index out of range")
             return ((self.toU8 & (0xFF << index.toU8)) >> index.toU8).to8
@@ -118,7 +118,7 @@ extension UInt8 {
         }
     public static var allOnes:UInt8{return UInt8.max}
     public static var size:Int{return strideof(self)}
-    subscript(index: Int) -> UInt8 {
+    public subscript(index: Int) -> UInt8 {
         get {
             precondition(index<Int8.size,"Byte set index out of range")
             return self & (0xFF << index.toU8) >> index.toU8
@@ -145,7 +145,7 @@ extension Int16 {
         }
     public static var allOnes:Int16{return Int16(bitPattern: UInt16.max)}
     public static var size:Int{return strideof(self)}
-    subscript(index: Int) -> Int16 {
+    public subscript(index: Int) -> Int16 {
         get {
             precondition(index<Int16.size,"Byte set index out of range")
             return ((self.toU16 & (0xFF << index.toU16)) >> index.toU16).to16
@@ -171,7 +171,7 @@ extension UInt16 {
         }
     public static var allOnes:UInt16{return UInt16.max}
     public static var size:Int{return strideof(self)}
-    subscript(index: Int) -> UInt16 {
+    public subscript(index: Int) -> UInt16 {
         get {
             precondition(index<Int16.size,"Byte set index out of range")
             return self & (0xFF << index.toU16) >> index.toU16
@@ -198,7 +198,7 @@ extension Int32 {
         }
     public static var allOnes:Int32{return Int32(bitPattern: UInt32.max)}
     public static var size:Int{return strideof(self)}
-    subscript(index: Int) -> Int32 {
+    public subscript(index: Int) -> Int32 {
         get {
             precondition(index<Int32.size,"Byte set index out of range")
             return ((self.toU32 & (0xFF << index.toU32)) >> index.toU32).to32
@@ -224,7 +224,7 @@ extension UInt32 {
         }
     public static var allOnes:UInt32{return UInt32.max}
     public static var size:Int{return strideof(self)}
-    subscript(index: Int) -> UInt32 {
+    public subscript(index: Int) -> UInt32 {
         get {
             precondition(index<Int32.size,"Byte set index out of range")
             return self & (0xFF << index.toU32) >> index.toU32
@@ -251,7 +251,7 @@ extension Int64 {
         }
     public static var allOnes:Int64{return Int64(bitPattern: UInt64.max)}
     public static var size:Int{return strideof(self)}
-    subscript(index: Int) -> Int64 {
+    public subscript(index: Int) -> Int64 {
         get {
             precondition(index<Int64.size,"Byte set index out of range")
             return ((self.toU64 & (0xFF << index.toU64)) >> index.toU64).to64
@@ -277,7 +277,7 @@ extension UInt64 {
         }
     public static var allOnes:UInt64{return UInt64.max}
     public static var size:Int{return strideof(self)}
-    subscript(index: Int) -> UInt64 {
+    public subscript(index: Int) -> UInt64 {
         get {
             precondition(index<Int64.size,"Byte set index out of range")
             return self & (0xFF << index.toU64) >> index.toU64
