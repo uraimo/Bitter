@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "46AEA0131C5EB111003E7AF9"
+               BlueprintIdentifier = "464254711C61EAF0001718FA"
                BuildableName = "Bitter.framework"
                BlueprintName = "Bitter"
                ReferencedContainer = "container:Bitter.xcodeproj">
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "46AEA01D1C5EB111003E7AF9"
-               BuildableName = "Bitter.xctest"
-               BlueprintName = "BitterTests"
-               ReferencedContainer = "container:Bitter.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "46AEA0131C5EB111003E7AF9"
-            BuildableName = "Bitter.framework"
-            BlueprintName = "Bitter"
-            ReferencedContainer = "container:Bitter.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -64,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "46AEA0131C5EB111003E7AF9"
+            BlueprintIdentifier = "464254711C61EAF0001718FA"
             BuildableName = "Bitter.framework"
             BlueprintName = "Bitter"
             ReferencedContainer = "container:Bitter.xcodeproj">
@@ -82,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "46AEA0131C5EB111003E7AF9"
+            BlueprintIdentifier = "464254711C61EAF0001718FA"
             BuildableName = "Bitter.framework"
             BlueprintName = "Bitter"
             ReferencedContainer = "container:Bitter.xcodeproj">

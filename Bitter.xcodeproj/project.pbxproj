@@ -7,108 +7,79 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4680264A1C5FBBCA0086AED1 /* Bitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468026491C5FBBCA0086AED1 /* Bitter.swift */; };
-		46AEA01F1C5EB111003E7AF9 /* Bitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AEA0141C5EB111003E7AF9 /* Bitter.framework */; };
-		46AEA0241C5EB111003E7AF9 /* BitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AEA0231C5EB111003E7AF9 /* BitterTests.swift */; };
+		464254761C61EAF0001718FA /* Bitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 464254751C61EAF0001718FA /* Bitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4642547E1C61ED1A001718FA /* Bitter in Resources */ = {isa = PBXBuildFile; fileRef = 4642547D1C61ED1A001718FA /* Bitter */; };
+		464254821C61ED84001718FA /* BitterTests in Resources */ = {isa = PBXBuildFile; fileRef = 464254811C61ED84001718FA /* BitterTests */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		46AEA0201C5EB111003E7AF9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46AEA00B1C5EB111003E7AF9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 46AEA0131C5EB111003E7AF9;
-			remoteInfo = Bitter;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		468026491C5FBBCA0086AED1 /* Bitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bitter.swift; sourceTree = "<group>"; };
-		46AEA0141C5EB111003E7AF9 /* Bitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		46AEA0191C5EB111003E7AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46AEA01E1C5EB111003E7AF9 /* Bitter.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bitter.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		46AEA0231C5EB111003E7AF9 /* BitterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitterTests.swift; sourceTree = "<group>"; };
-		46AEA0251C5EB112003E7AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		464254721C61EAF0001718FA /* Bitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		464254751C61EAF0001718FA /* Bitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bitter.h; sourceTree = "<group>"; };
+		464254771C61EAF0001718FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4642547D1C61ED1A001718FA /* Bitter */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Bitter; path = Sources/Bitter; sourceTree = "<group>"; };
+		464254811C61ED84001718FA /* BitterTests */ = {isa = PBXFileReference; lastKnownFileType = folder; name = BitterTests; path = Sources/BitterTests; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		46AEA0101C5EB111003E7AF9 /* Frameworks */ = {
+		4642546E1C61EAF0001718FA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		46AEA01B1C5EB111003E7AF9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				46AEA01F1C5EB111003E7AF9 /* Bitter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		46AEA00A1C5EB111003E7AF9 = {
+		464254681C61EAF0001718FA = {
 			isa = PBXGroup;
 			children = (
-				46AEA0161C5EB111003E7AF9 /* Bitter */,
-				46AEA0221C5EB111003E7AF9 /* BitterTests */,
-				46AEA0151C5EB111003E7AF9 /* Products */,
+				4642547D1C61ED1A001718FA /* Bitter */,
+				464254811C61ED84001718FA /* BitterTests */,
+				464254741C61EAF0001718FA /* Bitter */,
+				464254731C61EAF0001718FA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		46AEA0151C5EB111003E7AF9 /* Products */ = {
+		464254731C61EAF0001718FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				46AEA0141C5EB111003E7AF9 /* Bitter.framework */,
-				46AEA01E1C5EB111003E7AF9 /* Bitter.xctest */,
+				464254721C61EAF0001718FA /* Bitter.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		46AEA0161C5EB111003E7AF9 /* Bitter */ = {
+		464254741C61EAF0001718FA /* Bitter */ = {
 			isa = PBXGroup;
 			children = (
-				46AEA0191C5EB111003E7AF9 /* Info.plist */,
-				468026491C5FBBCA0086AED1 /* Bitter.swift */,
+				464254751C61EAF0001718FA /* Bitter.h */,
+				464254771C61EAF0001718FA /* Info.plist */,
 			);
-			name = Bitter;
-			path = Sources/Bitter;
-			sourceTree = "<group>";
-		};
-		46AEA0221C5EB111003E7AF9 /* BitterTests */ = {
-			isa = PBXGroup;
-			children = (
-				46AEA0231C5EB111003E7AF9 /* BitterTests.swift */,
-				46AEA0251C5EB112003E7AF9 /* Info.plist */,
-			);
-			name = BitterTests;
-			path = Sources/BitterTests;
+			path = Bitter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		46AEA0111C5EB111003E7AF9 /* Headers */ = {
+		4642546F1C61EAF0001718FA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				464254761C61EAF0001718FA /* Bitter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		46AEA0131C5EB111003E7AF9 /* Bitter */ = {
+		464254711C61EAF0001718FA /* Bitter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46AEA0281C5EB112003E7AF9 /* Build configuration list for PBXNativeTarget "Bitter" */;
+			buildConfigurationList = 4642547A1C61EAF0001718FA /* Build configuration list for PBXNativeTarget "Bitter" */;
 			buildPhases = (
-				46AEA00F1C5EB111003E7AF9 /* Sources */,
-				46AEA0101C5EB111003E7AF9 /* Frameworks */,
-				46AEA0111C5EB111003E7AF9 /* Headers */,
-				46AEA0121C5EB111003E7AF9 /* Resources */,
+				4642546D1C61EAF0001718FA /* Sources */,
+				4642546E1C61EAF0001718FA /* Frameworks */,
+				4642546F1C61EAF0001718FA /* Headers */,
+				464254701C61EAF0001718FA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -116,109 +87,64 @@
 			);
 			name = Bitter;
 			productName = Bitter;
-			productReference = 46AEA0141C5EB111003E7AF9 /* Bitter.framework */;
+			productReference = 464254721C61EAF0001718FA /* Bitter.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		46AEA01D1C5EB111003E7AF9 /* BitterTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 46AEA02B1C5EB112003E7AF9 /* Build configuration list for PBXNativeTarget "BitterTests" */;
-			buildPhases = (
-				46AEA01A1C5EB111003E7AF9 /* Sources */,
-				46AEA01B1C5EB111003E7AF9 /* Frameworks */,
-				46AEA01C1C5EB111003E7AF9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				46AEA0211C5EB111003E7AF9 /* PBXTargetDependency */,
-			);
-			name = BitterTests;
-			productName = BitterTests;
-			productReference = 46AEA01E1C5EB111003E7AF9 /* Bitter.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		46AEA00B1C5EB111003E7AF9 /* Project object */ = {
+		464254691C61EAF0001718FA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Umberto Raimondi";
 				TargetAttributes = {
-					46AEA0131C5EB111003E7AF9 = {
-						CreatedOnToolsVersion = 7.2;
-					};
-					46AEA01D1C5EB111003E7AF9 = {
+					464254711C61EAF0001718FA = {
 						CreatedOnToolsVersion = 7.2;
 					};
 				};
 			};
-			buildConfigurationList = 46AEA00E1C5EB111003E7AF9 /* Build configuration list for PBXProject "Bitter" */;
+			buildConfigurationList = 4642546C1C61EAF0001718FA /* Build configuration list for PBXProject "Bitter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 46AEA00A1C5EB111003E7AF9;
-			productRefGroup = 46AEA0151C5EB111003E7AF9 /* Products */;
+			mainGroup = 464254681C61EAF0001718FA;
+			productRefGroup = 464254731C61EAF0001718FA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				46AEA0131C5EB111003E7AF9 /* Bitter */,
-				46AEA01D1C5EB111003E7AF9 /* BitterTests */,
+				464254711C61EAF0001718FA /* Bitter */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		46AEA0121C5EB111003E7AF9 /* Resources */ = {
+		464254701C61EAF0001718FA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		46AEA01C1C5EB111003E7AF9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				464254821C61ED84001718FA /* BitterTests in Resources */,
+				4642547E1C61ED1A001718FA /* Bitter in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		46AEA00F1C5EB111003E7AF9 /* Sources */ = {
+		4642546D1C61EAF0001718FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4680264A1C5FBBCA0086AED1 /* Bitter.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		46AEA01A1C5EB111003E7AF9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				46AEA0241C5EB111003E7AF9 /* BitterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		46AEA0211C5EB111003E7AF9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 46AEA0131C5EB111003E7AF9 /* Bitter */;
-			targetProxy = 46AEA0201C5EB111003E7AF9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		46AEA0261C5EB112003E7AF9 /* Debug */ = {
+		464254781C61EAF0001718FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -266,7 +192,7 @@
 			};
 			name = Debug;
 		};
-		46AEA0271C5EB112003E7AF9 /* Release */ = {
+		464254791C61EAF0001718FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -307,92 +233,62 @@
 			};
 			name = Release;
 		};
-		46AEA0291C5EB112003E7AF9 /* Debug */ = {
+		4642547B1C61EAF0001718FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Bitter/Info.plist;
+				INFOPLIST_FILE = Bitter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uraimo.Bitter;
-				PRODUCT_NAME = Bitter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		46AEA02A1C5EB112003E7AF9 /* Release */ = {
+		4642547C1C61EAF0001718FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Bitter/Info.plist;
+				INFOPLIST_FILE = Bitter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uraimo.Bitter;
-				PRODUCT_NAME = Bitter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		46AEA02C1C5EB112003E7AF9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = Sources/BitterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.uraimo.BitterTests;
-				PRODUCT_NAME = Bitter;
-			};
-			name = Debug;
-		};
-		46AEA02D1C5EB112003E7AF9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = Sources/BitterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.uraimo.BitterTests;
-				PRODUCT_NAME = Bitter;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		46AEA00E1C5EB111003E7AF9 /* Build configuration list for PBXProject "Bitter" */ = {
+		4642546C1C61EAF0001718FA /* Build configuration list for PBXProject "Bitter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				46AEA0261C5EB112003E7AF9 /* Debug */,
-				46AEA0271C5EB112003E7AF9 /* Release */,
+				464254781C61EAF0001718FA /* Debug */,
+				464254791C61EAF0001718FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46AEA0281C5EB112003E7AF9 /* Build configuration list for PBXNativeTarget "Bitter" */ = {
+		4642547A1C61EAF0001718FA /* Build configuration list for PBXNativeTarget "Bitter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				46AEA0291C5EB112003E7AF9 /* Debug */,
-				46AEA02A1C5EB112003E7AF9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		46AEA02B1C5EB112003E7AF9 /* Build configuration list for PBXNativeTarget "BitterTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				46AEA02C1C5EB112003E7AF9 /* Debug */,
-				46AEA02D1C5EB112003E7AF9 /* Release */,
+				4642547B1C61EAF0001718FA /* Debug */,
+				4642547C1C61EAF0001718FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 46AEA00B1C5EB111003E7AF9 /* Project object */;
+	rootObject = 464254691C61EAF0001718FA /* Project object */;
 }
