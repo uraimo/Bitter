@@ -12,7 +12,7 @@
 
 The Bitter library extends all the basic Swift Int types with some useful methods for manipulating bits.
 The objective of the library is to make the code dealing with bits and bitwise operations more concise and readable, through the use of shorthand methods where they make sense.
-                     
+
 ## Installation
 
 If you want to install Bitter manually just include all the Swift files in `Sources/Bitter` in your project or load it as a git submodule.
@@ -113,4 +113,6 @@ Bitter also adds a few other extensions to Int types:
 ## TODO
 
 - [ ] Reduce code duplication converting part of the source to .gyb templates
- 
+- [ ] Proper documentation
+- [ ] Test for each functionality (XCTest ok, Quick better)
+- [ ] Additional functionalities?
