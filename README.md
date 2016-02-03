@@ -26,11 +26,13 @@ use_frameworks!
 pod 'Bitter'
 
 ```
+And update your workspace with `pod install`. Import the framework with `import Bitter`.
 
 You can also install Bitter with [Carthage](https://github.com/Carthage/Carthage) adding it to your `Cartfile`:
 ```
 github "uraimo/Bitter"
 ```
+Download the framework with `carthage update` and add it to your embedded binaries. Import the framework with `import Bitter`.
 
 And if you are using the Swift Package Manager just add it to the dependencies of your `Package.swift`:
 
@@ -45,6 +47,7 @@ let package = Package(
     ]
 )
 ```
+Import the framework with `import Bitter`.
 
 ## Usage
 
@@ -52,17 +55,17 @@ Let's see what Bitter provides:
 
 #### Int type conversion
 
-Every time you want to convert an Int containing a bit pattern to a smaller Int you need to perform a *truncating* bit conversion because the conversion will simply **fail at runtime** if the content of your integer is bigger than what the receiving type allows (e.g. try Int8(1000)). And let me reiterate that we are performing a bit truncation, not a decimal truncating conversion.
+Every time you want to convert an Int containing a bit pattern to a smaller Int you need to perform a *truncating* bit conversion because the conversion will simply **fail at runtime** if the content of your integer is bigger than what the receiving type allows (e.g. try `Int8(1000)`). And let me reiterate that we are performing a bit truncation, not a decimal truncating conversion.
 
 Bit pattern truncating conversions can be easily performed using the constructor `init(truncatingBitPattern:)`, but if you need to do this a lot, your code will become unreadable fast.
 
-With Bitter, every *IntN/UIntN* type gains a few methods that allows to perform truncating bit pattern conversions to smaller Int types or simple bit pattern conversion for bigger and same size/different signedness Int types: **.to8, toU8, to16, toU16, to32, toU32, to64, toU64**.
-The toU*n* methods perform a conversion to unsigned Int while the number refers to the size of the type, e.g.  *.toU16* will convert the current integer to an *UInt16* truncating the bit pattern if necessary.
+With Bitter, every Int*n*/UInt*n* type gains a few methods that allows to perform truncating bit pattern conversions to smaller Int types or simple bit pattern conversion for bigger and same size/different signedness Int types: **.to8, toU8, to16, toU16, to32, toU32, to64, toU64**.
+The toU*n* methods perform a conversion to unsigned Int while the number refers to the size of the type, e.g.  `.toU16` will convert the current integer to an UInt16 truncating the bit pattern if necessary.
 
 Let's see an example:
 ```swift
 var i:Int32 = 50000
-var u8:UInt8 = i.toU8   //81
+var u8:UInt8 = i.toU8   //81, Without Bitter: var u8:UInt8 = UInt8(truncatingBitPattern:i)
 ```
 
 Bitter is also useful in mixed types expression, making the code more concise:
@@ -71,7 +74,7 @@ class Test{
     var content:UInt32=0
 
     func shiftAndResizeMe(howMuch:Int)->UInt16{
-        return  (content << howMuch.toU32).toU16
+        return  (content << howMuch.toU32).toU16  //Without Bitter: return UInt16(truncatingBitPattern:(content << UInt32(truncatingBitPattern:howMuch)))
     }
 }
 ```
@@ -80,13 +83,20 @@ class Test{
 
 While retrieving and modifying a single byte in a multi-byte Int is easy, having to write always the same code is a bit annoying and Bitter adds subscript to address single bytes to every Int type. Following the same safety-first approach of the Int conversions, trying to modify a byte outside of the range of the current type will result in an error at runtime.
 
-Let's see an example:
+Let's see some examples:
 ```swift
 var i:UInt16 = 0b1010101011110000
+
 //Let's swap the two bytes
-let tmp = i[0]
-i[0] = i[1]
-i[i] = tmp
+let tmp = i[0]           //Without Bitter: let tmp = (i & 0x00FF)
+i[0] = i[1]              //                i = ((i & 0xFF00) >> 8)  
+i[i] = tmp               //                i = (tmp << 8) | i
+
+// Let's set to 0 the second bit of the second byte
+i[1] &= 0b11111101
+
+// Let's change the third byte
+i[3] = 0xAA   //Error! There is not 3rd byte!
 ``` 
 The subscript index start from the LSB to the MSB for little endian multi-byte Ints and in the opposite direction if a big endian conversion has been applied to the Int.
 
@@ -94,8 +104,10 @@ The subscript index start from the LSB to the MSB for little endian multi-byte I
 
 Bitter also adds a few other extensions to Int types:
 
-* Double negation operator `~~`: This new operator has the same function that **!!** has in C or similar languages, it converts every integer value not equal to 0 to 1 and keeps the value 0 the same. 
+* Double negation operator `~~`: This new operator has the same function that **!!** has in C or similar languages, it converts every integer value not equal to 0 to 1 and keeps the value 0 the same. Extremely useful when you want to convert the result of an expression to the standard C 0/1 integer boolean to use it in another expression.
+
 * `size` static property for Int types: Shorthand for `strideof(Int*n*)`  
+
 * `.allOnes` static property: We already have `.allZeros` in `BitwiseOperationsType`, now we have this too.
 
 ## TODO
