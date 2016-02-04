@@ -96,7 +96,7 @@ i[i] = tmp               //                i = (tmp << 8) | i
 i[1] &= 0b11111101
 
 // Let's change the third byte
-i[3] = 0xAA   //Error! There is not 3rd byte!
+i[3] = 0xAA   //Error! There is no 3rd byte!
 ``` 
 The subscript index start from the LSB to the MSB for little endian multi-byte Ints and in the opposite direction if a big endian conversion has been applied to the Int.
 
@@ -113,6 +113,7 @@ Bitter also adds a few other extensions to Int types:
 ## TODO
 
 - [ ] Reduce code duplication converting part of the source to .gyb templates
-- [ ] Proper documentation
+- [ ] Proper documentation using gyb
 - [ ] Test for each functionality (XCTest ok, Quick better)
 - [ ] Additional functionalities?
+- [ ] Example project?
