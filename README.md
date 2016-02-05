@@ -85,15 +85,15 @@ While retrieving and modifying a single byte in a multi-byte Int is easy, having
 
 Let's see some examples:
 ```swift
-var i:UInt16 = 0b1010101011110000
+var i:UInt32 = 0xAABBCCDD
 
 //Let's swap the two bytes
-let tmp = i[0]           //Without Bitter: let tmp = (i & 0x00FF)
-i[0] = i[1]              //                i = ((i & 0xFF00) >> 8)  
-i[i] = tmp               //                i = (tmp << 8) | i
+let tmp = i[2]           //Without Bitter: let tmp = (i & (0xFF << 16)) >> 16))
+i[2] = i[1]              //                i = (i & ~(0xFF << 16)) | ((i & (0xFF << 8)) << 8)
+i[1] = tmp               //                i = (i & ~(0xFF << 8)) | (tmp << 8)
 
 // Let's set to 0 the second bit of the second byte
-i[1] &= 0b11111101
+i[1] &= 0b11111101       //Without Bitter: i = i & (0b11111101 << 8)
 
 // Let's change the third byte
 i[3] = 0xAA   //Error! There is no 3rd byte!
@@ -112,8 +112,8 @@ Bitter also adds a few other extensions to Int types:
 
 ## TODO
 
+- [x] Test for each functionality (XCTest ok, Quick better)
 - [ ] Reduce code duplication converting part of the source to .gyb templates
 - [ ] Proper documentation using gyb
-- [ ] Test for each functionality (XCTest ok, Quick better)
 - [ ] Additional functionalities?
 - [ ] Example project?
