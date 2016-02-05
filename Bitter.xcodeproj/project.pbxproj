@@ -7,79 +7,112 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		464254761C61EAF0001718FA /* Bitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 464254751C61EAF0001718FA /* Bitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4642547E1C61ED1A001718FA /* Bitter in Resources */ = {isa = PBXBuildFile; fileRef = 4642547D1C61ED1A001718FA /* Bitter */; };
-		464254821C61ED84001718FA /* BitterTests in Resources */ = {isa = PBXBuildFile; fileRef = 464254811C61ED84001718FA /* BitterTests */; };
+		466264491C64AF01007B43AB /* Bitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 466264481C64AF01007B43AB /* Bitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		466264501C64AF01007B43AB /* Bitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466264451C64AF01007B43AB /* Bitter.framework */; };
+		466264551C64AF01007B43AB /* BitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466264541C64AF01007B43AB /* BitterTests.swift */; };
+		466264621C64B036007B43AB /* Bitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466264611C64B036007B43AB /* Bitter.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		466264511C64AF01007B43AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4662643C1C64AF01007B43AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 466264441C64AF01007B43AB;
+			remoteInfo = Bitter;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		464254721C61EAF0001718FA /* Bitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		464254751C61EAF0001718FA /* Bitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bitter.h; sourceTree = "<group>"; };
-		464254771C61EAF0001718FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4642547D1C61ED1A001718FA /* Bitter */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Bitter; path = Sources/Bitter; sourceTree = "<group>"; };
-		464254811C61ED84001718FA /* BitterTests */ = {isa = PBXFileReference; lastKnownFileType = folder; name = BitterTests; path = Sources/BitterTests; sourceTree = "<group>"; };
+		466264451C64AF01007B43AB /* Bitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		466264481C64AF01007B43AB /* Bitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bitter.h; sourceTree = "<group>"; };
+		4662644A1C64AF01007B43AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4662644F1C64AF01007B43AB /* BitterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		466264541C64AF01007B43AB /* BitterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitterTests.swift; sourceTree = "<group>"; };
+		466264561C64AF01007B43AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		466264611C64B036007B43AB /* Bitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bitter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4642546E1C61EAF0001718FA /* Frameworks */ = {
+		466264411C64AF01007B43AB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4662644C1C64AF01007B43AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				466264501C64AF01007B43AB /* Bitter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		464254681C61EAF0001718FA = {
+		4662643B1C64AF01007B43AB = {
 			isa = PBXGroup;
 			children = (
-				4642547D1C61ED1A001718FA /* Bitter */,
-				464254811C61ED84001718FA /* BitterTests */,
-				464254741C61EAF0001718FA /* Bitter */,
-				464254731C61EAF0001718FA /* Products */,
+				466264471C64AF01007B43AB /* Bitter */,
+				466264531C64AF01007B43AB /* BitterTests */,
+				466264461C64AF01007B43AB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		464254731C61EAF0001718FA /* Products */ = {
+		466264461C64AF01007B43AB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				464254721C61EAF0001718FA /* Bitter.framework */,
+				466264451C64AF01007B43AB /* Bitter.framework */,
+				4662644F1C64AF01007B43AB /* BitterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		464254741C61EAF0001718FA /* Bitter */ = {
+		466264471C64AF01007B43AB /* Bitter */ = {
 			isa = PBXGroup;
 			children = (
-				464254751C61EAF0001718FA /* Bitter.h */,
-				464254771C61EAF0001718FA /* Info.plist */,
+				466264611C64B036007B43AB /* Bitter.swift */,
+				466264481C64AF01007B43AB /* Bitter.h */,
+				4662644A1C64AF01007B43AB /* Info.plist */,
 			);
-			path = Bitter;
+			name = Bitter;
+			path = Sources/Bitter;
+			sourceTree = "<group>";
+		};
+		466264531C64AF01007B43AB /* BitterTests */ = {
+			isa = PBXGroup;
+			children = (
+				466264541C64AF01007B43AB /* BitterTests.swift */,
+				466264561C64AF01007B43AB /* Info.plist */,
+			);
+			name = BitterTests;
+			path = Sources/BitterTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4642546F1C61EAF0001718FA /* Headers */ = {
+		466264421C64AF01007B43AB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				464254761C61EAF0001718FA /* Bitter.h in Headers */,
+				466264491C64AF01007B43AB /* Bitter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		464254711C61EAF0001718FA /* Bitter */ = {
+		466264441C64AF01007B43AB /* Bitter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4642547A1C61EAF0001718FA /* Build configuration list for PBXNativeTarget "Bitter" */;
+			buildConfigurationList = 466264591C64AF01007B43AB /* Build configuration list for PBXNativeTarget "Bitter" */;
 			buildPhases = (
-				4642546D1C61EAF0001718FA /* Sources */,
-				4642546E1C61EAF0001718FA /* Frameworks */,
-				4642546F1C61EAF0001718FA /* Headers */,
-				464254701C61EAF0001718FA /* Resources */,
+				466264401C64AF01007B43AB /* Sources */,
+				466264411C64AF01007B43AB /* Frameworks */,
+				466264421C64AF01007B43AB /* Headers */,
+				466264431C64AF01007B43AB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -87,64 +120,109 @@
 			);
 			name = Bitter;
 			productName = Bitter;
-			productReference = 464254721C61EAF0001718FA /* Bitter.framework */;
+			productReference = 466264451C64AF01007B43AB /* Bitter.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		4662644E1C64AF01007B43AB /* BitterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4662645C1C64AF01007B43AB /* Build configuration list for PBXNativeTarget "BitterTests" */;
+			buildPhases = (
+				4662644B1C64AF01007B43AB /* Sources */,
+				4662644C1C64AF01007B43AB /* Frameworks */,
+				4662644D1C64AF01007B43AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				466264521C64AF01007B43AB /* PBXTargetDependency */,
+			);
+			name = BitterTests;
+			productName = BitterTests;
+			productReference = 4662644F1C64AF01007B43AB /* BitterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		464254691C61EAF0001718FA /* Project object */ = {
+		4662643C1C64AF01007B43AB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Umberto Raimondi";
 				TargetAttributes = {
-					464254711C61EAF0001718FA = {
-						CreatedOnToolsVersion = 7.2;
+					466264441C64AF01007B43AB = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					4662644E1C64AF01007B43AB = {
+						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 4642546C1C61EAF0001718FA /* Build configuration list for PBXProject "Bitter" */;
+			buildConfigurationList = 4662643F1C64AF01007B43AB /* Build configuration list for PBXProject "Bitter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 464254681C61EAF0001718FA;
-			productRefGroup = 464254731C61EAF0001718FA /* Products */;
+			mainGroup = 4662643B1C64AF01007B43AB;
+			productRefGroup = 466264461C64AF01007B43AB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				464254711C61EAF0001718FA /* Bitter */,
+				466264441C64AF01007B43AB /* Bitter */,
+				4662644E1C64AF01007B43AB /* BitterTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		464254701C61EAF0001718FA /* Resources */ = {
+		466264431C64AF01007B43AB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				464254821C61ED84001718FA /* BitterTests in Resources */,
-				4642547E1C61ED1A001718FA /* Bitter in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4662644D1C64AF01007B43AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4642546D1C61EAF0001718FA /* Sources */ = {
+		466264401C64AF01007B43AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				466264621C64B036007B43AB /* Bitter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4662644B1C64AF01007B43AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				466264551C64AF01007B43AB /* BitterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		466264521C64AF01007B43AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 466264441C64AF01007B43AB /* Bitter */;
+			targetProxy = 466264511C64AF01007B43AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		464254781C61EAF0001718FA /* Debug */ = {
+		466264571C64AF01007B43AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -181,7 +259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -192,7 +270,7 @@
 			};
 			name = Debug;
 		};
-		464254791C61EAF0001718FA /* Release */ = {
+		466264581C64AF01007B43AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -223,7 +301,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -233,33 +311,34 @@
 			};
 			name = Release;
 		};
-		4642547B1C61EAF0001718FA /* Debug */ = {
+		4662645A1C64AF01007B43AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Bitter/Info.plist;
+				INFOPLIST_FILE = Sources/Bitter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uraimo.Bitter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		4642547C1C61EAF0001718FA /* Release */ = {
+		4662645B1C64AF01007B43AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Bitter/Info.plist;
+				INFOPLIST_FILE = Sources/Bitter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uraimo.Bitter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -267,28 +346,57 @@
 			};
 			name = Release;
 		};
+		4662645D1C64AF01007B43AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Sources/BitterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.uraimo.BitterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4662645E1C64AF01007B43AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Sources/BitterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.uraimo.BitterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4642546C1C61EAF0001718FA /* Build configuration list for PBXProject "Bitter" */ = {
+		4662643F1C64AF01007B43AB /* Build configuration list for PBXProject "Bitter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				464254781C61EAF0001718FA /* Debug */,
-				464254791C61EAF0001718FA /* Release */,
+				466264571C64AF01007B43AB /* Debug */,
+				466264581C64AF01007B43AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4642547A1C61EAF0001718FA /* Build configuration list for PBXNativeTarget "Bitter" */ = {
+		466264591C64AF01007B43AB /* Build configuration list for PBXNativeTarget "Bitter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4642547B1C61EAF0001718FA /* Debug */,
-				4642547C1C61EAF0001718FA /* Release */,
+				4662645A1C64AF01007B43AB /* Debug */,
+				4662645B1C64AF01007B43AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4662645C1C64AF01007B43AB /* Build configuration list for PBXNativeTarget "BitterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4662645D1C64AF01007B43AB /* Debug */,
+				4662645E1C64AF01007B43AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 464254691C61EAF0001718FA /* Project object */;
+	rootObject = 4662643C1C64AF01007B43AB /* Project object */;
 }
