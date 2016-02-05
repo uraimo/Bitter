@@ -8,5 +8,5 @@ before_install:
 - gem install cocoapods xcpretty # Since Travis is not always on latest version
 - pod --version
 script:
-- set -o pipefail && xcodebuild test -workspace Bitter.xcworkspace -scheme "BitterTests" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6" ONLY_ACTIVE_ARCH=NO | xcpretty -c
+- set -o pipefail && xcodebuild -workspace Bitter.xcworkspace -scheme "Bitter" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6" ONLY_ACTIVE_ARCH=NO | xcpretty -c
 - pod lib lint
