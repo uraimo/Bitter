@@ -6,7 +6,7 @@
 //  Copyright © 2016 Umberto Raimondi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import Foundation;
 
 //! Project version number for Bitter.
 FOUNDATION_EXPORT double BitterVersionNumber;
