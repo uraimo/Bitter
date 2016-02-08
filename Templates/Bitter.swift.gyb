@@ -1,0 +1,162 @@
+//
+//  Bitter.swift
+//  Bitter
+//
+//  Created by Umberto Raimondi on 01/02/16.
+//  Copyright © 2016 Umberto Raimondi. All rights reserved.
+//
+
+// MARK: Int types extensions
+%{
+  intTypes = [8,16,32,64]
+}%
+
+% for sign in ['','U']:
+extension ${sign}Int{
+    % for intType in intTypes[:3]:
+    public var toU${intType}: UInt${intType}{return UInt${intType}(truncatingBitPattern:self)}
+    public var to${intType}: Int${intType}{return Int${intType}(truncatingBitPattern:self)}
+    %end
+    public var toU64: UInt64{
+        return UInt64(self) //No difference if the platform is 32 or 64
+        }
+    public var to64: Int64{
+        return Int64(self) //No difference if the platform is 32 or 64
+        }
+    %if sign == '':
+    public var toInt:Int{return self}
+    public var toUInt:UInt{return UInt(bitPattern:self)}
+    %else:
+    public var toInt:Int{return Int(bitPattern:self)}
+    public var toUInt:UInt{return self}
+    %end
+    %if sign == '':
+    public static var allOnes:Int{return Int(bitPattern: UInt.max)}
+    %else:
+    public static var allOnes:UInt{return UInt.max}
+    %end
+    public static var size:Int{return strideof(self)}
+    public subscript(index: Int) -> ${sign}Int {
+    %if sign == '':
+        get {
+            precondition(index<Int.size,"Byte set index out of range")
+            if(Int.size == 8){
+                return Int(bitPattern: UInt((self.toU64 & (0xFF << (index.toU64*8))) >> (index.toU64*8)) )
+            }else{
+               return Int(bitPattern: UInt((self.toU32 & (0xFF << (index.toU32*8))) >> (index.toU32*8)) )
+            }
+        }
+        set(newValue) {
+            precondition(index<Int.size,"Byte set index out of range")
+            if(Int.size == 8){
+                self = Int(bitPattern: UInt((self.toU64 & ~(0xFF << (index.toU64*8))) | (newValue.toU64 << (index.toU64*8))) )
+            }else{
+                self = Int(bitPattern: UInt((self.toU32 & ~(0xFF << (index.toU32*8))) | (newValue.toU32 << (index.toU32*8))) )
+            }
+        }
+    %else:
+        get {
+            precondition(index<Int.size,"Byte set index out of range")
+            if(UInt.size == 8){
+                return UInt(self.toU64 & (0xFF << (index.toU64*8))) >> (index*8).toUInt
+            }else{
+                return UInt(self.toU32 & (0xFF << (index.toU32*8))) >> (index*8).toUInt
+            }
+        }
+        set(newValue) {
+            precondition(index<Int.size,"Byte set index out of range")
+            if(UInt.size == 8){
+                self = UInt((self.toU64 & ~(0xFF << (index.toU64*8))) | (newValue.toU64 << (index.toU64*8)))
+            }else{
+                self = UInt((self.toU32 & ~(0xFF << (index.toU32*8))) | (newValue.toU32 << (index.toU32*8)))
+            }
+        }
+    %end
+    }
+}
+%end
+
+% for intType in intTypes:
+    % for sign in ['','U']:
+extension ${sign}Int${intType} {
+        % for aSize in intTypes:
+            %if intType > aSize:
+    public var toU${aSize}: UInt${aSize}{return UInt${aSize}(truncatingBitPattern:self)}
+    public var to${aSize}: Int${aSize}{return Int${aSize}(truncatingBitPattern:self)}
+            %elif intType == aSize:
+                %if sign == '':
+    public var toU${aSize}: UInt${aSize}{return UInt${aSize}(bitPattern:self)}
+    public var to${aSize}: Int${aSize}{return self}
+                %else:
+    public var toU${aSize}: UInt${aSize}{return self}
+    public var to${aSize}: Int${aSize}{return Int${aSize}(bitPattern:self)}
+                %end
+            %else:
+    public var toU${aSize}: UInt${aSize}{return UInt${aSize}(self)}
+    public var to${aSize}: Int${aSize}{return Int${aSize}(self)}
+            %end
+        %end
+        %if intType < 64:
+    public var toInt:Int{return Int(bitPattern:UInt(self))}
+    public var toUInt:UInt{return UInt(self)}
+        %else:
+    public var toInt:Int{return Int(truncatingBitPattern:self)}
+    public var toUInt:UInt{return UInt(truncatingBitPattern:self)}
+        %end
+        %if sign == '':
+    public static var allOnes:Int${intType}{return Int${intType}(bitPattern: UInt${intType}.max)}
+        %else:
+    public static var allOnes:${sign}Int${intType}{return ${sign}Int${intType}.max}
+        %end
+    public static var size:Int{return strideof(self)}
+        %if intType == 8:
+    public subscript(index: Int) -> ${sign}Int8 {
+        get {
+            precondition(index<Int8.size,"Byte set index out of range")
+            return self
+        }
+        set(newValue) {
+            precondition(index<Int8.size,"Byte set index out of range")
+            self = newValue
+        }
+    }
+        %else:
+    public subscript(index: Int) -> ${sign}Int${intType} {
+            %if sign == '':
+        get {
+            precondition(index<Int${intType}.size,"Byte set index out of range")
+            return ((self.toU${intType} & (0xFF << (index.toU${intType}*8))) >> (index.toU${intType}*8)).to${intType}
+        }
+        set(newValue) {
+            precondition(index<Int${intType}.size,"Byte set index out of range")
+            self = ( (self.toU${intType} & ~(0xFF << (index.toU${intType}*8))) | (newValue.toU${intType} << (index.toU${intType}*8)) ).to${intType}
+        }
+            %else:
+        get {
+            precondition(index<Int${intType}.size,"Byte set index out of range")
+            return (self & (0xFF << (index.toU${intType}*8))) >> (index.toU${intType}*8)
+        }
+        set(newValue) {
+            precondition(index<Int${intType}.size,"Byte set index out of range")
+            self = (self & ~(0xFF << (index.toU${intType}*8))) | (newValue.toU${intType} << (index.toU${intType}*8))
+        }
+            %end
+    }
+        %end
+}
+
+    %end
+%end
+
+
+// MARK: Operators
+
+prefix operator ~~ {}
+
+% for intType in intTypes:
+    % for sign in ['','U']:
+prefix func ~~(value: ${sign}Int${intType})->${sign}Int${intType}{
+    return (value>0) ? 1 : 0
+}
+    %end
+%end

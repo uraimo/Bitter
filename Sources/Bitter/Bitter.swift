@@ -88,12 +88,8 @@ extension Int8 {
     public var to16: Int16{return Int16(self)}
     public var toU32: UInt32{return UInt32(self)}
     public var to32: Int32{return Int32(self)}
-    public var toU64: UInt64{
-        return UInt64(self) //No difference if the platform is 32 or 64
-        }
-    public var to64: Int64{
-        return Int64(self) //No difference if the platform is 32 or 64
-        }
+    public var toU64: UInt64{return UInt64(self)}
+    public var to64: Int64{return Int64(self)}
     public var toInt:Int{return Int(bitPattern:UInt(self))}
     public var toUInt:UInt{return UInt(self)}
     public static var allOnes:Int8{return Int8(bitPattern: UInt8.max)}
@@ -109,6 +105,7 @@ extension Int8 {
         }
     }
 }
+
 extension UInt8 {
     public var toU8: UInt8{return self}
     public var to8: Int8{return Int8(bitPattern:self)}
@@ -116,12 +113,8 @@ extension UInt8 {
     public var to16: Int16{return Int16(self)}
     public var toU32: UInt32{return UInt32(self)}
     public var to32: Int32{return Int32(self)}
-    public var toU64: UInt64{
-        return UInt64(self) //No difference if the platform is 32 or 64
-        }
-    public var to64: Int64{
-        return Int64(self) //No difference if the platform is 32 or 64
-        }
+    public var toU64: UInt64{return UInt64(self)}
+    public var to64: Int64{return Int64(self)}
     public var toInt:Int{return Int(bitPattern:UInt(self))}
     public var toUInt:UInt{return UInt(self)}
     public static var allOnes:UInt8{return UInt8.max}
@@ -145,12 +138,8 @@ extension Int16 {
     public var to16: Int16{return self}
     public var toU32: UInt32{return UInt32(self)}
     public var to32: Int32{return Int32(self)}
-    public var toU64: UInt64{
-        return UInt64(self) //No difference if the platform is 32 or 64
-        }
-    public var to64: Int64{
-        return Int64(self) //No difference if the platform is 32 or 64
-        }
+    public var toU64: UInt64{return UInt64(self)}
+    public var to64: Int64{return Int64(self)}
     public var toInt:Int{return Int(bitPattern:UInt(self))}
     public var toUInt:UInt{return UInt(self)}
     public static var allOnes:Int16{return Int16(bitPattern: UInt16.max)}
@@ -158,14 +147,15 @@ extension Int16 {
     public subscript(index: Int) -> Int16 {
         get {
             precondition(index<Int16.size,"Byte set index out of range")
-            return ( (self.toU16 & (0xFF << (index.toU16*8))) >> (index.toU16*8)).to16
+            return ((self.toU16 & (0xFF << (index.toU16*8))) >> (index.toU16*8)).to16
         }
         set(newValue) {
             precondition(index<Int16.size,"Byte set index out of range")
-            self = ((self.toU16 & ~(0xFF << (index.toU16*8))) | (newValue.toU16 << (index.toU16*8))).to16
+            self = ( (self.toU16 & ~(0xFF << (index.toU16*8))) | (newValue.toU16 << (index.toU16*8)) ).to16
         }
     }
 }
+
 extension UInt16 {
     public var toU8: UInt8{return UInt8(truncatingBitPattern:self)}
     public var to8: Int8{return Int8(truncatingBitPattern:self)}
@@ -173,12 +163,8 @@ extension UInt16 {
     public var to16: Int16{return Int16(bitPattern:self)}
     public var toU32: UInt32{return UInt32(self)}
     public var to32: Int32{return Int32(self)}
-    public var toU64: UInt64{
-        return UInt64(self) //No difference if the platform is 32 or 64
-        }
-    public var to64: Int64{
-        return Int64(self) //No difference if the platform is 32 or 64
-        }
+    public var toU64: UInt64{return UInt64(self)}
+    public var to64: Int64{return Int64(self)}
     public var toInt:Int{return Int(bitPattern:UInt(self))}
     public var toUInt:UInt{return UInt(self)}
     public static var allOnes:UInt16{return UInt16.max}
@@ -202,12 +188,8 @@ extension Int32 {
     public var to16: Int16{return Int16(truncatingBitPattern:self)}
     public var toU32: UInt32{return UInt32(bitPattern:self)}
     public var to32: Int32{return self}
-    public var toU64: UInt64{
-        return UInt64(self) //No difference if the platform is 32 or 64
-        }
-    public var to64: Int64{
-        return Int64(self) //No difference if the platform is 32 or 64
-        }
+    public var toU64: UInt64{return UInt64(self)}
+    public var to64: Int64{return Int64(self)}
     public var toInt:Int{return Int(bitPattern:UInt(self))}
     public var toUInt:UInt{return UInt(self)}
     public static var allOnes:Int32{return Int32(bitPattern: UInt32.max)}
@@ -215,27 +197,24 @@ extension Int32 {
     public subscript(index: Int) -> Int32 {
         get {
             precondition(index<Int32.size,"Byte set index out of range")
-            return ( (self.toU32 & (0xFF << (index.toU32*8))) >> (index.toU32*8)).to32
+            return ((self.toU32 & (0xFF << (index.toU32*8))) >> (index.toU32*8)).to32
         }
         set(newValue) {
             precondition(index<Int32.size,"Byte set index out of range")
-            self = ((self.toU32 & ~(0xFF << (index.toU32*8))) | (newValue.toU32 << (index.toU32*8))).to32
+            self = ( (self.toU32 & ~(0xFF << (index.toU32*8))) | (newValue.toU32 << (index.toU32*8)) ).to32
         }
     }
 }
+
 extension UInt32 {
-    public var toU8: UInt8{ return UInt8(truncatingBitPattern:self)}
-    public var to8: Int8{ return Int8(truncatingBitPattern:self)}
+    public var toU8: UInt8{return UInt8(truncatingBitPattern:self)}
+    public var to8: Int8{return Int8(truncatingBitPattern:self)}
     public var toU16: UInt16{return UInt16(truncatingBitPattern:self)}
     public var to16: Int16{return Int16(truncatingBitPattern:self)}
     public var toU32: UInt32{return self}
     public var to32: Int32{return Int32(bitPattern:self)}
-    public var toU64: UInt64{
-        return UInt64(self) //No difference if the platform is 32 or 64
-        }
-    public var to64: Int64{
-        return Int64(self) //No difference if the platform is 32 or 64
-        }
+    public var toU64: UInt64{return UInt64(self)}
+    public var to64: Int64{return Int64(self)}
     public var toInt:Int{return Int(bitPattern:UInt(self))}
     public var toUInt:UInt{return UInt(self)}
     public static var allOnes:UInt32{return UInt32.max}
@@ -253,18 +232,14 @@ extension UInt32 {
 }
 
 extension Int64 {
-    public var toU8: UInt8{ return UInt8(truncatingBitPattern:self)}
-    public var to8: Int8{ return Int8(truncatingBitPattern:self)}
+    public var toU8: UInt8{return UInt8(truncatingBitPattern:self)}
+    public var to8: Int8{return Int8(truncatingBitPattern:self)}
     public var toU16: UInt16{return UInt16(truncatingBitPattern:self)}
     public var to16: Int16{return Int16(truncatingBitPattern:self)}
     public var toU32: UInt32{return UInt32(truncatingBitPattern:self)}
     public var to32: Int32{return Int32(truncatingBitPattern:self)}
-    public var toU64: UInt64{
-        return UInt64(bitPattern:self) //No difference if the platform is 32 or 64
-        }
-    public var to64: Int64{
-        return self //No difference if the platform is 32 or 64
-        }
+    public var toU64: UInt64{return UInt64(bitPattern:self)}
+    public var to64: Int64{return self}
     public var toInt:Int{return Int(truncatingBitPattern:self)}
     public var toUInt:UInt{return UInt(truncatingBitPattern:self)}
     public static var allOnes:Int64{return Int64(bitPattern: UInt64.max)}
@@ -280,20 +255,17 @@ extension Int64 {
         }
     }
 }
+
 extension UInt64 {
-    public var toU8: UInt8{ return UInt8(truncatingBitPattern:self)}
-    public var to8: Int8{ return Int8(truncatingBitPattern:self)}
+    public var toU8: UInt8{return UInt8(truncatingBitPattern:self)}
+    public var to8: Int8{return Int8(truncatingBitPattern:self)}
     public var toU16: UInt16{return UInt16(truncatingBitPattern:self)}
     public var to16: Int16{return Int16(truncatingBitPattern:self)}
     public var toU32: UInt32{return UInt32(truncatingBitPattern:self)}
     public var to32: Int32{return Int32(truncatingBitPattern:self)}
-    public var toU64: UInt64{
-        return self //No difference if the platform is 32 or 64
-        }
-    public var to64: Int64{
-        return Int64(bitPattern:self) //No difference if the platform is 32 or 64
-        }
-    public var toInt:Int{return Int(bitPattern:UInt(truncatingBitPattern:self))}
+    public var toU64: UInt64{return self}
+    public var to64: Int64{return Int64(bitPattern:self)}
+    public var toInt:Int{return Int(truncatingBitPattern:self)}
     public var toUInt:UInt{return UInt(truncatingBitPattern:self)}
     public static var allOnes:UInt64{return UInt64.max}
     public static var size:Int{return strideof(self)}
@@ -309,42 +281,33 @@ extension UInt64 {
     }
 }
 
+
+
 // MARK: Operators
 
 prefix operator ~~ {}
 
-prefix func ~~(value: UInt)->UInt{
-    return (value>0) ? 1 : 0
-}
-prefix func ~~(value: Int)->Int{
-    return (value>0) ? 1 : 0
-}
-
-prefix func ~~(value: UInt8)->UInt8{
-    return (value>0) ? 1 : 0
-}
 prefix func ~~(value: Int8)->Int8{
     return (value>0) ? 1 : 0
 }
-
-prefix func ~~(value: UInt16)->UInt16{
+prefix func ~~(value: UInt8)->UInt8{
     return (value>0) ? 1 : 0
 }
 prefix func ~~(value: Int16)->Int16{
     return (value>0) ? 1 : 0
 }
-
-prefix func ~~(value: UInt32)->UInt32{
+prefix func ~~(value: UInt16)->UInt16{
     return (value>0) ? 1 : 0
 }
 prefix func ~~(value: Int32)->Int32{
     return (value>0) ? 1 : 0
 }
-
-prefix func ~~(value: UInt64)->UInt64{
+prefix func ~~(value: UInt32)->UInt32{
     return (value>0) ? 1 : 0
 }
 prefix func ~~(value: Int64)->Int64{
     return (value>0) ? 1 : 0
 }
-
+prefix func ~~(value: UInt64)->UInt64{
+    return (value>0) ? 1 : 0
+}
