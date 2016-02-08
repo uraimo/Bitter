@@ -8,11 +8,13 @@
 
 // MARK: Int types extensions
 
-/// Extension that adds a few additional functionalities:
-/// * toIntN/toUIntN truncating bit pattern conversions
-/// * allOnes
-/// * size
-/// * Byte indexed subscript
+/**
+Extension that adds a few additional functionalities to Int:
+- toIntN/toUIntN truncating bit pattern conversions
+- allOnes
+- size
+- Byte indexed subscript
+*/
 extension Int{
     /// Perform a bit pattern truncating conversion to UInt8
     public var toU8: UInt8{return UInt8(truncatingBitPattern:self)}
@@ -45,7 +47,7 @@ extension Int{
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
 
-    /// Subscript that returns or set one of the bytes of this integer
+    /// Subscript that returns or set one of the bytes of a Int
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> Int {
@@ -67,11 +69,13 @@ extension Int{
         }
     }
 }
-/// Extension that adds a few additional functionalities:
-/// * toIntN/toUIntN truncating bit pattern conversions
-/// * allOnes
-/// * size
-/// * Byte indexed subscript
+/**
+Extension that adds a few additional functionalities to UInt:
+- toIntN/toUIntN truncating bit pattern conversions
+- allOnes
+- size
+- Byte indexed subscript
+*/
 extension UInt{
     /// Perform a bit pattern truncating conversion to UInt8
     public var toU8: UInt8{return UInt8(truncatingBitPattern:self)}
@@ -104,7 +108,7 @@ extension UInt{
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
 
-    /// Subscript that returns or set one of the bytes of this integer
+    /// Subscript that returns or set one of the bytes of a UInt
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> UInt {
@@ -127,11 +131,13 @@ extension UInt{
     }
 }
 
-/// Extension that adds a few additional functionalities:
-/// * toIntN/toUIntN truncating bit pattern conversions
-/// * allOnes
-/// * size
-/// * Byte indexed subscript
+/**
+Extension that adds a few additional functionalities to Int8:
+- toIntN/toUIntN truncating bit pattern conversions
+- allOnes
+- size
+- Byte indexed subscript
+*/
 extension Int8 {
     /// Perform a bit pattern truncating conversion to UInt8
     public var toU8: UInt8{return UInt8(bitPattern:self)}
@@ -174,11 +180,13 @@ extension Int8 {
     }
 }
 
-/// Extension that adds a few additional functionalities:
-/// * toIntN/toUIntN truncating bit pattern conversions
-/// * allOnes
-/// * size
-/// * Byte indexed subscript
+/**
+Extension that adds a few additional functionalities to UInt8:
+- toIntN/toUIntN truncating bit pattern conversions
+- allOnes
+- size
+- Byte indexed subscript
+*/
 extension UInt8 {
     /// Perform a bit pattern truncating conversion to UInt8
     public var toU8: UInt8{return self}
@@ -221,11 +229,13 @@ extension UInt8 {
     }
 }
 
-/// Extension that adds a few additional functionalities:
-/// * toIntN/toUIntN truncating bit pattern conversions
-/// * allOnes
-/// * size
-/// * Byte indexed subscript
+/**
+Extension that adds a few additional functionalities to Int16:
+- toIntN/toUIntN truncating bit pattern conversions
+- allOnes
+- size
+- Byte indexed subscript
+*/
 extension Int16 {
     /// Perform a bit pattern truncating conversion to UInt8
     public var toU8: UInt8{return UInt8(truncatingBitPattern:self)}
@@ -253,7 +263,7 @@ extension Int16 {
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
 
-    /// Subscript that returns or set one of the bytes of this integer
+    /// Subscript that returns or set one of the bytes of a Int16 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> Int16 {
@@ -268,11 +278,13 @@ extension Int16 {
     }
 }
 
-/// Extension that adds a few additional functionalities:
-/// * toIntN/toUIntN truncating bit pattern conversions
-/// * allOnes
-/// * size
-/// * Byte indexed subscript
+/**
+Extension that adds a few additional functionalities to UInt16:
+- toIntN/toUIntN truncating bit pattern conversions
+- allOnes
+- size
+- Byte indexed subscript
+*/
 extension UInt16 {
     /// Perform a bit pattern truncating conversion to UInt8
     public var toU8: UInt8{return UInt8(truncatingBitPattern:self)}
@@ -300,7 +312,7 @@ extension UInt16 {
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
 
-    /// Subscript that returns or set one of the bytes of this integer
+    /// Subscript that returns or set one of the bytes of a UInt16 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> UInt16 {
@@ -315,11 +327,13 @@ extension UInt16 {
     }
 }
 
-/// Extension that adds a few additional functionalities:
-/// * toIntN/toUIntN truncating bit pattern conversions
-/// * allOnes
-/// * size
-/// * Byte indexed subscript
+/**
+Extension that adds a few additional functionalities to Int32:
+- toIntN/toUIntN truncating bit pattern conversions
+- allOnes
+- size
+- Byte indexed subscript
+*/
 extension Int32 {
     /// Perform a bit pattern truncating conversion to UInt8
     public var toU8: UInt8{return UInt8(truncatingBitPattern:self)}
@@ -347,7 +361,7 @@ extension Int32 {
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
 
-    /// Subscript that returns or set one of the bytes of this integer
+    /// Subscript that returns or set one of the bytes of a Int32 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> Int32 {
@@ -362,11 +376,13 @@ extension Int32 {
     }
 }
 
-/// Extension that adds a few additional functionalities:
-/// * toIntN/toUIntN truncating bit pattern conversions
-/// * allOnes
-/// * size
-/// * Byte indexed subscript
+/**
+Extension that adds a few additional functionalities to UInt32:
+- toIntN/toUIntN truncating bit pattern conversions
+- allOnes
+- size
+- Byte indexed subscript
+*/
 extension UInt32 {
     /// Perform a bit pattern truncating conversion to UInt8
     public var toU8: UInt8{return UInt8(truncatingBitPattern:self)}
@@ -394,7 +410,7 @@ extension UInt32 {
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
 
-    /// Subscript that returns or set one of the bytes of this integer
+    /// Subscript that returns or set one of the bytes of a UInt32 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> UInt32 {
@@ -409,11 +425,13 @@ extension UInt32 {
     }
 }
 
-/// Extension that adds a few additional functionalities:
-/// * toIntN/toUIntN truncating bit pattern conversions
-/// * allOnes
-/// * size
-/// * Byte indexed subscript
+/**
+Extension that adds a few additional functionalities to Int64:
+- toIntN/toUIntN truncating bit pattern conversions
+- allOnes
+- size
+- Byte indexed subscript
+*/
 extension Int64 {
     /// Perform a bit pattern truncating conversion to UInt8
     public var toU8: UInt8{return UInt8(truncatingBitPattern:self)}
@@ -441,7 +459,7 @@ extension Int64 {
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
 
-    /// Subscript that returns or set one of the bytes of this integer
+    /// Subscript that returns or set one of the bytes of a Int64 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> Int64 {
@@ -456,11 +474,13 @@ extension Int64 {
     }
 }
 
-/// Extension that adds a few additional functionalities:
-/// * toIntN/toUIntN truncating bit pattern conversions
-/// * allOnes
-/// * size
-/// * Byte indexed subscript
+/**
+Extension that adds a few additional functionalities to UInt64:
+- toIntN/toUIntN truncating bit pattern conversions
+- allOnes
+- size
+- Byte indexed subscript
+*/
 extension UInt64 {
     /// Perform a bit pattern truncating conversion to UInt8
     public var toU8: UInt8{return UInt8(truncatingBitPattern:self)}
@@ -488,7 +508,7 @@ extension UInt64 {
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
 
-    /// Subscript that returns or set one of the bytes of this integer
+    /// Subscript that returns or set one of the bytes of a UInt64 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> UInt64 {

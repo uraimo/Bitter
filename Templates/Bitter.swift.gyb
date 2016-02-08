@@ -12,11 +12,13 @@
 }%
 
 % for sign in ['','U']:
-/// Extension that adds a few additional functionalities:
-/// * toIntN/toUIntN truncating bit pattern conversions
-/// * allOnes
-/// * size
-/// * Byte indexed subscript
+/**
+Extension that adds a few additional functionalities to ${sign}Int:
+- toIntN/toUIntN truncating bit pattern conversions
+- allOnes
+- size
+- Byte indexed subscript
+*/
 extension ${sign}Int{
     % for intType in intTypes[:3]:
     /// Perform a bit pattern truncating conversion to UInt${intType}
@@ -54,7 +56,7 @@ extension ${sign}Int{
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
 
-    /// Subscript that returns or set one of the bytes of this integer
+    /// Subscript that returns or set one of the bytes of a ${sign}Int
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> ${sign}Int {
@@ -99,11 +101,13 @@ extension ${sign}Int{
 
 % for intType in intTypes:
     % for sign in ['','U']:
-/// Extension that adds a few additional functionalities:
-/// * toIntN/toUIntN truncating bit pattern conversions
-/// * allOnes
-/// * size
-/// * Byte indexed subscript
+/**
+Extension that adds a few additional functionalities to ${sign}Int${intType}:
+- toIntN/toUIntN truncating bit pattern conversions
+- allOnes
+- size
+- Byte indexed subscript
+*/
 extension ${sign}Int${intType} {
         % for aSize in intTypes:
             %if intType > aSize:
@@ -167,7 +171,7 @@ extension ${sign}Int${intType} {
     }
         %else:
 
-    /// Subscript that returns or set one of the bytes of this integer
+    /// Subscript that returns or set one of the bytes of a ${sign}Int${intType} 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> ${sign}Int${intType} {
