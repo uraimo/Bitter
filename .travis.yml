@@ -12,6 +12,6 @@ before_install:
 - rm "Carthage.pkg"
 script:
 - open -b com.apple.iphonesimulator # Travis CI workaround
-- set -o pipefail && xcodebuild test -workspace Bitter.xcworkspace -scheme "BitterTests" -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
+- set -o pipefail && xcodebuild -workspace Bitter.xcworkspace -scheme "Bitter" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6" ONLY_ACTIVE_ARCH=NO test | xcpretty -c
 - carthage build --no-skip-current
 - pod lib lint --quick
