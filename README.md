@@ -28,7 +28,7 @@ pod 'Bitter'
 ```
 And update your workspace with `pod install`. Import the framework with `import Bitter`.
 
-You can also install Bitter with [Carthage](https://github.com/Carthage/Carthage) adding it to your `Cartfile`:
+You can also install Bitter with carthage adding it to your `Cartfil e`:
 ```
 github "uraimo/Bitter"
 ```
@@ -113,7 +113,7 @@ Bitter also adds a few other extensions to Int types:
 ## TODO
 
 - [x] Test for each functionality (XCTest ok, Quick better)
-- [ ] Reduce code duplication converting part of the source to .gyb templates
-- [ ] Proper documentation using gyb
+- [x] Reduce code duplication converting part of the source to .gyb templates
+- [x] Proper documentation using gyb
 - [ ] Additional functionalities?
 - [ ] Example project?
