@@ -29,13 +29,13 @@ use_frameworks!
 pod 'Bitter'
 
 ```
-And update your workspace with `pod install`. Import the framework with `import Bitter`.
+And update your workspace with `pod install`. 
 
 You can also install Bitter with carthage adding it to your `Cartfil e`:
 ```
 github "uraimo/Bitter"
 ```
-Download the framework with `carthage update` and add it to your embedded binaries. Import the framework with `import Bitter`.
+Download the framework with `carthage update` and add it to your embedded binaries.
 
 And if you are using the Swift Package Manager just add it to the dependencies of your `Package.swift`:
 
@@ -50,7 +50,7 @@ let package = Package(
     ]
 )
 ```
-Import the framework with `import Bitter`.
+Regardless of how you added Bitter to your project, import it with `import Bitter`.
 
 ## Usage
 
