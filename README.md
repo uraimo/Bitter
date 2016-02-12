@@ -15,6 +15,21 @@
 
 The Bitter library extends all the basic Swift Int types with some useful methods for manipulating bits.
 The objective of the library is to make the code dealing with bits and bitwise operations more concise and readable, through the use of shorthand methods where they make sense.
+With Bitter you'll be able for example, to replace this:
+
+```swift
+var i:UInt32 = 0xAABBCCDD
+let tmp = (i & (0xFF << 16)) >> 16)) // Let's swap the 2nd and 3rd byte...
+i = (i & ~(0xFF << 16)) | ((i & (0xFF << 8)) << 8)
+i = (i & ~(0xFF << 8)) | (tmp << 8)
+```
+With this:
+```swift
+let tmp = i[2] // Let's swap the 2nd and 3rd byte!
+i[2] = i[1]
+i[1] = tmp 
+```
+
 
 ## Installation
 
