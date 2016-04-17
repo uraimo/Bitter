@@ -19,7 +19,7 @@ With Bitter you'll be able for example, to replace this:
 
 ```swift
 var i:UInt32 = 0xAABBCCDD
-let tmp = (i & (0xFF << 16)) >> 16)) // Let's swap the 2nd and 3rd byte...
+let tmp = (i & (0xFF << 16)) >> 16 // Let's swap the 2nd and 3rd byte...
 i = (i & ~(0xFF << 16)) | ((i & (0xFF << 8)) << 8)
 i = (i & ~(0xFF << 8)) | (tmp << 8)
 ```
