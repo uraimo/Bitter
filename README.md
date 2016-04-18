@@ -109,7 +109,7 @@ Let's see some examples:
 var i:UInt32 = 0xAABBCCDD
 
 //Let's swap the two bytes
-let tmp = i[2]           //Without Bitter: let tmp = (i & (0xFF << 16)) >> 16))
+let tmp = i[2]           //Without Bitter: let tmp = (i & (0xFF << 16)) >> 16
 i[2] = i[1]              //                i = (i & ~(0xFF << 16)) | ((i & (0xFF << 8)) << 8)
 i[1] = tmp               //                i = (i & ~(0xFF << 8)) | (tmp << 8)
 
