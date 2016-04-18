@@ -47,6 +47,145 @@ extension Int{
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
 
+
+    /// Get bit 0 value
+    public func b0Value()->Int{
+        if(Int.size == 8){
+            return Int(bitPattern: UInt( (self.toU64 & (0x1 << 0)) >> 0 ))
+        } else {
+            return Int(bitPattern: UInt( (self.toU32 & (0x1 << 0)) >> 0 ))
+        }
+    }
+    /// Set bit 0 and return a new Int
+    public func b0(bit:Int)->Int{
+        let nv = bit != 0 ? 1 : 0
+        if(Int.size == 8){
+            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 0)) | (nv.toU64 << 0) ))
+        } else {
+            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << 0)) | (nv.toU32 << 0) ))
+        }
+    }
+    /// Get bit 1 value
+    public func b1Value()->Int{
+        if(Int.size == 8){
+            return Int(bitPattern: UInt( (self.toU64 & (0x1 << 1)) >> 1 ))
+        } else {
+            return Int(bitPattern: UInt( (self.toU32 & (0x1 << 1)) >> 1 ))
+        }
+    }
+    /// Set bit 1 and return a new Int
+    public func b1(bit:Int)->Int{
+        let nv = bit != 0 ? 1 : 0
+        if(Int.size == 8){
+            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 1)) | (nv.toU64 << 1) ))
+        } else {
+            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << 1)) | (nv.toU32 << 1) ))
+        }
+    }
+    /// Get bit 2 value
+    public func b2Value()->Int{
+        if(Int.size == 8){
+            return Int(bitPattern: UInt( (self.toU64 & (0x1 << 2)) >> 2 ))
+        } else {
+            return Int(bitPattern: UInt( (self.toU32 & (0x1 << 2)) >> 2 ))
+        }
+    }
+    /// Set bit 2 and return a new Int
+    public func b2(bit:Int)->Int{
+        let nv = bit != 0 ? 1 : 0
+        if(Int.size == 8){
+            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 2)) | (nv.toU64 << 2) ))
+        } else {
+            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << 2)) | (nv.toU32 << 2) ))
+        }
+    }
+    /// Get bit 3 value
+    public func b3Value()->Int{
+        if(Int.size == 8){
+            return Int(bitPattern: UInt( (self.toU64 & (0x1 << 3)) >> 3 ))
+        } else {
+            return Int(bitPattern: UInt( (self.toU32 & (0x1 << 3)) >> 3 ))
+        }
+    }
+    /// Set bit 3 and return a new Int
+    public func b3(bit:Int)->Int{
+        let nv = bit != 0 ? 1 : 0
+        if(Int.size == 8){
+            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 3)) | (nv.toU64 << 3) ))
+        } else {
+            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << 3)) | (nv.toU32 << 3) ))
+        }
+    }
+    /// Get bit 4 value
+    public func b4Value()->Int{
+        if(Int.size == 8){
+            return Int(bitPattern: UInt( (self.toU64 & (0x1 << 4)) >> 4 ))
+        } else {
+            return Int(bitPattern: UInt( (self.toU32 & (0x1 << 4)) >> 4 ))
+        }
+    }
+    /// Set bit 4 and return a new Int
+    public func b4(bit:Int)->Int{
+        let nv = bit != 0 ? 1 : 0
+        if(Int.size == 8){
+            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 4)) | (nv.toU64 << 4) ))
+        } else {
+            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << 4)) | (nv.toU32 << 4) ))
+        }
+    }
+    /// Get bit 5 value
+    public func b5Value()->Int{
+        if(Int.size == 8){
+            return Int(bitPattern: UInt( (self.toU64 & (0x1 << 5)) >> 5 ))
+        } else {
+            return Int(bitPattern: UInt( (self.toU32 & (0x1 << 5)) >> 5 ))
+        }
+    }
+    /// Set bit 5 and return a new Int
+    public func b5(bit:Int)->Int{
+        let nv = bit != 0 ? 1 : 0
+        if(Int.size == 8){
+            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 5)) | (nv.toU64 << 5) ))
+        } else {
+            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << 5)) | (nv.toU32 << 5) ))
+        }
+    }
+    /// Get bit 6 value
+    public func b6Value()->Int{
+        if(Int.size == 8){
+            return Int(bitPattern: UInt( (self.toU64 & (0x1 << 6)) >> 6 ))
+        } else {
+            return Int(bitPattern: UInt( (self.toU32 & (0x1 << 6)) >> 6 ))
+        }
+    }
+    /// Set bit 6 and return a new Int
+    public func b6(bit:Int)->Int{
+        let nv = bit != 0 ? 1 : 0
+        if(Int.size == 8){
+            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 6)) | (nv.toU64 << 6) ))
+        } else {
+            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << 6)) | (nv.toU32 << 6) ))
+        }
+    }
+    /// Get bit 7 value
+    public func b7Value()->Int{
+        if(Int.size == 8){
+            return Int(bitPattern: UInt( (self.toU64 & (0x1 << 7)) >> 7 ))
+        } else {
+            return Int(bitPattern: UInt( (self.toU32 & (0x1 << 7)) >> 7 ))
+        }
+    }
+    /// Set bit 7 and return a new Int
+    public func b7(bit:Int)->Int{
+        let nv = bit != 0 ? 1 : 0
+        if(Int.size == 8){
+            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 7)) | (nv.toU64 << 7) ))
+        } else {
+            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << 7)) | (nv.toU32 << 7) ))
+        }
+    }
+ 
+
     /// Subscript that returns or set one of the bytes of a Int
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
@@ -108,6 +247,145 @@ extension UInt{
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
 
+
+    /// Get bit 0 value
+    public func b0Value()->UInt{
+        if(Int.size == 8){
+            return UInt( (self.toU64 & (0x1 << 0)) >> 0 )
+        } else {
+            return UInt( (self.toU32 & (0x1 << 0)) >> 0 )
+        }
+    }
+    /// Set bit 0 and return a new UInt
+    public func b0(bit:Int)->UInt{
+        let nv = bit != 0 ? 1 : 0
+        if(Int.size == 8){
+            return UInt( (self.toU64 & ~(0x1 << 0)) | (nv.toU64 << 0) )
+        } else {
+            return UInt( (self.toU32 & ~(0x1 << 0)) | (nv.toU32 << 0) )
+        }
+    }
+    /// Get bit 1 value
+    public func b1Value()->UInt{
+        if(Int.size == 8){
+            return UInt( (self.toU64 & (0x1 << 1)) >> 1 )
+        } else {
+            return UInt( (self.toU32 & (0x1 << 1)) >> 1 )
+        }
+    }
+    /// Set bit 1 and return a new UInt
+    public func b1(bit:Int)->UInt{
+        let nv = bit != 0 ? 1 : 0
+        if(Int.size == 8){
+            return UInt( (self.toU64 & ~(0x1 << 1)) | (nv.toU64 << 1) )
+        } else {
+            return UInt( (self.toU32 & ~(0x1 << 1)) | (nv.toU32 << 1) )
+        }
+    }
+    /// Get bit 2 value
+    public func b2Value()->UInt{
+        if(Int.size == 8){
+            return UInt( (self.toU64 & (0x1 << 2)) >> 2 )
+        } else {
+            return UInt( (self.toU32 & (0x1 << 2)) >> 2 )
+        }
+    }
+    /// Set bit 2 and return a new UInt
+    public func b2(bit:Int)->UInt{
+        let nv = bit != 0 ? 1 : 0
+        if(Int.size == 8){
+            return UInt( (self.toU64 & ~(0x1 << 2)) | (nv.toU64 << 2) )
+        } else {
+            return UInt( (self.toU32 & ~(0x1 << 2)) | (nv.toU32 << 2) )
+        }
+    }
+    /// Get bit 3 value
+    public func b3Value()->UInt{
+        if(Int.size == 8){
+            return UInt( (self.toU64 & (0x1 << 3)) >> 3 )
+        } else {
+            return UInt( (self.toU32 & (0x1 << 3)) >> 3 )
+        }
+    }
+    /// Set bit 3 and return a new UInt
+    public func b3(bit:Int)->UInt{
+        let nv = bit != 0 ? 1 : 0
+        if(Int.size == 8){
+            return UInt( (self.toU64 & ~(0x1 << 3)) | (nv.toU64 << 3) )
+        } else {
+            return UInt( (self.toU32 & ~(0x1 << 3)) | (nv.toU32 << 3) )
+        }
+    }
+    /// Get bit 4 value
+    public func b4Value()->UInt{
+        if(Int.size == 8){
+            return UInt( (self.toU64 & (0x1 << 4)) >> 4 )
+        } else {
+            return UInt( (self.toU32 & (0x1 << 4)) >> 4 )
+        }
+    }
+    /// Set bit 4 and return a new UInt
+    public func b4(bit:Int)->UInt{
+        let nv = bit != 0 ? 1 : 0
+        if(Int.size == 8){
+            return UInt( (self.toU64 & ~(0x1 << 4)) | (nv.toU64 << 4) )
+        } else {
+            return UInt( (self.toU32 & ~(0x1 << 4)) | (nv.toU32 << 4) )
+        }
+    }
+    /// Get bit 5 value
+    public func b5Value()->UInt{
+        if(Int.size == 8){
+            return UInt( (self.toU64 & (0x1 << 5)) >> 5 )
+        } else {
+            return UInt( (self.toU32 & (0x1 << 5)) >> 5 )
+        }
+    }
+    /// Set bit 5 and return a new UInt
+    public func b5(bit:Int)->UInt{
+        let nv = bit != 0 ? 1 : 0
+        if(Int.size == 8){
+            return UInt( (self.toU64 & ~(0x1 << 5)) | (nv.toU64 << 5) )
+        } else {
+            return UInt( (self.toU32 & ~(0x1 << 5)) | (nv.toU32 << 5) )
+        }
+    }
+    /// Get bit 6 value
+    public func b6Value()->UInt{
+        if(Int.size == 8){
+            return UInt( (self.toU64 & (0x1 << 6)) >> 6 )
+        } else {
+            return UInt( (self.toU32 & (0x1 << 6)) >> 6 )
+        }
+    }
+    /// Set bit 6 and return a new UInt
+    public func b6(bit:Int)->UInt{
+        let nv = bit != 0 ? 1 : 0
+        if(Int.size == 8){
+            return UInt( (self.toU64 & ~(0x1 << 6)) | (nv.toU64 << 6) )
+        } else {
+            return UInt( (self.toU32 & ~(0x1 << 6)) | (nv.toU32 << 6) )
+        }
+    }
+    /// Get bit 7 value
+    public func b7Value()->UInt{
+        if(Int.size == 8){
+            return UInt( (self.toU64 & (0x1 << 7)) >> 7 )
+        } else {
+            return UInt( (self.toU32 & (0x1 << 7)) >> 7 )
+        }
+    }
+    /// Set bit 7 and return a new UInt
+    public func b7(bit:Int)->UInt{
+        let nv = bit != 0 ? 1 : 0
+        if(Int.size == 8){
+            return UInt( (self.toU64 & ~(0x1 << 7)) | (nv.toU64 << 7) )
+        } else {
+            return UInt( (self.toU32 & ~(0x1 << 7)) | (nv.toU32 << 7) )
+        }
+    }
+ 
+
     /// Subscript that returns or set one of the bytes of a UInt
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
@@ -165,6 +443,81 @@ extension Int8 {
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
 
+    /// Get bit 0 value
+    public func b0Value()->Int8{
+        return ( (self.toU8 & (0x1 << 0)) >> 0 ).to8
+    }
+    /// Set bit 0 and return a new Int
+    public func b0(bit:Int)->Int8{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU8 & ~(0x1 << 0)) | (nv.toU8 << 0) ).to8
+    }
+    /// Get bit 1 value
+    public func b1Value()->Int8{
+        return ( (self.toU8 & (0x1 << 1)) >> 1 ).to8
+    }
+    /// Set bit 1 and return a new Int
+    public func b1(bit:Int)->Int8{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU8 & ~(0x1 << 1)) | (nv.toU8 << 1) ).to8
+    }
+    /// Get bit 2 value
+    public func b2Value()->Int8{
+        return ( (self.toU8 & (0x1 << 2)) >> 2 ).to8
+    }
+    /// Set bit 2 and return a new Int
+    public func b2(bit:Int)->Int8{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU8 & ~(0x1 << 2)) | (nv.toU8 << 2) ).to8
+    }
+    /// Get bit 3 value
+    public func b3Value()->Int8{
+        return ( (self.toU8 & (0x1 << 3)) >> 3 ).to8
+    }
+    /// Set bit 3 and return a new Int
+    public func b3(bit:Int)->Int8{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU8 & ~(0x1 << 3)) | (nv.toU8 << 3) ).to8
+    }
+    /// Get bit 4 value
+    public func b4Value()->Int8{
+        return ( (self.toU8 & (0x1 << 4)) >> 4 ).to8
+    }
+    /// Set bit 4 and return a new Int
+    public func b4(bit:Int)->Int8{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU8 & ~(0x1 << 4)) | (nv.toU8 << 4) ).to8
+    }
+    /// Get bit 5 value
+    public func b5Value()->Int8{
+        return ( (self.toU8 & (0x1 << 5)) >> 5 ).to8
+    }
+    /// Set bit 5 and return a new Int
+    public func b5(bit:Int)->Int8{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU8 & ~(0x1 << 5)) | (nv.toU8 << 5) ).to8
+    }
+    /// Get bit 6 value
+    public func b6Value()->Int8{
+        return ( (self.toU8 & (0x1 << 6)) >> 6 ).to8
+    }
+    /// Set bit 6 and return a new Int
+    public func b6(bit:Int)->Int8{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU8 & ~(0x1 << 6)) | (nv.toU8 << 6) ).to8
+    }
+    /// Get bit 7 value
+    public func b7Value()->Int8{
+        return ( (self.toU8 & (0x1 << 7)) >> 7 ).to8
+    }
+    /// Set bit 7 and return a new Int
+    public func b7(bit:Int)->Int8{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU8 & ~(0x1 << 7)) | (nv.toU8 << 7) ).to8
+    }
+ 
+
+
     /// Subscript that returns or set one of the bytes of this integer
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
@@ -213,6 +566,81 @@ extension UInt8 {
 
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
+
+    /// Get bit 0 value
+    public func b0Value()->UInt8{
+        return (self & (0x1 << 0)) >> 0
+    }
+    /// Set bit 0 and return a new UInt
+    public func b0(bit:Int)->UInt8{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 0)) | (nv.toU8 << 0)
+    }
+    /// Get bit 1 value
+    public func b1Value()->UInt8{
+        return (self & (0x1 << 1)) >> 1
+    }
+    /// Set bit 1 and return a new UInt
+    public func b1(bit:Int)->UInt8{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 1)) | (nv.toU8 << 1)
+    }
+    /// Get bit 2 value
+    public func b2Value()->UInt8{
+        return (self & (0x1 << 2)) >> 2
+    }
+    /// Set bit 2 and return a new UInt
+    public func b2(bit:Int)->UInt8{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 2)) | (nv.toU8 << 2)
+    }
+    /// Get bit 3 value
+    public func b3Value()->UInt8{
+        return (self & (0x1 << 3)) >> 3
+    }
+    /// Set bit 3 and return a new UInt
+    public func b3(bit:Int)->UInt8{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 3)) | (nv.toU8 << 3)
+    }
+    /// Get bit 4 value
+    public func b4Value()->UInt8{
+        return (self & (0x1 << 4)) >> 4
+    }
+    /// Set bit 4 and return a new UInt
+    public func b4(bit:Int)->UInt8{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 4)) | (nv.toU8 << 4)
+    }
+    /// Get bit 5 value
+    public func b5Value()->UInt8{
+        return (self & (0x1 << 5)) >> 5
+    }
+    /// Set bit 5 and return a new UInt
+    public func b5(bit:Int)->UInt8{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 5)) | (nv.toU8 << 5)
+    }
+    /// Get bit 6 value
+    public func b6Value()->UInt8{
+        return (self & (0x1 << 6)) >> 6
+    }
+    /// Set bit 6 and return a new UInt
+    public func b6(bit:Int)->UInt8{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 6)) | (nv.toU8 << 6)
+    }
+    /// Get bit 7 value
+    public func b7Value()->UInt8{
+        return (self & (0x1 << 7)) >> 7
+    }
+    /// Set bit 7 and return a new UInt
+    public func b7(bit:Int)->UInt8{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 7)) | (nv.toU8 << 7)
+    }
+ 
+
 
     /// Subscript that returns or set one of the bytes of this integer
     /// at the given index.
@@ -263,6 +691,81 @@ extension Int16 {
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
 
+    /// Get bit 0 value
+    public func b0Value()->Int16{
+        return ( (self.toU16 & (0x1 << 0)) >> 0 ).to16
+    }
+    /// Set bit 0 and return a new Int
+    public func b0(bit:Int)->Int16{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU16 & ~(0x1 << 0)) | (nv.toU16 << 0) ).to16
+    }
+    /// Get bit 1 value
+    public func b1Value()->Int16{
+        return ( (self.toU16 & (0x1 << 1)) >> 1 ).to16
+    }
+    /// Set bit 1 and return a new Int
+    public func b1(bit:Int)->Int16{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU16 & ~(0x1 << 1)) | (nv.toU16 << 1) ).to16
+    }
+    /// Get bit 2 value
+    public func b2Value()->Int16{
+        return ( (self.toU16 & (0x1 << 2)) >> 2 ).to16
+    }
+    /// Set bit 2 and return a new Int
+    public func b2(bit:Int)->Int16{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU16 & ~(0x1 << 2)) | (nv.toU16 << 2) ).to16
+    }
+    /// Get bit 3 value
+    public func b3Value()->Int16{
+        return ( (self.toU16 & (0x1 << 3)) >> 3 ).to16
+    }
+    /// Set bit 3 and return a new Int
+    public func b3(bit:Int)->Int16{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU16 & ~(0x1 << 3)) | (nv.toU16 << 3) ).to16
+    }
+    /// Get bit 4 value
+    public func b4Value()->Int16{
+        return ( (self.toU16 & (0x1 << 4)) >> 4 ).to16
+    }
+    /// Set bit 4 and return a new Int
+    public func b4(bit:Int)->Int16{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU16 & ~(0x1 << 4)) | (nv.toU16 << 4) ).to16
+    }
+    /// Get bit 5 value
+    public func b5Value()->Int16{
+        return ( (self.toU16 & (0x1 << 5)) >> 5 ).to16
+    }
+    /// Set bit 5 and return a new Int
+    public func b5(bit:Int)->Int16{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU16 & ~(0x1 << 5)) | (nv.toU16 << 5) ).to16
+    }
+    /// Get bit 6 value
+    public func b6Value()->Int16{
+        return ( (self.toU16 & (0x1 << 6)) >> 6 ).to16
+    }
+    /// Set bit 6 and return a new Int
+    public func b6(bit:Int)->Int16{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU16 & ~(0x1 << 6)) | (nv.toU16 << 6) ).to16
+    }
+    /// Get bit 7 value
+    public func b7Value()->Int16{
+        return ( (self.toU16 & (0x1 << 7)) >> 7 ).to16
+    }
+    /// Set bit 7 and return a new Int
+    public func b7(bit:Int)->Int16{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU16 & ~(0x1 << 7)) | (nv.toU16 << 7) ).to16
+    }
+ 
+
+
     /// Subscript that returns or set one of the bytes of a Int16 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
@@ -311,6 +814,81 @@ extension UInt16 {
 
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
+
+    /// Get bit 0 value
+    public func b0Value()->UInt16{
+        return (self & (0x1 << 0)) >> 0
+    }
+    /// Set bit 0 and return a new UInt
+    public func b0(bit:Int)->UInt16{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 0)) | (nv.toU16 << 0)
+    }
+    /// Get bit 1 value
+    public func b1Value()->UInt16{
+        return (self & (0x1 << 1)) >> 1
+    }
+    /// Set bit 1 and return a new UInt
+    public func b1(bit:Int)->UInt16{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 1)) | (nv.toU16 << 1)
+    }
+    /// Get bit 2 value
+    public func b2Value()->UInt16{
+        return (self & (0x1 << 2)) >> 2
+    }
+    /// Set bit 2 and return a new UInt
+    public func b2(bit:Int)->UInt16{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 2)) | (nv.toU16 << 2)
+    }
+    /// Get bit 3 value
+    public func b3Value()->UInt16{
+        return (self & (0x1 << 3)) >> 3
+    }
+    /// Set bit 3 and return a new UInt
+    public func b3(bit:Int)->UInt16{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 3)) | (nv.toU16 << 3)
+    }
+    /// Get bit 4 value
+    public func b4Value()->UInt16{
+        return (self & (0x1 << 4)) >> 4
+    }
+    /// Set bit 4 and return a new UInt
+    public func b4(bit:Int)->UInt16{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 4)) | (nv.toU16 << 4)
+    }
+    /// Get bit 5 value
+    public func b5Value()->UInt16{
+        return (self & (0x1 << 5)) >> 5
+    }
+    /// Set bit 5 and return a new UInt
+    public func b5(bit:Int)->UInt16{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 5)) | (nv.toU16 << 5)
+    }
+    /// Get bit 6 value
+    public func b6Value()->UInt16{
+        return (self & (0x1 << 6)) >> 6
+    }
+    /// Set bit 6 and return a new UInt
+    public func b6(bit:Int)->UInt16{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 6)) | (nv.toU16 << 6)
+    }
+    /// Get bit 7 value
+    public func b7Value()->UInt16{
+        return (self & (0x1 << 7)) >> 7
+    }
+    /// Set bit 7 and return a new UInt
+    public func b7(bit:Int)->UInt16{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 7)) | (nv.toU16 << 7)
+    }
+ 
+
 
     /// Subscript that returns or set one of the bytes of a UInt16 
     /// at the given index.
@@ -361,6 +939,81 @@ extension Int32 {
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
 
+    /// Get bit 0 value
+    public func b0Value()->Int32{
+        return ( (self.toU32 & (0x1 << 0)) >> 0 ).to32
+    }
+    /// Set bit 0 and return a new Int
+    public func b0(bit:Int)->Int32{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU32 & ~(0x1 << 0)) | (nv.toU32 << 0) ).to32
+    }
+    /// Get bit 1 value
+    public func b1Value()->Int32{
+        return ( (self.toU32 & (0x1 << 1)) >> 1 ).to32
+    }
+    /// Set bit 1 and return a new Int
+    public func b1(bit:Int)->Int32{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU32 & ~(0x1 << 1)) | (nv.toU32 << 1) ).to32
+    }
+    /// Get bit 2 value
+    public func b2Value()->Int32{
+        return ( (self.toU32 & (0x1 << 2)) >> 2 ).to32
+    }
+    /// Set bit 2 and return a new Int
+    public func b2(bit:Int)->Int32{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU32 & ~(0x1 << 2)) | (nv.toU32 << 2) ).to32
+    }
+    /// Get bit 3 value
+    public func b3Value()->Int32{
+        return ( (self.toU32 & (0x1 << 3)) >> 3 ).to32
+    }
+    /// Set bit 3 and return a new Int
+    public func b3(bit:Int)->Int32{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU32 & ~(0x1 << 3)) | (nv.toU32 << 3) ).to32
+    }
+    /// Get bit 4 value
+    public func b4Value()->Int32{
+        return ( (self.toU32 & (0x1 << 4)) >> 4 ).to32
+    }
+    /// Set bit 4 and return a new Int
+    public func b4(bit:Int)->Int32{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU32 & ~(0x1 << 4)) | (nv.toU32 << 4) ).to32
+    }
+    /// Get bit 5 value
+    public func b5Value()->Int32{
+        return ( (self.toU32 & (0x1 << 5)) >> 5 ).to32
+    }
+    /// Set bit 5 and return a new Int
+    public func b5(bit:Int)->Int32{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU32 & ~(0x1 << 5)) | (nv.toU32 << 5) ).to32
+    }
+    /// Get bit 6 value
+    public func b6Value()->Int32{
+        return ( (self.toU32 & (0x1 << 6)) >> 6 ).to32
+    }
+    /// Set bit 6 and return a new Int
+    public func b6(bit:Int)->Int32{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU32 & ~(0x1 << 6)) | (nv.toU32 << 6) ).to32
+    }
+    /// Get bit 7 value
+    public func b7Value()->Int32{
+        return ( (self.toU32 & (0x1 << 7)) >> 7 ).to32
+    }
+    /// Set bit 7 and return a new Int
+    public func b7(bit:Int)->Int32{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU32 & ~(0x1 << 7)) | (nv.toU32 << 7) ).to32
+    }
+ 
+
+
     /// Subscript that returns or set one of the bytes of a Int32 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
@@ -409,6 +1062,81 @@ extension UInt32 {
 
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
+
+    /// Get bit 0 value
+    public func b0Value()->UInt32{
+        return (self & (0x1 << 0)) >> 0
+    }
+    /// Set bit 0 and return a new UInt
+    public func b0(bit:Int)->UInt32{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 0)) | (nv.toU32 << 0)
+    }
+    /// Get bit 1 value
+    public func b1Value()->UInt32{
+        return (self & (0x1 << 1)) >> 1
+    }
+    /// Set bit 1 and return a new UInt
+    public func b1(bit:Int)->UInt32{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 1)) | (nv.toU32 << 1)
+    }
+    /// Get bit 2 value
+    public func b2Value()->UInt32{
+        return (self & (0x1 << 2)) >> 2
+    }
+    /// Set bit 2 and return a new UInt
+    public func b2(bit:Int)->UInt32{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 2)) | (nv.toU32 << 2)
+    }
+    /// Get bit 3 value
+    public func b3Value()->UInt32{
+        return (self & (0x1 << 3)) >> 3
+    }
+    /// Set bit 3 and return a new UInt
+    public func b3(bit:Int)->UInt32{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 3)) | (nv.toU32 << 3)
+    }
+    /// Get bit 4 value
+    public func b4Value()->UInt32{
+        return (self & (0x1 << 4)) >> 4
+    }
+    /// Set bit 4 and return a new UInt
+    public func b4(bit:Int)->UInt32{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 4)) | (nv.toU32 << 4)
+    }
+    /// Get bit 5 value
+    public func b5Value()->UInt32{
+        return (self & (0x1 << 5)) >> 5
+    }
+    /// Set bit 5 and return a new UInt
+    public func b5(bit:Int)->UInt32{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 5)) | (nv.toU32 << 5)
+    }
+    /// Get bit 6 value
+    public func b6Value()->UInt32{
+        return (self & (0x1 << 6)) >> 6
+    }
+    /// Set bit 6 and return a new UInt
+    public func b6(bit:Int)->UInt32{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 6)) | (nv.toU32 << 6)
+    }
+    /// Get bit 7 value
+    public func b7Value()->UInt32{
+        return (self & (0x1 << 7)) >> 7
+    }
+    /// Set bit 7 and return a new UInt
+    public func b7(bit:Int)->UInt32{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 7)) | (nv.toU32 << 7)
+    }
+ 
+
 
     /// Subscript that returns or set one of the bytes of a UInt32 
     /// at the given index.
@@ -459,6 +1187,81 @@ extension Int64 {
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
 
+    /// Get bit 0 value
+    public func b0Value()->Int64{
+        return ( (self.toU64 & (0x1 << 0)) >> 0 ).to64
+    }
+    /// Set bit 0 and return a new Int
+    public func b0(bit:Int)->Int64{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU64 & ~(0x1 << 0)) | (nv.toU64 << 0) ).to64
+    }
+    /// Get bit 1 value
+    public func b1Value()->Int64{
+        return ( (self.toU64 & (0x1 << 1)) >> 1 ).to64
+    }
+    /// Set bit 1 and return a new Int
+    public func b1(bit:Int)->Int64{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU64 & ~(0x1 << 1)) | (nv.toU64 << 1) ).to64
+    }
+    /// Get bit 2 value
+    public func b2Value()->Int64{
+        return ( (self.toU64 & (0x1 << 2)) >> 2 ).to64
+    }
+    /// Set bit 2 and return a new Int
+    public func b2(bit:Int)->Int64{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU64 & ~(0x1 << 2)) | (nv.toU64 << 2) ).to64
+    }
+    /// Get bit 3 value
+    public func b3Value()->Int64{
+        return ( (self.toU64 & (0x1 << 3)) >> 3 ).to64
+    }
+    /// Set bit 3 and return a new Int
+    public func b3(bit:Int)->Int64{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU64 & ~(0x1 << 3)) | (nv.toU64 << 3) ).to64
+    }
+    /// Get bit 4 value
+    public func b4Value()->Int64{
+        return ( (self.toU64 & (0x1 << 4)) >> 4 ).to64
+    }
+    /// Set bit 4 and return a new Int
+    public func b4(bit:Int)->Int64{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU64 & ~(0x1 << 4)) | (nv.toU64 << 4) ).to64
+    }
+    /// Get bit 5 value
+    public func b5Value()->Int64{
+        return ( (self.toU64 & (0x1 << 5)) >> 5 ).to64
+    }
+    /// Set bit 5 and return a new Int
+    public func b5(bit:Int)->Int64{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU64 & ~(0x1 << 5)) | (nv.toU64 << 5) ).to64
+    }
+    /// Get bit 6 value
+    public func b6Value()->Int64{
+        return ( (self.toU64 & (0x1 << 6)) >> 6 ).to64
+    }
+    /// Set bit 6 and return a new Int
+    public func b6(bit:Int)->Int64{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU64 & ~(0x1 << 6)) | (nv.toU64 << 6) ).to64
+    }
+    /// Get bit 7 value
+    public func b7Value()->Int64{
+        return ( (self.toU64 & (0x1 << 7)) >> 7 ).to64
+    }
+    /// Set bit 7 and return a new Int
+    public func b7(bit:Int)->Int64{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU64 & ~(0x1 << 7)) | (nv.toU64 << 7) ).to64
+    }
+ 
+
+
     /// Subscript that returns or set one of the bytes of a Int64 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
@@ -507,6 +1310,81 @@ extension UInt64 {
 
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return strideof(self)}
+
+    /// Get bit 0 value
+    public func b0Value()->UInt64{
+        return (self & (0x1 << 0)) >> 0
+    }
+    /// Set bit 0 and return a new UInt
+    public func b0(bit:Int)->UInt64{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 0)) | (nv.toU64 << 0)
+    }
+    /// Get bit 1 value
+    public func b1Value()->UInt64{
+        return (self & (0x1 << 1)) >> 1
+    }
+    /// Set bit 1 and return a new UInt
+    public func b1(bit:Int)->UInt64{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 1)) | (nv.toU64 << 1)
+    }
+    /// Get bit 2 value
+    public func b2Value()->UInt64{
+        return (self & (0x1 << 2)) >> 2
+    }
+    /// Set bit 2 and return a new UInt
+    public func b2(bit:Int)->UInt64{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 2)) | (nv.toU64 << 2)
+    }
+    /// Get bit 3 value
+    public func b3Value()->UInt64{
+        return (self & (0x1 << 3)) >> 3
+    }
+    /// Set bit 3 and return a new UInt
+    public func b3(bit:Int)->UInt64{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 3)) | (nv.toU64 << 3)
+    }
+    /// Get bit 4 value
+    public func b4Value()->UInt64{
+        return (self & (0x1 << 4)) >> 4
+    }
+    /// Set bit 4 and return a new UInt
+    public func b4(bit:Int)->UInt64{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 4)) | (nv.toU64 << 4)
+    }
+    /// Get bit 5 value
+    public func b5Value()->UInt64{
+        return (self & (0x1 << 5)) >> 5
+    }
+    /// Set bit 5 and return a new UInt
+    public func b5(bit:Int)->UInt64{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 5)) | (nv.toU64 << 5)
+    }
+    /// Get bit 6 value
+    public func b6Value()->UInt64{
+        return (self & (0x1 << 6)) >> 6
+    }
+    /// Set bit 6 and return a new UInt
+    public func b6(bit:Int)->UInt64{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 6)) | (nv.toU64 << 6)
+    }
+    /// Get bit 7 value
+    public func b7Value()->UInt64{
+        return (self & (0x1 << 7)) >> 7
+    }
+    /// Set bit 7 and return a new UInt
+    public func b7(bit:Int)->UInt64{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 7)) | (nv.toU64 << 7)
+    }
+ 
+
 
     /// Subscript that returns or set one of the bytes of a UInt64 
     /// at the given index.

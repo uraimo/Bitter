@@ -60,7 +60,39 @@ class BitterTests: XCTestCase {
         XCTAssertEqual(asUInt64[6], 0xAA)
         XCTAssertEqual(asUInt64[7], 0xAA)
     }
-     // MARK: Int64 Tests
+    var bsUInt64:UInt64=0x1122334455660088
+    func testUInt64BitSetGet(){
+        XCTAssertEqual(bsUInt64[1], 0x00)
+        bsUInt64[1] = bsUInt64[1].b0(1)
+        XCTAssertEqual(bsUInt64[1].b0Value(), 1)
+        XCTAssertEqual(bsUInt64[1], 0x01)
+        bsUInt64[1] = bsUInt64[1].b1(1)
+        XCTAssertEqual(bsUInt64[1].b1Value(), 1)
+        XCTAssertEqual(bsUInt64[1], 0x03)
+        bsUInt64[1] = bsUInt64[1].b2(1)
+        XCTAssertEqual(bsUInt64[1].b2Value(), 1)
+        XCTAssertEqual(bsUInt64[1], 0x07)
+        bsUInt64[1] = bsUInt64[1].b3(1)
+        XCTAssertEqual(bsUInt64[1].b3Value(), 1)
+        XCTAssertEqual(bsUInt64[1], 0x0F)
+        bsUInt64[1] = bsUInt64[1].b4(1)
+        XCTAssertEqual(bsUInt64[1].b4Value(), 1)
+        XCTAssertEqual(bsUInt64[1], 0x1F)
+        bsUInt64[1] = bsUInt64[1].b5(1)
+        XCTAssertEqual(bsUInt64[1].b5Value(), 1)
+        XCTAssertEqual(bsUInt64[1], 0x3F)
+        bsUInt64[1] = bsUInt64[1].b6(1)
+        XCTAssertEqual(bsUInt64[1].b6Value(), 1)
+        XCTAssertEqual(bsUInt64[1], 0x7F)
+        bsUInt64[1] = bsUInt64[1].b7(1)
+        XCTAssertEqual(bsUInt64[1].b7Value(), 1)
+        XCTAssertEqual(bsUInt64[1], 0xFF)
+        XCTAssertEqual(bsUInt64, 0x112233445566FF88)
+        bsUInt64[1] = bsUInt64[1].b7(0).b6(0).b5(0).b4(0).b3(0).b2(0).b1(0).b0(0)
+        XCTAssertEqual(bsUInt64, 0x1122334455660088)
+    }
+    
+    // MARK: Int64 Tests
     let iInt64:Int64 = (Int.size==8) ? 0x6FAAFFAAFFAAFFAA : 0xFFAAFFAA
     func testInt64Conversion() {
         XCTAssert(iInt64.toUInt==UInt(truncatingBitPattern:iInt64))
@@ -99,6 +131,38 @@ class BitterTests: XCTestCase {
         XCTAssertEqual(asInt64[6], 0xAA)
         XCTAssertEqual(asInt64[7], 0xAA)
     }
+    var bsInt64:Int64=0x1122334455660088
+    func testInt64BitSetGet(){
+        XCTAssertEqual(bsInt64[1], 0x00)
+        bsInt64[1] = bsInt64[1].b0(1)
+        XCTAssertEqual(bsInt64[1].b0Value(), 1)
+        XCTAssertEqual(bsInt64[1], 0x01)
+        bsInt64[1] = bsInt64[1].b1(1)
+        XCTAssertEqual(bsInt64[1].b1Value(), 1)
+        XCTAssertEqual(bsInt64[1], 0x03)
+        bsInt64[1] = bsInt64[1].b2(1)
+        XCTAssertEqual(bsInt64[1].b2Value(), 1)
+        XCTAssertEqual(bsInt64[1], 0x07)
+        bsInt64[1] = bsInt64[1].b3(1)
+        XCTAssertEqual(bsInt64[1].b3Value(), 1)
+        XCTAssertEqual(bsInt64[1], 0x0F)
+        bsInt64[1] = bsInt64[1].b4(1)
+        XCTAssertEqual(bsInt64[1].b4Value(), 1)
+        XCTAssertEqual(bsInt64[1], 0x1F)
+        bsInt64[1] = bsInt64[1].b5(1)
+        XCTAssertEqual(bsInt64[1].b5Value(), 1)
+        XCTAssertEqual(bsInt64[1], 0x3F)
+        bsInt64[1] = bsInt64[1].b6(1)
+        XCTAssertEqual(bsInt64[1].b6Value(), 1)
+        XCTAssertEqual(bsInt64[1], 0x7F)
+        bsInt64[1] = bsInt64[1].b7(1)
+        XCTAssertEqual(bsInt64[1].b7Value(), 1)
+        XCTAssertEqual(bsInt64[1], 0xFF)
+        XCTAssertEqual(bsInt64, 0x112233445566FF88)
+        bsInt64[1] = bsInt64[1].b7(0).b6(0).b5(0).b4(0).b3(0).b2(0).b1(0).b0(0)
+        XCTAssertEqual(bsInt64, 0x1122334455660088)
+        
+    }
     
     // MARK: UInt32 Tests
     let iUInt32:UInt32=0xFFAAFFAA
@@ -130,6 +194,38 @@ class BitterTests: XCTestCase {
         XCTAssertEqual(asUInt32[2], 0xAA)
         XCTAssertEqual(asUInt32[3], 0xAA)
     }
+    var bsUInt32:UInt32=0x11220044
+    func testUInt32BitSetGet(){
+        XCTAssertEqual(bsUInt32[1], 0x00)
+        bsUInt32[1] = bsUInt32[1].b0(1)
+        XCTAssertEqual(bsUInt32[1].b0Value(), 1)
+        XCTAssertEqual(bsUInt32[1], 0x01)
+        bsUInt32[1] = bsUInt32[1].b1(1)
+        XCTAssertEqual(bsUInt32[1].b1Value(), 1)
+        XCTAssertEqual(bsUInt32[1], 0x03)
+        bsUInt32[1] = bsUInt32[1].b2(1)
+        XCTAssertEqual(bsUInt32[1].b2Value(), 1)
+        XCTAssertEqual(bsUInt32[1], 0x07)
+        bsUInt32[1] = bsUInt32[1].b3(1)
+        XCTAssertEqual(bsUInt32[1].b3Value(), 1)
+        XCTAssertEqual(bsUInt32[1], 0x0F)
+        bsUInt32[1] = bsUInt32[1].b4(1)
+        XCTAssertEqual(bsUInt32[1].b4Value(), 1)
+        XCTAssertEqual(bsUInt32[1], 0x1F)
+        bsUInt32[1] = bsUInt32[1].b5(1)
+        XCTAssertEqual(bsUInt32[1].b5Value(), 1)
+        XCTAssertEqual(bsUInt32[1], 0x3F)
+        bsUInt32[1] = bsUInt32[1].b6(1)
+        XCTAssertEqual(bsUInt32[1].b6Value(), 1)
+        XCTAssertEqual(bsUInt32[1], 0x7F)
+        bsUInt32[1] = bsUInt32[1].b7(1)
+        XCTAssertEqual(bsUInt32[1].b7Value(), 1)
+        XCTAssertEqual(bsUInt32[1], 0xFF)
+        XCTAssertEqual(bsUInt32, 0x1122FF44)
+        bsUInt32[1] = bsUInt32[1].b7(0).b6(0).b5(0).b4(0).b3(0).b2(0).b1(0).b0(0)
+        XCTAssertEqual(bsUInt32, 0x11220044)
+    }
+    
      // MARK: Int32 Tests
     let iInt32:Int32=0x6FAAFFAA
     func testInt32Conversion() {
@@ -160,6 +256,37 @@ class BitterTests: XCTestCase {
         XCTAssertEqual(asInt32[2], 0xAA)
         XCTAssertEqual(asInt32[3], 0xAA)
     }
+    var bsInt32:UInt32=0x11220044
+    func testInt32BitSetGet(){
+        XCTAssertEqual(bsInt32[1], 0x00)
+        bsInt32[1] = bsInt32[1].b0(1)
+        XCTAssertEqual(bsInt32[1].b0Value(), 1)
+        XCTAssertEqual(bsInt32[1], 0x01)
+        bsInt32[1] = bsInt32[1].b1(1)
+        XCTAssertEqual(bsInt32[1].b1Value(), 1)
+        XCTAssertEqual(bsInt32[1], 0x03)
+        bsInt32[1] = bsInt32[1].b2(1)
+        XCTAssertEqual(bsInt32[1].b2Value(), 1)
+        XCTAssertEqual(bsInt32[1], 0x07)
+        bsInt32[1] = bsInt32[1].b3(1)
+        XCTAssertEqual(bsInt32[1].b3Value(), 1)
+        XCTAssertEqual(bsInt32[1], 0x0F)
+        bsInt32[1] = bsInt32[1].b4(1)
+        XCTAssertEqual(bsInt32[1].b4Value(), 1)
+        XCTAssertEqual(bsInt32[1], 0x1F)
+        bsInt32[1] = bsInt32[1].b5(1)
+        XCTAssertEqual(bsInt32[1].b5Value(), 1)
+        XCTAssertEqual(bsInt32[1], 0x3F)
+        bsInt32[1] = bsInt32[1].b6(1)
+        XCTAssertEqual(bsInt32[1].b6Value(), 1)
+        XCTAssertEqual(bsInt32[1], 0x7F)
+        bsInt32[1] = bsInt32[1].b7(1)
+        XCTAssertEqual(bsInt32[1].b7Value(), 1)
+        XCTAssertEqual(bsInt32[1], 0xFF)
+        XCTAssertEqual(bsInt32, 0x1122FF44)
+        bsInt32[1] = bsInt32[1].b7(0).b6(0).b5(0).b4(0).b3(0).b2(0).b1(0).b0(0)
+        XCTAssertEqual(bsInt32, 0x11220044)
+    }
     
      // MARK: UInt16 Tests
     let iUInt16:UInt16=0x6FAA
@@ -186,6 +313,95 @@ class BitterTests: XCTestCase {
         XCTAssertEqual(asUInt16[0], 0xAA)
         XCTAssertEqual(asUInt16[1], 0xAA)
     }
+    var bsUInt16:UInt16=0x0022
+    func testUInt16BitSetGet(){
+        XCTAssertEqual(bsUInt16[1], 0x00)
+        bsUInt16[1] = bsUInt16[1].b0(1)
+        XCTAssertEqual(bsUInt16[1].b0Value(), 1)
+        XCTAssertEqual(bsUInt16[1], 0x01)
+        bsUInt16[1] = bsUInt16[1].b1(1)
+        XCTAssertEqual(bsUInt16[1].b1Value(), 1)
+        XCTAssertEqual(bsUInt16[1], 0x03)
+        bsUInt16[1] = bsUInt16[1].b2(1)
+        XCTAssertEqual(bsUInt16[1].b2Value(), 1)
+        XCTAssertEqual(bsUInt16[1], 0x07)
+        bsUInt16[1] = bsUInt16[1].b3(1)
+        XCTAssertEqual(bsUInt16[1].b3Value(), 1)
+        XCTAssertEqual(bsUInt16[1], 0x0F)
+        bsUInt16[1] = bsUInt16[1].b4(1)
+        XCTAssertEqual(bsUInt16[1].b4Value(), 1)
+        XCTAssertEqual(bsUInt16[1], 0x1F)
+        bsUInt16[1] = bsUInt16[1].b5(1)
+        XCTAssertEqual(bsUInt16[1].b5Value(), 1)
+        XCTAssertEqual(bsUInt16[1], 0x3F)
+        bsUInt16[1] = bsUInt16[1].b6(1)
+        XCTAssertEqual(bsUInt16[1].b6Value(), 1)
+        XCTAssertEqual(bsUInt16[1], 0x7F)
+        bsUInt16[1] = bsUInt16[1].b7(1)
+        XCTAssertEqual(bsUInt16[1].b7Value(), 1)
+        XCTAssertEqual(bsUInt16[1], 0xFF)
+        XCTAssertEqual(bsUInt16, 0xFF22)
+        bsUInt16[1] = bsUInt16[1].b7(0).b6(0).b5(0).b4(0).b3(0).b2(0).b1(0).b0(0)
+        XCTAssertEqual(bsUInt16, 0x0022)
+    }
+    
+    // MARK: Int16 Tests
+    let iInt16:Int16=0x6FAA
+    func testInt16Conversion() {
+        XCTAssert(iInt16.toUInt==0x6FAA)
+        XCTAssert(iInt16.toInt.toUInt==0x6FAA)
+        XCTAssert(iInt16.toU64==0x6FAA)
+        XCTAssert(iInt16.to64.toU64==0x6FAA)
+        XCTAssert(iInt16.toU32==0x6FAA)
+        XCTAssert(iInt16.to32.toU32==0x6FAA)
+        XCTAssert(iInt16.toU16==0x6FAA)
+        XCTAssert(iInt16.to16.toU16==0x6FAA)
+        XCTAssert(iInt16.toU8==0xAA)
+        XCTAssert(iInt16.to8.toU8==0xAA)
+    }
+    let aInt16:Int16=0x1188
+    func testInt16SubscriptGet(){
+        XCTAssertEqual(aInt16[0], 0x88)
+        XCTAssertEqual(aInt16[1], 0x11)
+    }
+    var asInt16:Int16=0x1188
+    func testInt16SubscriptSet(){
+        asInt16[0]=0xAA;asInt16[1]=0xAA
+        XCTAssertEqual(asInt16[0], 0xAA)
+        XCTAssertEqual(asInt16[1], 0xAA)
+    }
+    var bsInt16:Int16=0x0022
+    func testInt16BitSetGet(){
+        XCTAssertEqual(bsInt16[1], 0x00)
+        bsInt16[1] = bsInt16[1].b0(1)
+        XCTAssertEqual(bsInt16[1].b0Value(), 1)
+        XCTAssertEqual(bsInt16[1], 0x01)
+        bsInt16[1] = bsInt16[1].b1(1)
+        XCTAssertEqual(bsInt16[1].b1Value(), 1)
+        XCTAssertEqual(bsInt16[1], 0x03)
+        bsInt16[1] = bsInt16[1].b2(1)
+        XCTAssertEqual(bsInt16[1].b2Value(), 1)
+        XCTAssertEqual(bsInt16[1], 0x07)
+        bsInt16[1] = bsInt16[1].b3(1)
+        XCTAssertEqual(bsInt16[1].b3Value(), 1)
+        XCTAssertEqual(bsInt16[1], 0x0F)
+        bsInt16[1] = bsInt16[1].b4(1)
+        XCTAssertEqual(bsInt16[1].b4Value(), 1)
+        XCTAssertEqual(bsInt16[1], 0x1F)
+        bsInt16[1] = bsInt16[1].b5(1)
+        XCTAssertEqual(bsInt16[1].b5Value(), 1)
+        XCTAssertEqual(bsInt16[1], 0x3F)
+        bsInt16[1] = bsInt16[1].b6(1)
+        XCTAssertEqual(bsInt16[1].b6Value(), 1)
+        XCTAssertEqual(bsInt16[1], 0x7F)
+        bsInt16[1] = bsInt16[1].b7(1)
+        XCTAssertEqual(bsInt16[1].b7Value(), 1)
+        XCTAssertEqual(bsInt16[1], 0xFF)
+        XCTAssertEqual(bsInt16, -222)
+        bsInt16[1] = bsInt16[1].b7(0).b6(0).b5(0).b4(0).b3(0).b2(0).b1(0).b0(0)
+        XCTAssertEqual(bsInt16, 0x0022)
+    }
+    
     // MARK: UInt8 Tests
     let iUInt8:UInt8=0x66
     func testUInt8Conversion() {
@@ -208,6 +424,37 @@ class BitterTests: XCTestCase {
     func testUInt8SubscriptSet(){
         asUInt8[0]=0xAA
         XCTAssertEqual(asUInt8[0], 0xAA)
+    }
+    var bsUInt8:UInt8=0x00
+    func testUInt8BitSetGet(){
+        XCTAssertEqual(bsUInt8[0], 0x00)
+        bsUInt8 = bsUInt8.b0(1)
+        XCTAssertEqual(bsUInt8.b0Value(), 1)
+        XCTAssertEqual(bsUInt8[0], 0x01)
+        bsUInt8 = bsUInt8.b1(1)
+        XCTAssertEqual(bsUInt8.b1Value(), 1)
+        XCTAssertEqual(bsUInt8[0], 0x03)
+        bsUInt8 = bsUInt8.b2(1)
+        XCTAssertEqual(bsUInt8.b2Value(), 1)
+        XCTAssertEqual(bsUInt8[0], 0x07)
+        bsUInt8 = bsUInt8.b3(1)
+        XCTAssertEqual(bsUInt8.b3Value(), 1)
+        XCTAssertEqual(bsUInt8[0], 0x0F)
+        bsUInt8 = bsUInt8.b4(1)
+        XCTAssertEqual(bsUInt8.b4Value(), 1)
+        XCTAssertEqual(bsUInt8[0], 0x1F)
+        bsUInt8 = bsUInt8.b5(1)
+        XCTAssertEqual(bsUInt8.b5Value(), 1)
+        XCTAssertEqual(bsUInt8[0], 0x3F)
+        bsUInt8 = bsUInt8.b6(1)
+        XCTAssertEqual(bsUInt8.b6Value(), 1)
+        XCTAssertEqual(bsUInt8[0], 0x7F)
+        bsUInt8 = bsUInt8.b7(1)
+        XCTAssertEqual(bsUInt8.b7Value(), 1)
+        XCTAssertEqual(bsUInt8[0], 0xFF)
+        XCTAssertEqual(bsUInt8, 0xFF)
+        bsUInt8 = bsUInt8.b7(0).b6(0).b5(0).b4(0).b3(0).b2(0).b1(0).b0(0)
+        XCTAssertEqual(bsUInt8, 0x00)
     }
      // MARK: Int8 Tests
     let iInt8:Int8=0x66
@@ -232,5 +479,37 @@ class BitterTests: XCTestCase {
         asInt8[0]=0x1A
         XCTAssertEqual(asInt8[0], 0x1A)
     }
+    var bsInt8:Int8=0x00
+    func testInt8BitSetGet(){
+        XCTAssertEqual(bsInt8[0], 0x00)
+        bsInt8 = bsInt8.b0(1)
+        XCTAssertEqual(bsInt8.b0Value(), 1)
+        XCTAssertEqual(bsInt8[0], 0x01)
+        bsInt8 = bsInt8.b1(1)
+        XCTAssertEqual(bsInt8.b1Value(), 1)
+        XCTAssertEqual(bsInt8[0], 0x03)
+        bsInt8 = bsInt8.b2(1)
+        XCTAssertEqual(bsInt8.b2Value(), 1)
+        XCTAssertEqual(bsInt8[0], 0x07)
+        bsInt8 = bsInt8.b3(1)
+        XCTAssertEqual(bsInt8.b3Value(), 1)
+        XCTAssertEqual(bsInt8[0], 0x0F)
+        bsInt8 = bsInt8.b4(1)
+        XCTAssertEqual(bsInt8.b4Value(), 1)
+        XCTAssertEqual(bsInt8[0], 0x1F)
+        bsInt8 = bsInt8.b5(1)
+        XCTAssertEqual(bsInt8.b5Value(), 1)
+        XCTAssertEqual(bsInt8[0], 0x3F)
+        bsInt8 = bsInt8.b6(1)
+        XCTAssertEqual(bsInt8.b6Value(), 1)
+        XCTAssertEqual(bsInt8[0], 0x7F)
+        bsInt8 = bsInt8.b7(1)
+        XCTAssertEqual(bsInt8.b7Value(), 1)
+        XCTAssertEqual(bsInt8[0], -0x1)
+        XCTAssertEqual(bsInt8, -0x1)
+        bsInt8 = bsInt8.b7(0).b6(0).b5(0).b4(0).b3(0).b2(0).b1(0).b0(0)
+        XCTAssertEqual(bsInt8, 0x00)
+    }
+
     
 }

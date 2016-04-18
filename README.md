@@ -22,12 +22,15 @@ var i:UInt32 = 0xAABBCCDD
 let tmp = (i & (0xFF << 16)) >> 16 // Let's swap the 2nd and 3rd byte...
 i = (i & ~(0xFF << 16)) | ((i & (0xFF << 8)) << 8)
 i = (i & ~(0xFF << 8)) | (tmp << 8)
+i = (i & ~((0x1 << 3) << 8)) | (i & ((0x1 << 3) << 8)) // Set the 4th bit of the 2nd byte
 ```
 With this:
 ```swift
 let tmp = i[2] // Let's swap the 2nd and 3rd byte!
 i[2] = i[1]
 i[1] = tmp 
+i[1] = i[1].b3(1) // Set the 4th bit of the 2nd byte
+i[1] = i[1].b3(0).b4(1).b5(0).b6(1) // Let's set some other bit
 ```
 
 
@@ -118,6 +121,23 @@ i[3] = 0xAA   //Error! There is no 3rd byte!
 ``` 
 The subscript index start from the LSB to the MSB for little endian multi-byte Ints and in the opposite direction if a big endian conversion has been applied to the Int.
 
+#### Modifying specific bits
+
+Every Int type, signed or not, gains 8 pair of functions that allow to set or get a single bit in the first byte of the integer. They are supposed to be used in tandem with the byte subscript:
+
+```swift
+var i:UInt32 = 0xAABBCCDD
+i[2].b2Value() //0
+i[2].b3Value() //1
+
+i[2] = i[2].b2(1).b3(0)
+i[2].b2Value() //1
+i[2].b3Value() //0
+```
+The `.getbNValue()` functions return the value of the bit at the specific position, while the `.bN(value)` functions set a specific bit in a integer (the indexes refer to the 8 less significant bits) and return the modified 8 bits integer (if used on integers with content larger than 8 bits, the rest is truncated).
+
+Considering that every `bN(value)` function returns a new integer, these functions can be concatenated to modify more than one bit. This function can be used in conjunction with byte indexed subscripts as shown above where on the right side we build a new byte value for the position 2 of the array that will be then assigned to the same position of the same array.
+
 #### Other functionalities
 
 Bitter also adds a few other extensions to Int types:
@@ -133,5 +153,6 @@ Bitter also adds a few other extensions to Int types:
 - [x] Test for each functionality (XCTest ok, Quick better)
 - [x] Reduce code duplication converting part of the source to .gyb templates
 - [x] Proper documentation using gyb
+- [ ] Converting the tests to gyb?
 - [ ] Additional functionalities?
 - [ ] Example project?

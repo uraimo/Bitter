@@ -11,6 +11,7 @@
 		466264501C64AF01007B43AB /* Bitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466264451C64AF01007B43AB /* Bitter.framework */; };
 		466264551C64AF01007B43AB /* BitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466264541C64AF01007B43AB /* BitterTests.swift */; };
 		466264621C64B036007B43AB /* Bitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466264611C64B036007B43AB /* Bitter.swift */; };
+		46E387071CC555CF00CCBA76 /* Templates in Resources */ = {isa = PBXBuildFile; fileRef = 46E387061CC555CF00CCBA76 /* Templates */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		466264541C64AF01007B43AB /* BitterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitterTests.swift; sourceTree = "<group>"; };
 		466264561C64AF01007B43AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		466264611C64B036007B43AB /* Bitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bitter.swift; sourceTree = "<group>"; };
+		46E387061CC555CF00CCBA76 /* Templates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Templates; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		4662643B1C64AF01007B43AB = {
 			isa = PBXGroup;
 			children = (
+				46E387061CC555CF00CCBA76 /* Templates */,
 				466264471C64AF01007B43AB /* Bitter */,
 				466264531C64AF01007B43AB /* BitterTests */,
 				466264461C64AF01007B43AB /* Products */,
@@ -182,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E387071CC555CF00CCBA76 /* Templates in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
