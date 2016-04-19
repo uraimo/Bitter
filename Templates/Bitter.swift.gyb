@@ -60,7 +60,7 @@ extension ${sign}Int{
     % for bitidx in [0,1,2,3,4,5,6,7]:
         %if sign == '':
     /// Get bit ${bitidx} value
-    public func b${bitidx}Value()->Int{
+    public var b${bitidx}:Int{
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & (0x1 << ${bitidx})) >> ${bitidx} ))
         } else {
@@ -78,7 +78,7 @@ extension ${sign}Int{
     }
         %else:
     /// Get bit ${bitidx} value
-    public func b${bitidx}Value()->UInt{
+    public var b${bitidx}:UInt{
         if(Int.size == 8){
             return UInt( (self.toU64 & (0x1 << ${bitidx})) >> ${bitidx} )
         } else {
@@ -200,7 +200,7 @@ extension ${sign}Int${intType} {
         % for bitidx in [0,1,2,3,4,5,6,7]:
             %if sign == '':
     /// Get bit ${bitidx} value
-    public func b${bitidx}Value()->${sign}Int${intType}{
+    public var b${bitidx}:${sign}Int${intType}{
         return ( (self.toU${intType} & (0x1 << ${bitidx})) >> ${bitidx} ).to${intType}
     }
     /// Set bit ${bitidx} and return a new ${sign}Int
@@ -210,7 +210,7 @@ extension ${sign}Int${intType} {
     }
             %else:
     /// Get bit ${bitidx} value
-    public func b${bitidx}Value()->${sign}Int${intType}{
+    public var b${bitidx}:${sign}Int${intType}{
         return (self & (0x1 << ${bitidx})) >> ${bitidx}
     }
     /// Set bit ${bitidx} and return a new ${sign}Int

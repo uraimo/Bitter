@@ -49,7 +49,7 @@ extension Int{
 
 
     /// Get bit 0 value
-    public func b0Value()->Int{
+    public var b0:Int{
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & (0x1 << 0)) >> 0 ))
         } else {
@@ -66,7 +66,7 @@ extension Int{
         }
     }
     /// Get bit 1 value
-    public func b1Value()->Int{
+    public var b1:Int{
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & (0x1 << 1)) >> 1 ))
         } else {
@@ -83,7 +83,7 @@ extension Int{
         }
     }
     /// Get bit 2 value
-    public func b2Value()->Int{
+    public var b2:Int{
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & (0x1 << 2)) >> 2 ))
         } else {
@@ -100,7 +100,7 @@ extension Int{
         }
     }
     /// Get bit 3 value
-    public func b3Value()->Int{
+    public var b3:Int{
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & (0x1 << 3)) >> 3 ))
         } else {
@@ -117,7 +117,7 @@ extension Int{
         }
     }
     /// Get bit 4 value
-    public func b4Value()->Int{
+    public var b4:Int{
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & (0x1 << 4)) >> 4 ))
         } else {
@@ -134,7 +134,7 @@ extension Int{
         }
     }
     /// Get bit 5 value
-    public func b5Value()->Int{
+    public var b5:Int{
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & (0x1 << 5)) >> 5 ))
         } else {
@@ -151,7 +151,7 @@ extension Int{
         }
     }
     /// Get bit 6 value
-    public func b6Value()->Int{
+    public var b6:Int{
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & (0x1 << 6)) >> 6 ))
         } else {
@@ -168,7 +168,7 @@ extension Int{
         }
     }
     /// Get bit 7 value
-    public func b7Value()->Int{
+    public var b7:Int{
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & (0x1 << 7)) >> 7 ))
         } else {
@@ -249,7 +249,7 @@ extension UInt{
 
 
     /// Get bit 0 value
-    public func b0Value()->UInt{
+    public var b0:UInt{
         if(Int.size == 8){
             return UInt( (self.toU64 & (0x1 << 0)) >> 0 )
         } else {
@@ -266,7 +266,7 @@ extension UInt{
         }
     }
     /// Get bit 1 value
-    public func b1Value()->UInt{
+    public var b1:UInt{
         if(Int.size == 8){
             return UInt( (self.toU64 & (0x1 << 1)) >> 1 )
         } else {
@@ -283,7 +283,7 @@ extension UInt{
         }
     }
     /// Get bit 2 value
-    public func b2Value()->UInt{
+    public var b2:UInt{
         if(Int.size == 8){
             return UInt( (self.toU64 & (0x1 << 2)) >> 2 )
         } else {
@@ -300,7 +300,7 @@ extension UInt{
         }
     }
     /// Get bit 3 value
-    public func b3Value()->UInt{
+    public var b3:UInt{
         if(Int.size == 8){
             return UInt( (self.toU64 & (0x1 << 3)) >> 3 )
         } else {
@@ -317,7 +317,7 @@ extension UInt{
         }
     }
     /// Get bit 4 value
-    public func b4Value()->UInt{
+    public var b4:UInt{
         if(Int.size == 8){
             return UInt( (self.toU64 & (0x1 << 4)) >> 4 )
         } else {
@@ -334,7 +334,7 @@ extension UInt{
         }
     }
     /// Get bit 5 value
-    public func b5Value()->UInt{
+    public var b5:UInt{
         if(Int.size == 8){
             return UInt( (self.toU64 & (0x1 << 5)) >> 5 )
         } else {
@@ -351,7 +351,7 @@ extension UInt{
         }
     }
     /// Get bit 6 value
-    public func b6Value()->UInt{
+    public var b6:UInt{
         if(Int.size == 8){
             return UInt( (self.toU64 & (0x1 << 6)) >> 6 )
         } else {
@@ -368,7 +368,7 @@ extension UInt{
         }
     }
     /// Get bit 7 value
-    public func b7Value()->UInt{
+    public var b7:UInt{
         if(Int.size == 8){
             return UInt( (self.toU64 & (0x1 << 7)) >> 7 )
         } else {
@@ -444,7 +444,7 @@ extension Int8 {
     public static var size:Int{return strideof(self)}
 
     /// Get bit 0 value
-    public func b0Value()->Int8{
+    public var b0:Int8{
         return ( (self.toU8 & (0x1 << 0)) >> 0 ).to8
     }
     /// Set bit 0 and return a new Int
@@ -453,7 +453,7 @@ extension Int8 {
         return ( (self.toU8 & ~(0x1 << 0)) | (nv.toU8 << 0) ).to8
     }
     /// Get bit 1 value
-    public func b1Value()->Int8{
+    public var b1:Int8{
         return ( (self.toU8 & (0x1 << 1)) >> 1 ).to8
     }
     /// Set bit 1 and return a new Int
@@ -462,7 +462,7 @@ extension Int8 {
         return ( (self.toU8 & ~(0x1 << 1)) | (nv.toU8 << 1) ).to8
     }
     /// Get bit 2 value
-    public func b2Value()->Int8{
+    public var b2:Int8{
         return ( (self.toU8 & (0x1 << 2)) >> 2 ).to8
     }
     /// Set bit 2 and return a new Int
@@ -471,7 +471,7 @@ extension Int8 {
         return ( (self.toU8 & ~(0x1 << 2)) | (nv.toU8 << 2) ).to8
     }
     /// Get bit 3 value
-    public func b3Value()->Int8{
+    public var b3:Int8{
         return ( (self.toU8 & (0x1 << 3)) >> 3 ).to8
     }
     /// Set bit 3 and return a new Int
@@ -480,7 +480,7 @@ extension Int8 {
         return ( (self.toU8 & ~(0x1 << 3)) | (nv.toU8 << 3) ).to8
     }
     /// Get bit 4 value
-    public func b4Value()->Int8{
+    public var b4:Int8{
         return ( (self.toU8 & (0x1 << 4)) >> 4 ).to8
     }
     /// Set bit 4 and return a new Int
@@ -489,7 +489,7 @@ extension Int8 {
         return ( (self.toU8 & ~(0x1 << 4)) | (nv.toU8 << 4) ).to8
     }
     /// Get bit 5 value
-    public func b5Value()->Int8{
+    public var b5:Int8{
         return ( (self.toU8 & (0x1 << 5)) >> 5 ).to8
     }
     /// Set bit 5 and return a new Int
@@ -498,7 +498,7 @@ extension Int8 {
         return ( (self.toU8 & ~(0x1 << 5)) | (nv.toU8 << 5) ).to8
     }
     /// Get bit 6 value
-    public func b6Value()->Int8{
+    public var b6:Int8{
         return ( (self.toU8 & (0x1 << 6)) >> 6 ).to8
     }
     /// Set bit 6 and return a new Int
@@ -507,7 +507,7 @@ extension Int8 {
         return ( (self.toU8 & ~(0x1 << 6)) | (nv.toU8 << 6) ).to8
     }
     /// Get bit 7 value
-    public func b7Value()->Int8{
+    public var b7:Int8{
         return ( (self.toU8 & (0x1 << 7)) >> 7 ).to8
     }
     /// Set bit 7 and return a new Int
@@ -568,7 +568,7 @@ extension UInt8 {
     public static var size:Int{return strideof(self)}
 
     /// Get bit 0 value
-    public func b0Value()->UInt8{
+    public var b0:UInt8{
         return (self & (0x1 << 0)) >> 0
     }
     /// Set bit 0 and return a new UInt
@@ -577,7 +577,7 @@ extension UInt8 {
         return (self & ~(0x1 << 0)) | (nv.toU8 << 0)
     }
     /// Get bit 1 value
-    public func b1Value()->UInt8{
+    public var b1:UInt8{
         return (self & (0x1 << 1)) >> 1
     }
     /// Set bit 1 and return a new UInt
@@ -586,7 +586,7 @@ extension UInt8 {
         return (self & ~(0x1 << 1)) | (nv.toU8 << 1)
     }
     /// Get bit 2 value
-    public func b2Value()->UInt8{
+    public var b2:UInt8{
         return (self & (0x1 << 2)) >> 2
     }
     /// Set bit 2 and return a new UInt
@@ -595,7 +595,7 @@ extension UInt8 {
         return (self & ~(0x1 << 2)) | (nv.toU8 << 2)
     }
     /// Get bit 3 value
-    public func b3Value()->UInt8{
+    public var b3:UInt8{
         return (self & (0x1 << 3)) >> 3
     }
     /// Set bit 3 and return a new UInt
@@ -604,7 +604,7 @@ extension UInt8 {
         return (self & ~(0x1 << 3)) | (nv.toU8 << 3)
     }
     /// Get bit 4 value
-    public func b4Value()->UInt8{
+    public var b4:UInt8{
         return (self & (0x1 << 4)) >> 4
     }
     /// Set bit 4 and return a new UInt
@@ -613,7 +613,7 @@ extension UInt8 {
         return (self & ~(0x1 << 4)) | (nv.toU8 << 4)
     }
     /// Get bit 5 value
-    public func b5Value()->UInt8{
+    public var b5:UInt8{
         return (self & (0x1 << 5)) >> 5
     }
     /// Set bit 5 and return a new UInt
@@ -622,7 +622,7 @@ extension UInt8 {
         return (self & ~(0x1 << 5)) | (nv.toU8 << 5)
     }
     /// Get bit 6 value
-    public func b6Value()->UInt8{
+    public var b6:UInt8{
         return (self & (0x1 << 6)) >> 6
     }
     /// Set bit 6 and return a new UInt
@@ -631,7 +631,7 @@ extension UInt8 {
         return (self & ~(0x1 << 6)) | (nv.toU8 << 6)
     }
     /// Get bit 7 value
-    public func b7Value()->UInt8{
+    public var b7:UInt8{
         return (self & (0x1 << 7)) >> 7
     }
     /// Set bit 7 and return a new UInt
@@ -692,7 +692,7 @@ extension Int16 {
     public static var size:Int{return strideof(self)}
 
     /// Get bit 0 value
-    public func b0Value()->Int16{
+    public var b0:Int16{
         return ( (self.toU16 & (0x1 << 0)) >> 0 ).to16
     }
     /// Set bit 0 and return a new Int
@@ -701,7 +701,7 @@ extension Int16 {
         return ( (self.toU16 & ~(0x1 << 0)) | (nv.toU16 << 0) ).to16
     }
     /// Get bit 1 value
-    public func b1Value()->Int16{
+    public var b1:Int16{
         return ( (self.toU16 & (0x1 << 1)) >> 1 ).to16
     }
     /// Set bit 1 and return a new Int
@@ -710,7 +710,7 @@ extension Int16 {
         return ( (self.toU16 & ~(0x1 << 1)) | (nv.toU16 << 1) ).to16
     }
     /// Get bit 2 value
-    public func b2Value()->Int16{
+    public var b2:Int16{
         return ( (self.toU16 & (0x1 << 2)) >> 2 ).to16
     }
     /// Set bit 2 and return a new Int
@@ -719,7 +719,7 @@ extension Int16 {
         return ( (self.toU16 & ~(0x1 << 2)) | (nv.toU16 << 2) ).to16
     }
     /// Get bit 3 value
-    public func b3Value()->Int16{
+    public var b3:Int16{
         return ( (self.toU16 & (0x1 << 3)) >> 3 ).to16
     }
     /// Set bit 3 and return a new Int
@@ -728,7 +728,7 @@ extension Int16 {
         return ( (self.toU16 & ~(0x1 << 3)) | (nv.toU16 << 3) ).to16
     }
     /// Get bit 4 value
-    public func b4Value()->Int16{
+    public var b4:Int16{
         return ( (self.toU16 & (0x1 << 4)) >> 4 ).to16
     }
     /// Set bit 4 and return a new Int
@@ -737,7 +737,7 @@ extension Int16 {
         return ( (self.toU16 & ~(0x1 << 4)) | (nv.toU16 << 4) ).to16
     }
     /// Get bit 5 value
-    public func b5Value()->Int16{
+    public var b5:Int16{
         return ( (self.toU16 & (0x1 << 5)) >> 5 ).to16
     }
     /// Set bit 5 and return a new Int
@@ -746,7 +746,7 @@ extension Int16 {
         return ( (self.toU16 & ~(0x1 << 5)) | (nv.toU16 << 5) ).to16
     }
     /// Get bit 6 value
-    public func b6Value()->Int16{
+    public var b6:Int16{
         return ( (self.toU16 & (0x1 << 6)) >> 6 ).to16
     }
     /// Set bit 6 and return a new Int
@@ -755,7 +755,7 @@ extension Int16 {
         return ( (self.toU16 & ~(0x1 << 6)) | (nv.toU16 << 6) ).to16
     }
     /// Get bit 7 value
-    public func b7Value()->Int16{
+    public var b7:Int16{
         return ( (self.toU16 & (0x1 << 7)) >> 7 ).to16
     }
     /// Set bit 7 and return a new Int
@@ -816,7 +816,7 @@ extension UInt16 {
     public static var size:Int{return strideof(self)}
 
     /// Get bit 0 value
-    public func b0Value()->UInt16{
+    public var b0:UInt16{
         return (self & (0x1 << 0)) >> 0
     }
     /// Set bit 0 and return a new UInt
@@ -825,7 +825,7 @@ extension UInt16 {
         return (self & ~(0x1 << 0)) | (nv.toU16 << 0)
     }
     /// Get bit 1 value
-    public func b1Value()->UInt16{
+    public var b1:UInt16{
         return (self & (0x1 << 1)) >> 1
     }
     /// Set bit 1 and return a new UInt
@@ -834,7 +834,7 @@ extension UInt16 {
         return (self & ~(0x1 << 1)) | (nv.toU16 << 1)
     }
     /// Get bit 2 value
-    public func b2Value()->UInt16{
+    public var b2:UInt16{
         return (self & (0x1 << 2)) >> 2
     }
     /// Set bit 2 and return a new UInt
@@ -843,7 +843,7 @@ extension UInt16 {
         return (self & ~(0x1 << 2)) | (nv.toU16 << 2)
     }
     /// Get bit 3 value
-    public func b3Value()->UInt16{
+    public var b3:UInt16{
         return (self & (0x1 << 3)) >> 3
     }
     /// Set bit 3 and return a new UInt
@@ -852,7 +852,7 @@ extension UInt16 {
         return (self & ~(0x1 << 3)) | (nv.toU16 << 3)
     }
     /// Get bit 4 value
-    public func b4Value()->UInt16{
+    public var b4:UInt16{
         return (self & (0x1 << 4)) >> 4
     }
     /// Set bit 4 and return a new UInt
@@ -861,7 +861,7 @@ extension UInt16 {
         return (self & ~(0x1 << 4)) | (nv.toU16 << 4)
     }
     /// Get bit 5 value
-    public func b5Value()->UInt16{
+    public var b5:UInt16{
         return (self & (0x1 << 5)) >> 5
     }
     /// Set bit 5 and return a new UInt
@@ -870,7 +870,7 @@ extension UInt16 {
         return (self & ~(0x1 << 5)) | (nv.toU16 << 5)
     }
     /// Get bit 6 value
-    public func b6Value()->UInt16{
+    public var b6:UInt16{
         return (self & (0x1 << 6)) >> 6
     }
     /// Set bit 6 and return a new UInt
@@ -879,7 +879,7 @@ extension UInt16 {
         return (self & ~(0x1 << 6)) | (nv.toU16 << 6)
     }
     /// Get bit 7 value
-    public func b7Value()->UInt16{
+    public var b7:UInt16{
         return (self & (0x1 << 7)) >> 7
     }
     /// Set bit 7 and return a new UInt
@@ -940,7 +940,7 @@ extension Int32 {
     public static var size:Int{return strideof(self)}
 
     /// Get bit 0 value
-    public func b0Value()->Int32{
+    public var b0:Int32{
         return ( (self.toU32 & (0x1 << 0)) >> 0 ).to32
     }
     /// Set bit 0 and return a new Int
@@ -949,7 +949,7 @@ extension Int32 {
         return ( (self.toU32 & ~(0x1 << 0)) | (nv.toU32 << 0) ).to32
     }
     /// Get bit 1 value
-    public func b1Value()->Int32{
+    public var b1:Int32{
         return ( (self.toU32 & (0x1 << 1)) >> 1 ).to32
     }
     /// Set bit 1 and return a new Int
@@ -958,7 +958,7 @@ extension Int32 {
         return ( (self.toU32 & ~(0x1 << 1)) | (nv.toU32 << 1) ).to32
     }
     /// Get bit 2 value
-    public func b2Value()->Int32{
+    public var b2:Int32{
         return ( (self.toU32 & (0x1 << 2)) >> 2 ).to32
     }
     /// Set bit 2 and return a new Int
@@ -967,7 +967,7 @@ extension Int32 {
         return ( (self.toU32 & ~(0x1 << 2)) | (nv.toU32 << 2) ).to32
     }
     /// Get bit 3 value
-    public func b3Value()->Int32{
+    public var b3:Int32{
         return ( (self.toU32 & (0x1 << 3)) >> 3 ).to32
     }
     /// Set bit 3 and return a new Int
@@ -976,7 +976,7 @@ extension Int32 {
         return ( (self.toU32 & ~(0x1 << 3)) | (nv.toU32 << 3) ).to32
     }
     /// Get bit 4 value
-    public func b4Value()->Int32{
+    public var b4:Int32{
         return ( (self.toU32 & (0x1 << 4)) >> 4 ).to32
     }
     /// Set bit 4 and return a new Int
@@ -985,7 +985,7 @@ extension Int32 {
         return ( (self.toU32 & ~(0x1 << 4)) | (nv.toU32 << 4) ).to32
     }
     /// Get bit 5 value
-    public func b5Value()->Int32{
+    public var b5:Int32{
         return ( (self.toU32 & (0x1 << 5)) >> 5 ).to32
     }
     /// Set bit 5 and return a new Int
@@ -994,7 +994,7 @@ extension Int32 {
         return ( (self.toU32 & ~(0x1 << 5)) | (nv.toU32 << 5) ).to32
     }
     /// Get bit 6 value
-    public func b6Value()->Int32{
+    public var b6:Int32{
         return ( (self.toU32 & (0x1 << 6)) >> 6 ).to32
     }
     /// Set bit 6 and return a new Int
@@ -1003,7 +1003,7 @@ extension Int32 {
         return ( (self.toU32 & ~(0x1 << 6)) | (nv.toU32 << 6) ).to32
     }
     /// Get bit 7 value
-    public func b7Value()->Int32{
+    public var b7:Int32{
         return ( (self.toU32 & (0x1 << 7)) >> 7 ).to32
     }
     /// Set bit 7 and return a new Int
@@ -1064,7 +1064,7 @@ extension UInt32 {
     public static var size:Int{return strideof(self)}
 
     /// Get bit 0 value
-    public func b0Value()->UInt32{
+    public var b0:UInt32{
         return (self & (0x1 << 0)) >> 0
     }
     /// Set bit 0 and return a new UInt
@@ -1073,7 +1073,7 @@ extension UInt32 {
         return (self & ~(0x1 << 0)) | (nv.toU32 << 0)
     }
     /// Get bit 1 value
-    public func b1Value()->UInt32{
+    public var b1:UInt32{
         return (self & (0x1 << 1)) >> 1
     }
     /// Set bit 1 and return a new UInt
@@ -1082,7 +1082,7 @@ extension UInt32 {
         return (self & ~(0x1 << 1)) | (nv.toU32 << 1)
     }
     /// Get bit 2 value
-    public func b2Value()->UInt32{
+    public var b2:UInt32{
         return (self & (0x1 << 2)) >> 2
     }
     /// Set bit 2 and return a new UInt
@@ -1091,7 +1091,7 @@ extension UInt32 {
         return (self & ~(0x1 << 2)) | (nv.toU32 << 2)
     }
     /// Get bit 3 value
-    public func b3Value()->UInt32{
+    public var b3:UInt32{
         return (self & (0x1 << 3)) >> 3
     }
     /// Set bit 3 and return a new UInt
@@ -1100,7 +1100,7 @@ extension UInt32 {
         return (self & ~(0x1 << 3)) | (nv.toU32 << 3)
     }
     /// Get bit 4 value
-    public func b4Value()->UInt32{
+    public var b4:UInt32{
         return (self & (0x1 << 4)) >> 4
     }
     /// Set bit 4 and return a new UInt
@@ -1109,7 +1109,7 @@ extension UInt32 {
         return (self & ~(0x1 << 4)) | (nv.toU32 << 4)
     }
     /// Get bit 5 value
-    public func b5Value()->UInt32{
+    public var b5:UInt32{
         return (self & (0x1 << 5)) >> 5
     }
     /// Set bit 5 and return a new UInt
@@ -1118,7 +1118,7 @@ extension UInt32 {
         return (self & ~(0x1 << 5)) | (nv.toU32 << 5)
     }
     /// Get bit 6 value
-    public func b6Value()->UInt32{
+    public var b6:UInt32{
         return (self & (0x1 << 6)) >> 6
     }
     /// Set bit 6 and return a new UInt
@@ -1127,7 +1127,7 @@ extension UInt32 {
         return (self & ~(0x1 << 6)) | (nv.toU32 << 6)
     }
     /// Get bit 7 value
-    public func b7Value()->UInt32{
+    public var b7:UInt32{
         return (self & (0x1 << 7)) >> 7
     }
     /// Set bit 7 and return a new UInt
@@ -1188,7 +1188,7 @@ extension Int64 {
     public static var size:Int{return strideof(self)}
 
     /// Get bit 0 value
-    public func b0Value()->Int64{
+    public var b0:Int64{
         return ( (self.toU64 & (0x1 << 0)) >> 0 ).to64
     }
     /// Set bit 0 and return a new Int
@@ -1197,7 +1197,7 @@ extension Int64 {
         return ( (self.toU64 & ~(0x1 << 0)) | (nv.toU64 << 0) ).to64
     }
     /// Get bit 1 value
-    public func b1Value()->Int64{
+    public var b1:Int64{
         return ( (self.toU64 & (0x1 << 1)) >> 1 ).to64
     }
     /// Set bit 1 and return a new Int
@@ -1206,7 +1206,7 @@ extension Int64 {
         return ( (self.toU64 & ~(0x1 << 1)) | (nv.toU64 << 1) ).to64
     }
     /// Get bit 2 value
-    public func b2Value()->Int64{
+    public var b2:Int64{
         return ( (self.toU64 & (0x1 << 2)) >> 2 ).to64
     }
     /// Set bit 2 and return a new Int
@@ -1215,7 +1215,7 @@ extension Int64 {
         return ( (self.toU64 & ~(0x1 << 2)) | (nv.toU64 << 2) ).to64
     }
     /// Get bit 3 value
-    public func b3Value()->Int64{
+    public var b3:Int64{
         return ( (self.toU64 & (0x1 << 3)) >> 3 ).to64
     }
     /// Set bit 3 and return a new Int
@@ -1224,7 +1224,7 @@ extension Int64 {
         return ( (self.toU64 & ~(0x1 << 3)) | (nv.toU64 << 3) ).to64
     }
     /// Get bit 4 value
-    public func b4Value()->Int64{
+    public var b4:Int64{
         return ( (self.toU64 & (0x1 << 4)) >> 4 ).to64
     }
     /// Set bit 4 and return a new Int
@@ -1233,7 +1233,7 @@ extension Int64 {
         return ( (self.toU64 & ~(0x1 << 4)) | (nv.toU64 << 4) ).to64
     }
     /// Get bit 5 value
-    public func b5Value()->Int64{
+    public var b5:Int64{
         return ( (self.toU64 & (0x1 << 5)) >> 5 ).to64
     }
     /// Set bit 5 and return a new Int
@@ -1242,7 +1242,7 @@ extension Int64 {
         return ( (self.toU64 & ~(0x1 << 5)) | (nv.toU64 << 5) ).to64
     }
     /// Get bit 6 value
-    public func b6Value()->Int64{
+    public var b6:Int64{
         return ( (self.toU64 & (0x1 << 6)) >> 6 ).to64
     }
     /// Set bit 6 and return a new Int
@@ -1251,7 +1251,7 @@ extension Int64 {
         return ( (self.toU64 & ~(0x1 << 6)) | (nv.toU64 << 6) ).to64
     }
     /// Get bit 7 value
-    public func b7Value()->Int64{
+    public var b7:Int64{
         return ( (self.toU64 & (0x1 << 7)) >> 7 ).to64
     }
     /// Set bit 7 and return a new Int
@@ -1312,7 +1312,7 @@ extension UInt64 {
     public static var size:Int{return strideof(self)}
 
     /// Get bit 0 value
-    public func b0Value()->UInt64{
+    public var b0:UInt64{
         return (self & (0x1 << 0)) >> 0
     }
     /// Set bit 0 and return a new UInt
@@ -1321,7 +1321,7 @@ extension UInt64 {
         return (self & ~(0x1 << 0)) | (nv.toU64 << 0)
     }
     /// Get bit 1 value
-    public func b1Value()->UInt64{
+    public var b1:UInt64{
         return (self & (0x1 << 1)) >> 1
     }
     /// Set bit 1 and return a new UInt
@@ -1330,7 +1330,7 @@ extension UInt64 {
         return (self & ~(0x1 << 1)) | (nv.toU64 << 1)
     }
     /// Get bit 2 value
-    public func b2Value()->UInt64{
+    public var b2:UInt64{
         return (self & (0x1 << 2)) >> 2
     }
     /// Set bit 2 and return a new UInt
@@ -1339,7 +1339,7 @@ extension UInt64 {
         return (self & ~(0x1 << 2)) | (nv.toU64 << 2)
     }
     /// Get bit 3 value
-    public func b3Value()->UInt64{
+    public var b3:UInt64{
         return (self & (0x1 << 3)) >> 3
     }
     /// Set bit 3 and return a new UInt
@@ -1348,7 +1348,7 @@ extension UInt64 {
         return (self & ~(0x1 << 3)) | (nv.toU64 << 3)
     }
     /// Get bit 4 value
-    public func b4Value()->UInt64{
+    public var b4:UInt64{
         return (self & (0x1 << 4)) >> 4
     }
     /// Set bit 4 and return a new UInt
@@ -1357,7 +1357,7 @@ extension UInt64 {
         return (self & ~(0x1 << 4)) | (nv.toU64 << 4)
     }
     /// Get bit 5 value
-    public func b5Value()->UInt64{
+    public var b5:UInt64{
         return (self & (0x1 << 5)) >> 5
     }
     /// Set bit 5 and return a new UInt
@@ -1366,7 +1366,7 @@ extension UInt64 {
         return (self & ~(0x1 << 5)) | (nv.toU64 << 5)
     }
     /// Get bit 6 value
-    public func b6Value()->UInt64{
+    public var b6:UInt64{
         return (self & (0x1 << 6)) >> 6
     }
     /// Set bit 6 and return a new UInt
@@ -1375,7 +1375,7 @@ extension UInt64 {
         return (self & ~(0x1 << 6)) | (nv.toU64 << 6)
     }
     /// Get bit 7 value
-    public func b7Value()->UInt64{
+    public var b7:UInt64{
         return (self & (0x1 << 7)) >> 7
     }
     /// Set bit 7 and return a new UInt

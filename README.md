@@ -123,20 +123,20 @@ The subscript index start from the LSB to the MSB for little endian multi-byte I
 
 #### Modifying specific bits
 
-Every Int type, signed or not, gains 8 pair of functions that allow to set or get a single bit in the first byte of the integer. They are supposed to be used in tandem with the byte subscript:
+Every Int type, signed or not, gains 8 properties and 8 functions that allow to set or get a single bit in the first byte of the integer. They are supposed to be used in tandem with the byte subscript:
 
 ```swift
 var i:UInt32 = 0xAABBCCDD
-i[2].b2Value() //0
-i[2].b3Value() //1
+i[2].b2 //0
+i[2].b3 //1
 
 i[2] = i[2].b2(1).b3(0)
-i[2].b2Value() //1
-i[2].b3Value() //0
+i[2].b2 //1
+i[2].b3 //0
 ```
-The `.getbNValue()` functions return the value of the bit at the specific position, while the `.bN(value)` functions set a specific bit in a integer (the indexes refer to the 8 less significant bits) and return the modified 8 bits integer (if used on integers with content larger than 8 bits, the rest is truncated).
+The `.bN` property returns the value of the bit at the specific position, while the `.bN(value)` function sets a specific bit in a integer (the indexes refer to the 8 less significant bits) and return the modified 8 bits integer (if used on integers with content larger than 8 bits, the rest is truncated).
 
-Considering that every `bN(value)` function returns a new integer, these functions can be concatenated to modify more than one bit. This function can be used in conjunction with byte indexed subscripts as shown above where on the right side we build a new byte value for the position 2 of the array that will be then assigned to the same position of the same array.
+Considering that every `.bN(value)` function returns a new integer, these functions can be concatenated to modify more than one bit. This function can be used in conjunction with byte indexed subscripts as shown above where on the right side we build a new byte value for the position 2 of the array that will be then assigned to the same position of the same array.
 
 #### Other functionalities
 
