@@ -148,6 +148,10 @@ Bitter also adds a few other extensions to Int types:
 
 * `.allOnes` static property: We already have `.allZeros` in `BitwiseOperationsType`, now we have this too.
 
+#### Bitwise operations
+
+To learn more about bitwise operations in Swift, see the article "[Dealing with Bit Sets in Swift](https://www.uraimo.com/2016/02/05/Dealing-With-Bit-Sets-In-Swift/)" on my blog.
+
 ## TODO
 
 - [x] Test for each functionality (XCTest ok, Quick better)
