@@ -29,8 +29,8 @@ With this:
 let tmp = i[2] // Let's swap the 2nd and 3rd byte!
 i[2] = i[1]
 i[1] = tmp 
-i[1] = i[1].b3(1) // Set the 4th bit of the 2nd byte
-i[1] = i[1].b3(0).b4(1).b5(0).b6(1) // Let's set some other bit
+i[1] = i[1].setb3(1) // Set the 4th bit of the 2nd byte
+i[1] = i[1].setb3(0).setb4(1).setb5(0).setb6(1) // Let's set some other bit
 ```
 
 
@@ -130,13 +130,13 @@ var i:UInt32 = 0xAABBCCDD
 i[2].b2 //0
 i[2].b3 //1
 
-i[2] = i[2].b2(1).b3(0)
+i[2] = i[2].setb2(1).setb3(0)
 i[2].b2 //1
 i[2].b3 //0
 ```
-The `.bN` property returns the value of the bit at the specific position, while the `.bN(value)` function sets a specific bit in a integer (the indexes refer to the 8 less significant bits) and return the modified 8 bits integer (if used on integers with content larger than 8 bits, the rest is truncated).
+The `.bN` property returns the value of the bit at the specific position, while the `.setbN(value)` function sets a specific bit in a integer (the indexes refer to the 8 less significant bits) and return the modified 8 bits integer (if used on integers with content larger than 8 bits, the rest is truncated).
 
-Considering that every `.bN(value)` function returns a new integer, these functions can be concatenated to modify more than one bit. This function can be used in conjunction with byte indexed subscripts as shown above where on the right side we build a new byte value for the position 2 of the array that will be then assigned to the same position of the same array.
+Considering that every `.setbN(value)` function returns a new integer, these functions can be concatenated to modify more than one bit. This function can be used in conjunction with byte indexed subscripts as shown above where on the right side we build a new byte value for the position 2 of the array that will be then assigned to the same position of the same array.
 
 #### Other functionalities
 
@@ -164,11 +164,5 @@ Modifying .gyb templates requires minimal knowledge of python and GYB itself pro
 
 When your template has an error, GYB will show the specific line where the error occurred, remove `--line-directive ''` from the compile script to enable this debug mode.
 
-## TODO
 
-- [x] Test for each functionality (XCTest ok, Quick better)
-- [x] Reduce code duplication converting part of the source to .gyb templates
-- [x] Proper documentation using gyb
-- [ ] Converting the tests to gyb?
-- [ ] Additional functionalities?
-- [ ] Example project?
+

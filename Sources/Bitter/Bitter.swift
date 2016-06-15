@@ -57,7 +57,7 @@ extension Int{
         }
     }
     /// Set bit 0 and return a new Int
-    public func b0(bit:Int)->Int{
+    public func setb0(bit:Int)->Int{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 0)) | (nv.toU64 << 0) ))
@@ -74,7 +74,7 @@ extension Int{
         }
     }
     /// Set bit 1 and return a new Int
-    public func b1(bit:Int)->Int{
+    public func setb1(bit:Int)->Int{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 1)) | (nv.toU64 << 1) ))
@@ -91,7 +91,7 @@ extension Int{
         }
     }
     /// Set bit 2 and return a new Int
-    public func b2(bit:Int)->Int{
+    public func setb2(bit:Int)->Int{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 2)) | (nv.toU64 << 2) ))
@@ -108,7 +108,7 @@ extension Int{
         }
     }
     /// Set bit 3 and return a new Int
-    public func b3(bit:Int)->Int{
+    public func setb3(bit:Int)->Int{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 3)) | (nv.toU64 << 3) ))
@@ -125,7 +125,7 @@ extension Int{
         }
     }
     /// Set bit 4 and return a new Int
-    public func b4(bit:Int)->Int{
+    public func setb4(bit:Int)->Int{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 4)) | (nv.toU64 << 4) ))
@@ -142,7 +142,7 @@ extension Int{
         }
     }
     /// Set bit 5 and return a new Int
-    public func b5(bit:Int)->Int{
+    public func setb5(bit:Int)->Int{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 5)) | (nv.toU64 << 5) ))
@@ -159,7 +159,7 @@ extension Int{
         }
     }
     /// Set bit 6 and return a new Int
-    public func b6(bit:Int)->Int{
+    public func setb6(bit:Int)->Int{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 6)) | (nv.toU64 << 6) ))
@@ -176,7 +176,7 @@ extension Int{
         }
     }
     /// Set bit 7 and return a new Int
-    public func b7(bit:Int)->Int{
+    public func setb7(bit:Int)->Int{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 7)) | (nv.toU64 << 7) ))
@@ -257,7 +257,7 @@ extension UInt{
         }
     }
     /// Set bit 0 and return a new UInt
-    public func b0(bit:Int)->UInt{
+    public func setb0(bit:Int)->UInt{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return UInt( (self.toU64 & ~(0x1 << 0)) | (nv.toU64 << 0) )
@@ -274,7 +274,7 @@ extension UInt{
         }
     }
     /// Set bit 1 and return a new UInt
-    public func b1(bit:Int)->UInt{
+    public func setb1(bit:Int)->UInt{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return UInt( (self.toU64 & ~(0x1 << 1)) | (nv.toU64 << 1) )
@@ -291,7 +291,7 @@ extension UInt{
         }
     }
     /// Set bit 2 and return a new UInt
-    public func b2(bit:Int)->UInt{
+    public func setb2(bit:Int)->UInt{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return UInt( (self.toU64 & ~(0x1 << 2)) | (nv.toU64 << 2) )
@@ -308,7 +308,7 @@ extension UInt{
         }
     }
     /// Set bit 3 and return a new UInt
-    public func b3(bit:Int)->UInt{
+    public func setb3(bit:Int)->UInt{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return UInt( (self.toU64 & ~(0x1 << 3)) | (nv.toU64 << 3) )
@@ -325,7 +325,7 @@ extension UInt{
         }
     }
     /// Set bit 4 and return a new UInt
-    public func b4(bit:Int)->UInt{
+    public func setb4(bit:Int)->UInt{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return UInt( (self.toU64 & ~(0x1 << 4)) | (nv.toU64 << 4) )
@@ -342,7 +342,7 @@ extension UInt{
         }
     }
     /// Set bit 5 and return a new UInt
-    public func b5(bit:Int)->UInt{
+    public func setb5(bit:Int)->UInt{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return UInt( (self.toU64 & ~(0x1 << 5)) | (nv.toU64 << 5) )
@@ -359,7 +359,7 @@ extension UInt{
         }
     }
     /// Set bit 6 and return a new UInt
-    public func b6(bit:Int)->UInt{
+    public func setb6(bit:Int)->UInt{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return UInt( (self.toU64 & ~(0x1 << 6)) | (nv.toU64 << 6) )
@@ -376,7 +376,7 @@ extension UInt{
         }
     }
     /// Set bit 7 and return a new UInt
-    public func b7(bit:Int)->UInt{
+    public func setb7(bit:Int)->UInt{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return UInt( (self.toU64 & ~(0x1 << 7)) | (nv.toU64 << 7) )
@@ -448,7 +448,7 @@ extension Int8 {
         return ( (self.toU8 & (0x1 << 0)) >> 0 ).to8
     }
     /// Set bit 0 and return a new Int
-    public func b0(bit:Int)->Int8{
+    public func setb0(bit:Int)->Int8{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU8 & ~(0x1 << 0)) | (nv.toU8 << 0) ).to8
     }
@@ -457,7 +457,7 @@ extension Int8 {
         return ( (self.toU8 & (0x1 << 1)) >> 1 ).to8
     }
     /// Set bit 1 and return a new Int
-    public func b1(bit:Int)->Int8{
+    public func setb1(bit:Int)->Int8{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU8 & ~(0x1 << 1)) | (nv.toU8 << 1) ).to8
     }
@@ -466,7 +466,7 @@ extension Int8 {
         return ( (self.toU8 & (0x1 << 2)) >> 2 ).to8
     }
     /// Set bit 2 and return a new Int
-    public func b2(bit:Int)->Int8{
+    public func setb2(bit:Int)->Int8{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU8 & ~(0x1 << 2)) | (nv.toU8 << 2) ).to8
     }
@@ -475,7 +475,7 @@ extension Int8 {
         return ( (self.toU8 & (0x1 << 3)) >> 3 ).to8
     }
     /// Set bit 3 and return a new Int
-    public func b3(bit:Int)->Int8{
+    public func setb3(bit:Int)->Int8{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU8 & ~(0x1 << 3)) | (nv.toU8 << 3) ).to8
     }
@@ -484,7 +484,7 @@ extension Int8 {
         return ( (self.toU8 & (0x1 << 4)) >> 4 ).to8
     }
     /// Set bit 4 and return a new Int
-    public func b4(bit:Int)->Int8{
+    public func setb4(bit:Int)->Int8{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU8 & ~(0x1 << 4)) | (nv.toU8 << 4) ).to8
     }
@@ -493,7 +493,7 @@ extension Int8 {
         return ( (self.toU8 & (0x1 << 5)) >> 5 ).to8
     }
     /// Set bit 5 and return a new Int
-    public func b5(bit:Int)->Int8{
+    public func setb5(bit:Int)->Int8{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU8 & ~(0x1 << 5)) | (nv.toU8 << 5) ).to8
     }
@@ -502,7 +502,7 @@ extension Int8 {
         return ( (self.toU8 & (0x1 << 6)) >> 6 ).to8
     }
     /// Set bit 6 and return a new Int
-    public func b6(bit:Int)->Int8{
+    public func setb6(bit:Int)->Int8{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU8 & ~(0x1 << 6)) | (nv.toU8 << 6) ).to8
     }
@@ -511,7 +511,7 @@ extension Int8 {
         return ( (self.toU8 & (0x1 << 7)) >> 7 ).to8
     }
     /// Set bit 7 and return a new Int
-    public func b7(bit:Int)->Int8{
+    public func setb7(bit:Int)->Int8{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU8 & ~(0x1 << 7)) | (nv.toU8 << 7) ).to8
     }
@@ -572,7 +572,7 @@ extension UInt8 {
         return (self & (0x1 << 0)) >> 0
     }
     /// Set bit 0 and return a new UInt
-    public func b0(bit:Int)->UInt8{
+    public func setb0(bit:Int)->UInt8{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 0)) | (nv.toU8 << 0)
     }
@@ -581,7 +581,7 @@ extension UInt8 {
         return (self & (0x1 << 1)) >> 1
     }
     /// Set bit 1 and return a new UInt
-    public func b1(bit:Int)->UInt8{
+    public func setb1(bit:Int)->UInt8{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 1)) | (nv.toU8 << 1)
     }
@@ -590,7 +590,7 @@ extension UInt8 {
         return (self & (0x1 << 2)) >> 2
     }
     /// Set bit 2 and return a new UInt
-    public func b2(bit:Int)->UInt8{
+    public func setb2(bit:Int)->UInt8{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 2)) | (nv.toU8 << 2)
     }
@@ -599,7 +599,7 @@ extension UInt8 {
         return (self & (0x1 << 3)) >> 3
     }
     /// Set bit 3 and return a new UInt
-    public func b3(bit:Int)->UInt8{
+    public func setb3(bit:Int)->UInt8{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 3)) | (nv.toU8 << 3)
     }
@@ -608,7 +608,7 @@ extension UInt8 {
         return (self & (0x1 << 4)) >> 4
     }
     /// Set bit 4 and return a new UInt
-    public func b4(bit:Int)->UInt8{
+    public func setb4(bit:Int)->UInt8{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 4)) | (nv.toU8 << 4)
     }
@@ -617,7 +617,7 @@ extension UInt8 {
         return (self & (0x1 << 5)) >> 5
     }
     /// Set bit 5 and return a new UInt
-    public func b5(bit:Int)->UInt8{
+    public func setb5(bit:Int)->UInt8{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 5)) | (nv.toU8 << 5)
     }
@@ -626,7 +626,7 @@ extension UInt8 {
         return (self & (0x1 << 6)) >> 6
     }
     /// Set bit 6 and return a new UInt
-    public func b6(bit:Int)->UInt8{
+    public func setb6(bit:Int)->UInt8{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 6)) | (nv.toU8 << 6)
     }
@@ -635,7 +635,7 @@ extension UInt8 {
         return (self & (0x1 << 7)) >> 7
     }
     /// Set bit 7 and return a new UInt
-    public func b7(bit:Int)->UInt8{
+    public func setb7(bit:Int)->UInt8{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 7)) | (nv.toU8 << 7)
     }
@@ -696,7 +696,7 @@ extension Int16 {
         return ( (self.toU16 & (0x1 << 0)) >> 0 ).to16
     }
     /// Set bit 0 and return a new Int
-    public func b0(bit:Int)->Int16{
+    public func setb0(bit:Int)->Int16{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU16 & ~(0x1 << 0)) | (nv.toU16 << 0) ).to16
     }
@@ -705,7 +705,7 @@ extension Int16 {
         return ( (self.toU16 & (0x1 << 1)) >> 1 ).to16
     }
     /// Set bit 1 and return a new Int
-    public func b1(bit:Int)->Int16{
+    public func setb1(bit:Int)->Int16{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU16 & ~(0x1 << 1)) | (nv.toU16 << 1) ).to16
     }
@@ -714,7 +714,7 @@ extension Int16 {
         return ( (self.toU16 & (0x1 << 2)) >> 2 ).to16
     }
     /// Set bit 2 and return a new Int
-    public func b2(bit:Int)->Int16{
+    public func setb2(bit:Int)->Int16{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU16 & ~(0x1 << 2)) | (nv.toU16 << 2) ).to16
     }
@@ -723,7 +723,7 @@ extension Int16 {
         return ( (self.toU16 & (0x1 << 3)) >> 3 ).to16
     }
     /// Set bit 3 and return a new Int
-    public func b3(bit:Int)->Int16{
+    public func setb3(bit:Int)->Int16{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU16 & ~(0x1 << 3)) | (nv.toU16 << 3) ).to16
     }
@@ -732,7 +732,7 @@ extension Int16 {
         return ( (self.toU16 & (0x1 << 4)) >> 4 ).to16
     }
     /// Set bit 4 and return a new Int
-    public func b4(bit:Int)->Int16{
+    public func setb4(bit:Int)->Int16{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU16 & ~(0x1 << 4)) | (nv.toU16 << 4) ).to16
     }
@@ -741,7 +741,7 @@ extension Int16 {
         return ( (self.toU16 & (0x1 << 5)) >> 5 ).to16
     }
     /// Set bit 5 and return a new Int
-    public func b5(bit:Int)->Int16{
+    public func setb5(bit:Int)->Int16{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU16 & ~(0x1 << 5)) | (nv.toU16 << 5) ).to16
     }
@@ -750,7 +750,7 @@ extension Int16 {
         return ( (self.toU16 & (0x1 << 6)) >> 6 ).to16
     }
     /// Set bit 6 and return a new Int
-    public func b6(bit:Int)->Int16{
+    public func setb6(bit:Int)->Int16{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU16 & ~(0x1 << 6)) | (nv.toU16 << 6) ).to16
     }
@@ -759,7 +759,7 @@ extension Int16 {
         return ( (self.toU16 & (0x1 << 7)) >> 7 ).to16
     }
     /// Set bit 7 and return a new Int
-    public func b7(bit:Int)->Int16{
+    public func setb7(bit:Int)->Int16{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU16 & ~(0x1 << 7)) | (nv.toU16 << 7) ).to16
     }
@@ -820,7 +820,7 @@ extension UInt16 {
         return (self & (0x1 << 0)) >> 0
     }
     /// Set bit 0 and return a new UInt
-    public func b0(bit:Int)->UInt16{
+    public func setb0(bit:Int)->UInt16{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 0)) | (nv.toU16 << 0)
     }
@@ -829,7 +829,7 @@ extension UInt16 {
         return (self & (0x1 << 1)) >> 1
     }
     /// Set bit 1 and return a new UInt
-    public func b1(bit:Int)->UInt16{
+    public func setb1(bit:Int)->UInt16{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 1)) | (nv.toU16 << 1)
     }
@@ -838,7 +838,7 @@ extension UInt16 {
         return (self & (0x1 << 2)) >> 2
     }
     /// Set bit 2 and return a new UInt
-    public func b2(bit:Int)->UInt16{
+    public func setb2(bit:Int)->UInt16{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 2)) | (nv.toU16 << 2)
     }
@@ -847,7 +847,7 @@ extension UInt16 {
         return (self & (0x1 << 3)) >> 3
     }
     /// Set bit 3 and return a new UInt
-    public func b3(bit:Int)->UInt16{
+    public func setb3(bit:Int)->UInt16{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 3)) | (nv.toU16 << 3)
     }
@@ -856,7 +856,7 @@ extension UInt16 {
         return (self & (0x1 << 4)) >> 4
     }
     /// Set bit 4 and return a new UInt
-    public func b4(bit:Int)->UInt16{
+    public func setb4(bit:Int)->UInt16{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 4)) | (nv.toU16 << 4)
     }
@@ -865,7 +865,7 @@ extension UInt16 {
         return (self & (0x1 << 5)) >> 5
     }
     /// Set bit 5 and return a new UInt
-    public func b5(bit:Int)->UInt16{
+    public func setb5(bit:Int)->UInt16{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 5)) | (nv.toU16 << 5)
     }
@@ -874,7 +874,7 @@ extension UInt16 {
         return (self & (0x1 << 6)) >> 6
     }
     /// Set bit 6 and return a new UInt
-    public func b6(bit:Int)->UInt16{
+    public func setb6(bit:Int)->UInt16{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 6)) | (nv.toU16 << 6)
     }
@@ -883,7 +883,7 @@ extension UInt16 {
         return (self & (0x1 << 7)) >> 7
     }
     /// Set bit 7 and return a new UInt
-    public func b7(bit:Int)->UInt16{
+    public func setb7(bit:Int)->UInt16{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 7)) | (nv.toU16 << 7)
     }
@@ -944,7 +944,7 @@ extension Int32 {
         return ( (self.toU32 & (0x1 << 0)) >> 0 ).to32
     }
     /// Set bit 0 and return a new Int
-    public func b0(bit:Int)->Int32{
+    public func setb0(bit:Int)->Int32{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU32 & ~(0x1 << 0)) | (nv.toU32 << 0) ).to32
     }
@@ -953,7 +953,7 @@ extension Int32 {
         return ( (self.toU32 & (0x1 << 1)) >> 1 ).to32
     }
     /// Set bit 1 and return a new Int
-    public func b1(bit:Int)->Int32{
+    public func setb1(bit:Int)->Int32{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU32 & ~(0x1 << 1)) | (nv.toU32 << 1) ).to32
     }
@@ -962,7 +962,7 @@ extension Int32 {
         return ( (self.toU32 & (0x1 << 2)) >> 2 ).to32
     }
     /// Set bit 2 and return a new Int
-    public func b2(bit:Int)->Int32{
+    public func setb2(bit:Int)->Int32{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU32 & ~(0x1 << 2)) | (nv.toU32 << 2) ).to32
     }
@@ -971,7 +971,7 @@ extension Int32 {
         return ( (self.toU32 & (0x1 << 3)) >> 3 ).to32
     }
     /// Set bit 3 and return a new Int
-    public func b3(bit:Int)->Int32{
+    public func setb3(bit:Int)->Int32{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU32 & ~(0x1 << 3)) | (nv.toU32 << 3) ).to32
     }
@@ -980,7 +980,7 @@ extension Int32 {
         return ( (self.toU32 & (0x1 << 4)) >> 4 ).to32
     }
     /// Set bit 4 and return a new Int
-    public func b4(bit:Int)->Int32{
+    public func setb4(bit:Int)->Int32{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU32 & ~(0x1 << 4)) | (nv.toU32 << 4) ).to32
     }
@@ -989,7 +989,7 @@ extension Int32 {
         return ( (self.toU32 & (0x1 << 5)) >> 5 ).to32
     }
     /// Set bit 5 and return a new Int
-    public func b5(bit:Int)->Int32{
+    public func setb5(bit:Int)->Int32{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU32 & ~(0x1 << 5)) | (nv.toU32 << 5) ).to32
     }
@@ -998,7 +998,7 @@ extension Int32 {
         return ( (self.toU32 & (0x1 << 6)) >> 6 ).to32
     }
     /// Set bit 6 and return a new Int
-    public func b6(bit:Int)->Int32{
+    public func setb6(bit:Int)->Int32{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU32 & ~(0x1 << 6)) | (nv.toU32 << 6) ).to32
     }
@@ -1007,7 +1007,7 @@ extension Int32 {
         return ( (self.toU32 & (0x1 << 7)) >> 7 ).to32
     }
     /// Set bit 7 and return a new Int
-    public func b7(bit:Int)->Int32{
+    public func setb7(bit:Int)->Int32{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU32 & ~(0x1 << 7)) | (nv.toU32 << 7) ).to32
     }
@@ -1068,7 +1068,7 @@ extension UInt32 {
         return (self & (0x1 << 0)) >> 0
     }
     /// Set bit 0 and return a new UInt
-    public func b0(bit:Int)->UInt32{
+    public func setb0(bit:Int)->UInt32{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 0)) | (nv.toU32 << 0)
     }
@@ -1077,7 +1077,7 @@ extension UInt32 {
         return (self & (0x1 << 1)) >> 1
     }
     /// Set bit 1 and return a new UInt
-    public func b1(bit:Int)->UInt32{
+    public func setb1(bit:Int)->UInt32{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 1)) | (nv.toU32 << 1)
     }
@@ -1086,7 +1086,7 @@ extension UInt32 {
         return (self & (0x1 << 2)) >> 2
     }
     /// Set bit 2 and return a new UInt
-    public func b2(bit:Int)->UInt32{
+    public func setb2(bit:Int)->UInt32{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 2)) | (nv.toU32 << 2)
     }
@@ -1095,7 +1095,7 @@ extension UInt32 {
         return (self & (0x1 << 3)) >> 3
     }
     /// Set bit 3 and return a new UInt
-    public func b3(bit:Int)->UInt32{
+    public func setb3(bit:Int)->UInt32{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 3)) | (nv.toU32 << 3)
     }
@@ -1104,7 +1104,7 @@ extension UInt32 {
         return (self & (0x1 << 4)) >> 4
     }
     /// Set bit 4 and return a new UInt
-    public func b4(bit:Int)->UInt32{
+    public func setb4(bit:Int)->UInt32{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 4)) | (nv.toU32 << 4)
     }
@@ -1113,7 +1113,7 @@ extension UInt32 {
         return (self & (0x1 << 5)) >> 5
     }
     /// Set bit 5 and return a new UInt
-    public func b5(bit:Int)->UInt32{
+    public func setb5(bit:Int)->UInt32{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 5)) | (nv.toU32 << 5)
     }
@@ -1122,7 +1122,7 @@ extension UInt32 {
         return (self & (0x1 << 6)) >> 6
     }
     /// Set bit 6 and return a new UInt
-    public func b6(bit:Int)->UInt32{
+    public func setb6(bit:Int)->UInt32{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 6)) | (nv.toU32 << 6)
     }
@@ -1131,7 +1131,7 @@ extension UInt32 {
         return (self & (0x1 << 7)) >> 7
     }
     /// Set bit 7 and return a new UInt
-    public func b7(bit:Int)->UInt32{
+    public func setb7(bit:Int)->UInt32{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 7)) | (nv.toU32 << 7)
     }
@@ -1192,7 +1192,7 @@ extension Int64 {
         return ( (self.toU64 & (0x1 << 0)) >> 0 ).to64
     }
     /// Set bit 0 and return a new Int
-    public func b0(bit:Int)->Int64{
+    public func setb0(bit:Int)->Int64{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU64 & ~(0x1 << 0)) | (nv.toU64 << 0) ).to64
     }
@@ -1201,7 +1201,7 @@ extension Int64 {
         return ( (self.toU64 & (0x1 << 1)) >> 1 ).to64
     }
     /// Set bit 1 and return a new Int
-    public func b1(bit:Int)->Int64{
+    public func setb1(bit:Int)->Int64{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU64 & ~(0x1 << 1)) | (nv.toU64 << 1) ).to64
     }
@@ -1210,7 +1210,7 @@ extension Int64 {
         return ( (self.toU64 & (0x1 << 2)) >> 2 ).to64
     }
     /// Set bit 2 and return a new Int
-    public func b2(bit:Int)->Int64{
+    public func setb2(bit:Int)->Int64{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU64 & ~(0x1 << 2)) | (nv.toU64 << 2) ).to64
     }
@@ -1219,7 +1219,7 @@ extension Int64 {
         return ( (self.toU64 & (0x1 << 3)) >> 3 ).to64
     }
     /// Set bit 3 and return a new Int
-    public func b3(bit:Int)->Int64{
+    public func setb3(bit:Int)->Int64{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU64 & ~(0x1 << 3)) | (nv.toU64 << 3) ).to64
     }
@@ -1228,7 +1228,7 @@ extension Int64 {
         return ( (self.toU64 & (0x1 << 4)) >> 4 ).to64
     }
     /// Set bit 4 and return a new Int
-    public func b4(bit:Int)->Int64{
+    public func setb4(bit:Int)->Int64{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU64 & ~(0x1 << 4)) | (nv.toU64 << 4) ).to64
     }
@@ -1237,7 +1237,7 @@ extension Int64 {
         return ( (self.toU64 & (0x1 << 5)) >> 5 ).to64
     }
     /// Set bit 5 and return a new Int
-    public func b5(bit:Int)->Int64{
+    public func setb5(bit:Int)->Int64{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU64 & ~(0x1 << 5)) | (nv.toU64 << 5) ).to64
     }
@@ -1246,7 +1246,7 @@ extension Int64 {
         return ( (self.toU64 & (0x1 << 6)) >> 6 ).to64
     }
     /// Set bit 6 and return a new Int
-    public func b6(bit:Int)->Int64{
+    public func setb6(bit:Int)->Int64{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU64 & ~(0x1 << 6)) | (nv.toU64 << 6) ).to64
     }
@@ -1255,7 +1255,7 @@ extension Int64 {
         return ( (self.toU64 & (0x1 << 7)) >> 7 ).to64
     }
     /// Set bit 7 and return a new Int
-    public func b7(bit:Int)->Int64{
+    public func setb7(bit:Int)->Int64{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU64 & ~(0x1 << 7)) | (nv.toU64 << 7) ).to64
     }
@@ -1316,7 +1316,7 @@ extension UInt64 {
         return (self & (0x1 << 0)) >> 0
     }
     /// Set bit 0 and return a new UInt
-    public func b0(bit:Int)->UInt64{
+    public func setb0(bit:Int)->UInt64{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 0)) | (nv.toU64 << 0)
     }
@@ -1325,7 +1325,7 @@ extension UInt64 {
         return (self & (0x1 << 1)) >> 1
     }
     /// Set bit 1 and return a new UInt
-    public func b1(bit:Int)->UInt64{
+    public func setb1(bit:Int)->UInt64{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 1)) | (nv.toU64 << 1)
     }
@@ -1334,7 +1334,7 @@ extension UInt64 {
         return (self & (0x1 << 2)) >> 2
     }
     /// Set bit 2 and return a new UInt
-    public func b2(bit:Int)->UInt64{
+    public func setb2(bit:Int)->UInt64{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 2)) | (nv.toU64 << 2)
     }
@@ -1343,7 +1343,7 @@ extension UInt64 {
         return (self & (0x1 << 3)) >> 3
     }
     /// Set bit 3 and return a new UInt
-    public func b3(bit:Int)->UInt64{
+    public func setb3(bit:Int)->UInt64{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 3)) | (nv.toU64 << 3)
     }
@@ -1352,7 +1352,7 @@ extension UInt64 {
         return (self & (0x1 << 4)) >> 4
     }
     /// Set bit 4 and return a new UInt
-    public func b4(bit:Int)->UInt64{
+    public func setb4(bit:Int)->UInt64{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 4)) | (nv.toU64 << 4)
     }
@@ -1361,7 +1361,7 @@ extension UInt64 {
         return (self & (0x1 << 5)) >> 5
     }
     /// Set bit 5 and return a new UInt
-    public func b5(bit:Int)->UInt64{
+    public func setb5(bit:Int)->UInt64{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 5)) | (nv.toU64 << 5)
     }
@@ -1370,7 +1370,7 @@ extension UInt64 {
         return (self & (0x1 << 6)) >> 6
     }
     /// Set bit 6 and return a new UInt
-    public func b6(bit:Int)->UInt64{
+    public func setb6(bit:Int)->UInt64{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 6)) | (nv.toU64 << 6)
     }
@@ -1379,7 +1379,7 @@ extension UInt64 {
         return (self & (0x1 << 7)) >> 7
     }
     /// Set bit 7 and return a new UInt
-    public func b7(bit:Int)->UInt64{
+    public func setb7(bit:Int)->UInt64{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 7)) | (nv.toU64 << 7)
     }
