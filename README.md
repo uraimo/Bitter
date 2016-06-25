@@ -49,7 +49,7 @@ pod 'Bitter'
 ```
 And update your workspace with `pod install`. 
 
-You can also install Bitter with carthage adding it to your `Cartfil e`:
+Bitter is also available through Carthage. To install just write into your Cartfile:
 ```
 github "uraimo/Bitter"
 ```
@@ -64,7 +64,7 @@ let package = Package(
     ...
     dependencies: [
         ...
-        .Package(url: "https://github.com/uraimo/Bitter.git", majorVersion: 0, minor: 1)
+        .Package(url: "https://github.com/uraimo/Bitter.git", majorVersion: 1, minor: 1)
     ]
 )
 ```
