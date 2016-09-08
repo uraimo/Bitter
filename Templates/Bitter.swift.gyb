@@ -54,7 +54,7 @@ extension ${sign}Int{
     %end
 
     /// Returns the size of this type (number of bytes)
-    public static var size:Int{return strideof(self)}
+    public static var size:Int{return MemoryLayout<${sign}Int>.stride}
 
 
     % for bitidx in [0,1,2,3,4,5,6,7]:
@@ -68,7 +68,7 @@ extension ${sign}Int{
         }
     }
     /// Set bit ${bitidx} and return a new ${sign}Int
-    public func setb${bitidx}(bit:Int)->Int{
+    public func setb${bitidx}(_ bit:Int)->Int{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << ${bitidx})) | (nv.toU64 << ${bitidx}) ))
@@ -86,7 +86,7 @@ extension ${sign}Int{
         }
     }
     /// Set bit ${bitidx} and return a new ${sign}Int
-    public func setb${bitidx}(bit:Int)->UInt{
+    public func setb${bitidx}(_ bit:Int)->UInt{
         let nv = bit != 0 ? 1 : 0
         if(Int.size == 8){
             return UInt( (self.toU64 & ~(0x1 << ${bitidx})) | (nv.toU64 << ${bitidx}) )
@@ -195,7 +195,7 @@ extension ${sign}Int${intType} {
         %end
 
     /// Returns the size of this type (number of bytes)
-    public static var size:Int{return strideof(self)}
+    public static var size:Int{return MemoryLayout<${sign}Int${intType}>.stride}
 
         % for bitidx in [0,1,2,3,4,5,6,7]:
             %if sign == '':
@@ -204,7 +204,7 @@ extension ${sign}Int${intType} {
         return ( (self.toU${intType} & (0x1 << ${bitidx})) >> ${bitidx} ).to${intType}
     }
     /// Set bit ${bitidx} and return a new ${sign}Int
-    public func setb${bitidx}(bit:Int)->${sign}Int${intType}{
+    public func setb${bitidx}(_ bit:Int)->${sign}Int${intType}{
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU${intType} & ~(0x1 << ${bitidx})) | (nv.toU${intType} << ${bitidx}) ).to${intType}
     }
@@ -214,7 +214,7 @@ extension ${sign}Int${intType} {
         return (self & (0x1 << ${bitidx})) >> ${bitidx}
     }
     /// Set bit ${bitidx} and return a new ${sign}Int
-    public func setb${bitidx}(bit:Int)->${sign}Int${intType}{
+    public func setb${bitidx}(_ bit:Int)->${sign}Int${intType}{
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << ${bitidx})) | (nv.toU${intType} << ${bitidx})
     }
