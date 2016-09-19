@@ -1406,7 +1406,7 @@ extension UInt64 {
 // MARK: Operators
 
 /// Double negation operator
-prefix operator ~~ {}
+prefix operator ~~
 
 /// Double negation operator for Int8
 /// Returns 1 if value is not equal to 0, 0 otherwise

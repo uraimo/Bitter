@@ -273,7 +273,7 @@ extension ${sign}Int${intType} {
 // MARK: Operators
 
 /// Double negation operator
-prefix operator ~~ {}
+prefix operator ~~
 
 % for intType in intTypes:
     % for sign in ['','U']:
