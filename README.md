@@ -3,7 +3,7 @@
 **A Swift Bits Manipulation Toolkit**
 
 <p>
-<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Swift2.2-compatible-orange.svg?style=flat" alt="Swift 2 compatible" /></a>
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Swift3-compatible-orange.svg?style=flat" alt="Swift 3 compatible" /></a>
 <a href="https://raw.githubusercontent.com/uraimo/Bitter/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
 <a href="https://github.com/apple/swift-package-manager"><img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg"/></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-brightgreen.svg"/></a>
@@ -13,7 +13,7 @@
 
 ## Summary
 
-The Bitter library extends all the basic Swift Int types with some useful methods for manipulating bits.
+The Bitter library extends all the basic Swift 3.0 Int types with some useful methods for manipulating bits.
 The objective of the library is to make the code dealing with bits and bitwise operations more concise and readable, through the use of shorthand methods where they make sense.
 With Bitter you'll be able for example, to replace this:
 
@@ -164,5 +164,7 @@ Modifying .gyb templates requires minimal knowledge of python and GYB itself pro
 
 When your template has an error, GYB will show the specific line where the error occurred, remove `--line-directive ''` from the compile script to enable this debug mode.
 
+## Swift 2.x
 
+A specific branch [has been created](https://github.com/uraimo/Bitter/tree/swift-2.x) before the move to Swift 3.0, releases older than 2.0.0 support Swift 2.
 
