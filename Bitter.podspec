@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Bitter"
-  s.version      = "2.0.0"
+  s.version      = "2.0.1"
   s.summary      = "The Swift bits manipulation toolkit"
   s.homepage     = "https://github.com/uraimo/Bitter"
   s.license      = { :type => "MIT", :file => "LICENSE" }
@@ -8,7 +8,6 @@ Pod::Spec.new do |s|
   s.author       = "Umberto Raimondi"
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.9"
-  s.tvos.deployment_target = '9.0'
   s.source       = { :git => "https://github.com/uraimo/Bitter.git", :tag => s.version.to_s }
   s.source_files = "Sources/Bitter/**/*.{swift,h}"
   
