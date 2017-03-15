@@ -144,13 +144,13 @@ Bitter also adds a few other extensions to Int types:
 
 * Double negation operator `~~`: This new operator has the same function that **!!** has in C or similar languages, it converts every integer value not equal to 0 to 1 and keeps the value 0 the same. Extremely useful when you want to convert the result of an expression to the standard C 0/1 integer boolean to use it in another expression.
 
-* `size` static property for Int types: Shorthand for `strideof(Int*n*)`  
+* `size` static property for Int types: Shorthand for `MemoryLayout<IntN>.stride`  
 
 * `.allOnes` static property: We already have `.allZeros` in `BitwiseOperationsType`, now we have this too.
 
 #### Bitwise operations
 
-To learn more about bitwise operations in Swift, see the article "[Dealing with Bit Sets in Swift](https://www.uraimo.com/2016/02/05/Dealing-With-Bit-Sets-In-Swift/)" on my blog.
+To learn more about bitwise operations in Swift, see the article "[Dealing with Bit Sets in Swift](https://www.uraimo.com/2016/02/05/Dealing-With-Bit-Sets-In-Swift/)" on my blog (updated to Swift 3.0).
 
 ## Contributing
 
