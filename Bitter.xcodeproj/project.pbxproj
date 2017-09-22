@@ -90,7 +90,7 @@
 				466264561C64AF01007B43AB /* Info.plist */,
 			);
 			name = BitterTests;
-			path = Sources/BitterTests;
+			path = Tests/BitterTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,7 +378,7 @@
 		4662645D1C64AF01007B43AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = Sources/BitterTests/Info.plist;
+				INFOPLIST_FILE = Tests/BitterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.uraimo.BitterTests;
@@ -391,7 +391,7 @@
 		4662645E1C64AF01007B43AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = Sources/BitterTests/Info.plist;
+				INFOPLIST_FILE = Tests/BitterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.uraimo.BitterTests;

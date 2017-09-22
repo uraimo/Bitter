@@ -201,9 +201,11 @@ extension Int{
         set(newValue) {
             precondition(index<Int.size,"Byte set index out of range")
             if(Int.size == 8){
-                self = Int(bitPattern: UInt((self.toU64 & ~(0xFF << (index.toU64*8))) | (newValue.toU64 << (index.toU64*8))) )
+                let idx: UInt64 = index.toU64*8
+                self = Int(bitPattern: UInt((self.toU64 & ~(0xFF << idx)) | (newValue.toU64 << idx)) )
             }else{
-                self = Int(bitPattern: UInt((self.toU32 & ~(0xFF << (index.toU32*8))) | (newValue.toU32 << (index.toU32*8))) )
+                let idx: UInt32 = index.toU32*8
+                self = Int(bitPattern: UInt((self.toU32 & ~(0xFF << idx)) | (newValue.toU32 << idx)) )
             }
         }
     }
@@ -401,9 +403,11 @@ extension UInt{
         set(newValue) {
             precondition(index<Int.size,"Byte set index out of range")
             if(UInt.size == 8){
-                self = UInt((self.toU64 & ~(0xFF << (index.toU64*8))) | (newValue.toU64 << (index.toU64*8)))
+                let idx: UInt64 = index.toU64*8
+                self = UInt((self.toU64 & ~(0xFF << idx)) | (newValue.toU64 << idx) )
             }else{
-                self = UInt((self.toU32 & ~(0xFF << (index.toU32*8))) | (newValue.toU32 << (index.toU32*8)))
+                let idx: UInt32 = index.toU32*8
+                self = UInt((self.toU32 & ~(0xFF << idx)) | (newValue.toU32 << idx) )
             }
         }
     }
