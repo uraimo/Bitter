@@ -3,7 +3,7 @@
 **A Swift Bits Manipulation Toolkit**
 
 <p>
-<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Swift3-compatible-orange.svg?style=flat" alt="Swift 3 compatible" /></a>
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Swift3-compatible-orange.svg?style=flat" alt="Swift 4 compatible" /></a>
 <a href="https://raw.githubusercontent.com/uraimo/Bitter/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
 <a href="https://github.com/apple/swift-package-manager"><img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg"/></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-brightgreen.svg"/></a>
@@ -13,7 +13,7 @@
 
 ## Summary
 
-The Bitter library extends all the basic Swift 3.0 Int types with some useful methods for manipulating bits.
+The Bitter library extends all the basic Swift 4.0 Int types with some useful methods for manipulating bits.
 The objective of the library is to make the code dealing with bits and bitwise operations more concise and readable, through the use of shorthand methods where they make sense.
 With Bitter you'll be able for example, to replace this:
 
@@ -33,6 +33,7 @@ i[1] = i[1].setb3(1) // Set the 4th bit of the 2nd byte
 i[1] = i[1].setb3(0).setb4(1).setb5(0).setb6(1) // Let's set some other bit
 ```
 
+For a Swift 3.x compatible version, check out release 2.0.5 or the [swift-3](https://github.com/uraimo/Bitter/tree/swift-3) branch.
 
 ## Installation
 
@@ -86,7 +87,7 @@ The toU*n* methods perform a conversion to unsigned Int while the number refers 
 Let's see an example:
 ```swift
 var i:Int32 = 50000
-var u8:UInt8 = i.toU8   //81, Without Bitter: var u8:UInt8 = UInt8(truncatingBitPattern:i)
+var u8:UInt8 = i.toU8   //81, Without Bitter: var u8:UInt8 = UInt8(truncatingIfNeeded:i)
 ```
 
 Bitter is also useful in mixed types expression, making the code more concise:
@@ -95,7 +96,7 @@ class Test{
     var content:UInt32=0
 
     func shiftAndResizeMe(howMuch:Int)->UInt16{
-        return  (content << howMuch.toU32).toU16  //Without Bitter: return UInt16(truncatingBitPattern:(content << UInt32(truncatingBitPattern:howMuch)))
+        return  (content << howMuch.toU32).toU16  //Without Bitter: return UInt16(truncatingIfNeeded:(content << UInt32(truncatingIfNeeded:howMuch)))
     }
 }
 ```
@@ -163,8 +164,4 @@ To compile the template and save the result as `Sources/Bitter/Bitter.swift` run
 Modifying .gyb templates requires minimal knowledge of python and GYB itself provide just a few flow control directive but, lickily, examples of all the directives you could need are already in the template.
 
 When your template has an error, GYB will show the specific line where the error occurred, remove `--line-directive ''` from the compile script to enable this debug mode.
-
-## Swift 2.x
-
-A specific branch [has been created](https://github.com/uraimo/Bitter/tree/swift-2.x) before the move to Swift 3.0, releases older than 2.0.0 support Swift 2.
 
