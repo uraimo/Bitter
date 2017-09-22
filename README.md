@@ -3,7 +3,7 @@
 **A Swift Bits Manipulation Toolkit**
 
 <p>
-<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Swift3-compatible-orange.svg?style=flat" alt="Swift 4 compatible" /></a>
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Swift4-compatible-orange.svg?style=flat" alt="Swift 4 compatible" /></a>
 <a href="https://raw.githubusercontent.com/uraimo/Bitter/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
 <a href="https://github.com/apple/swift-package-manager"><img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg"/></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-brightgreen.svg"/></a>
@@ -79,7 +79,7 @@ Let's see what Bitter provides:
 
 Every time you want to convert an Int containing a bit pattern to a smaller Int you need to perform a *truncating* bit conversion because the conversion will simply **fail at runtime** if the content of your integer is bigger than what the receiving type allows (e.g. try `Int8(1000)`). And let me reiterate that we are performing a bit truncation, not a decimal truncating conversion.
 
-Bit pattern truncating conversions can be easily performed using the constructor `init(truncatingBitPattern:)`, but if you need to do this a lot, your code will become unreadable fast.
+Bit pattern truncating conversions can be easily performed using the constructor `init(truncatingIfNeeded:)`, but if you need to do this a lot, your code will become unreadable fast.
 
 With Bitter, every Int*n*/UInt*n* type gains a few methods that allows to perform truncating bit pattern conversions to smaller Int types or simple bit pattern conversion for bigger and same size/different signedness Int types: **.to8, toU8, to16, toU16, to32, toU32, to64, toU64**.
 The toU*n* methods perform a conversion to unsigned Int while the number refers to the size of the type, e.g.  `.toU16` will convert the current integer to an UInt16 truncating the bit pattern if necessary.
