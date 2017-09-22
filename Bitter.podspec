@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Bitter"
-  s.version      = "2.0.5"
+  s.version      = "3.0.0"
   s.summary      = "The Swift bits manipulation toolkit"
   s.homepage     = "https://github.com/uraimo/Bitter"
   s.license      = { :type => "MIT", :file => "LICENSE" }

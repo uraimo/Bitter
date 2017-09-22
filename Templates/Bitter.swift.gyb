@@ -22,9 +22,9 @@ Extension that adds a few additional functionalities to ${sign}Int:
 extension ${sign}Int{
     % for intType in intTypes[:3]:
     /// Perform a bit pattern truncating conversion to UInt${intType}
-    public var toU${intType}: UInt${intType}{return UInt${intType}(truncatingBitPattern:self)}
+    public var toU${intType}: UInt${intType}{return UInt${intType}(truncatingIfNeeded:self)}
     /// Perform a bit pattern truncating conversion to Int${intType}
-    public var to${intType}: Int${intType}{return Int${intType}(truncatingBitPattern:self)}
+    public var to${intType}: Int${intType}{return Int${intType}(truncatingIfNeeded:self)}
     %end
     /// Perform a bit pattern truncating conversion to UInt64
     public var toU64: UInt64{
@@ -154,9 +154,9 @@ extension ${sign}Int${intType} {
         % for aSize in intTypes:
             %if intType > aSize:
     /// Perform a bit pattern truncating conversion to UInt${aSize}
-    public var toU${aSize}: UInt${aSize}{return UInt${aSize}(truncatingBitPattern:self)}
+    public var toU${aSize}: UInt${aSize}{return UInt${aSize}(truncatingIfNeeded:self)}
     /// Perform a bit pattern truncating conversion to Int${aSize}
-    public var to${aSize}: Int${aSize}{return Int${aSize}(truncatingBitPattern:self)}
+    public var to${aSize}: Int${aSize}{return Int${aSize}(truncatingIfNeeded:self)}
             %elif intType == aSize:
                 %if sign == '':
     /// Perform a bit pattern truncating conversion to UInt${aSize}
@@ -183,9 +183,9 @@ extension ${sign}Int${intType} {
     public var toUInt:UInt{return UInt(self)}
         %else:
     /// Perform a bit pattern truncating conversion to Int
-    public var toInt:Int{return Int(truncatingBitPattern:self)}
+    public var toInt:Int{return Int(truncatingIfNeeded:self)}
     /// Perform a bit pattern truncating conversion to UInt
-    public var toUInt:UInt{return UInt(truncatingBitPattern:self)}
+    public var toUInt:UInt{return UInt(truncatingIfNeeded:self)}
         %end
         /// Returns a ${sign}Int${intType} with all ones
         %if sign == '':

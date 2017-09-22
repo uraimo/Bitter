@@ -24,8 +24,8 @@ class BitterTests: XCTestCase {
     // MARK: UInt64 Tests
     let iUInt64:UInt64 = (UInt.size==8) ? 0xFFAAFFAAFFAAFFAA : 0xFFAAFFAA
     func testUInt64Conversion() {
-        XCTAssert(iUInt64.toUInt == UInt(truncatingBitPattern:iUInt64))
-        XCTAssert(iUInt64.toInt.toUInt == UInt(truncatingBitPattern:iUInt64))
+        XCTAssert(iUInt64.toUInt == UInt(truncatingIfNeeded:iUInt64))
+        XCTAssert(iUInt64.toInt.toUInt == UInt(truncatingIfNeeded:iUInt64))
         XCTAssert(iUInt64.toU64 == iUInt64)
         XCTAssert(iUInt64.to64.toU64 == iUInt64)
         XCTAssert(iUInt64.toU32==0xFFAAFFAA)
@@ -95,8 +95,8 @@ class BitterTests: XCTestCase {
     // MARK: Int64 Tests
     let iInt64:Int64 = (Int.size==8) ? 0x6FAAFFAAFFAAFFAA : 0xFFAAFFAA
     func testInt64Conversion() {
-        XCTAssert(iInt64.toUInt==UInt(truncatingBitPattern:iInt64))
-        XCTAssert(iInt64.toInt.toUInt==UInt(truncatingBitPattern:iInt64))
+        XCTAssert(iInt64.toUInt==UInt(truncatingIfNeeded:iInt64))
+        XCTAssert(iInt64.toInt.toUInt==UInt(truncatingIfNeeded:iInt64))
         XCTAssert(iInt64.toU64==UInt64(bitPattern:iInt64))
         XCTAssert(iInt64.to64.toU64==UInt64(bitPattern:iInt64))
         XCTAssert(iInt64.toU32==0xFFAAFFAA)
