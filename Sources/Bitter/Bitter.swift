@@ -50,139 +50,75 @@ extension Int{
 
     /// Get bit 0 value
     public var b0:Int{
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & (0x1 << 0)) >> 0 ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & (0x1 << 0)) >> 0 ))
-        }
+        return Int(bitPattern: ( UInt(bitPattern: self) & (0x1 << 0)) >> 0 )
     }
     /// Set bit 0 and return a new Int
     public func setb0(_ bit:Int)->Int{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 0)) | (nv.toU64 << 0) ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << 0)) | (nv.toU32 << 0) ))
-        }
+        let nv: UInt = bit != 0 ? 1 : 0
+        return Int(bitPattern: ( UInt(bitPattern: self) & ~(0x1 << 0)) | (nv << 0) )
     }
     /// Get bit 1 value
     public var b1:Int{
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & (0x1 << 1)) >> 1 ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & (0x1 << 1)) >> 1 ))
-        }
+        return Int(bitPattern: ( UInt(bitPattern: self) & (0x1 << 1)) >> 1 )
     }
     /// Set bit 1 and return a new Int
     public func setb1(_ bit:Int)->Int{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 1)) | (nv.toU64 << 1) ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << 1)) | (nv.toU32 << 1) ))
-        }
+        let nv: UInt = bit != 0 ? 1 : 0
+        return Int(bitPattern: ( UInt(bitPattern: self) & ~(0x1 << 1)) | (nv << 1) )
     }
     /// Get bit 2 value
     public var b2:Int{
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & (0x1 << 2)) >> 2 ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & (0x1 << 2)) >> 2 ))
-        }
+        return Int(bitPattern: ( UInt(bitPattern: self) & (0x1 << 2)) >> 2 )
     }
     /// Set bit 2 and return a new Int
     public func setb2(_ bit:Int)->Int{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 2)) | (nv.toU64 << 2) ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << 2)) | (nv.toU32 << 2) ))
-        }
+        let nv: UInt = bit != 0 ? 1 : 0
+        return Int(bitPattern: ( UInt(bitPattern: self) & ~(0x1 << 2)) | (nv << 2) )
     }
     /// Get bit 3 value
     public var b3:Int{
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & (0x1 << 3)) >> 3 ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & (0x1 << 3)) >> 3 ))
-        }
+        return Int(bitPattern: ( UInt(bitPattern: self) & (0x1 << 3)) >> 3 )
     }
     /// Set bit 3 and return a new Int
     public func setb3(_ bit:Int)->Int{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 3)) | (nv.toU64 << 3) ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << 3)) | (nv.toU32 << 3) ))
-        }
+        let nv: UInt = bit != 0 ? 1 : 0
+        return Int(bitPattern: ( UInt(bitPattern: self) & ~(0x1 << 3)) | (nv << 3) )
     }
     /// Get bit 4 value
     public var b4:Int{
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & (0x1 << 4)) >> 4 ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & (0x1 << 4)) >> 4 ))
-        }
+        return Int(bitPattern: ( UInt(bitPattern: self) & (0x1 << 4)) >> 4 )
     }
     /// Set bit 4 and return a new Int
     public func setb4(_ bit:Int)->Int{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 4)) | (nv.toU64 << 4) ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << 4)) | (nv.toU32 << 4) ))
-        }
+        let nv: UInt = bit != 0 ? 1 : 0
+        return Int(bitPattern: ( UInt(bitPattern: self) & ~(0x1 << 4)) | (nv << 4) )
     }
     /// Get bit 5 value
     public var b5:Int{
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & (0x1 << 5)) >> 5 ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & (0x1 << 5)) >> 5 ))
-        }
+        return Int(bitPattern: ( UInt(bitPattern: self) & (0x1 << 5)) >> 5 )
     }
     /// Set bit 5 and return a new Int
     public func setb5(_ bit:Int)->Int{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 5)) | (nv.toU64 << 5) ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << 5)) | (nv.toU32 << 5) ))
-        }
+        let nv: UInt = bit != 0 ? 1 : 0
+        return Int(bitPattern: ( UInt(bitPattern: self) & ~(0x1 << 5)) | (nv << 5) )
     }
     /// Get bit 6 value
     public var b6:Int{
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & (0x1 << 6)) >> 6 ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & (0x1 << 6)) >> 6 ))
-        }
+        return Int(bitPattern: ( UInt(bitPattern: self) & (0x1 << 6)) >> 6 )
     }
     /// Set bit 6 and return a new Int
     public func setb6(_ bit:Int)->Int{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 6)) | (nv.toU64 << 6) ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << 6)) | (nv.toU32 << 6) ))
-        }
+        let nv: UInt = bit != 0 ? 1 : 0
+        return Int(bitPattern: ( UInt(bitPattern: self) & ~(0x1 << 6)) | (nv << 6) )
     }
     /// Get bit 7 value
     public var b7:Int{
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & (0x1 << 7)) >> 7 ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & (0x1 << 7)) >> 7 ))
-        }
+        return Int(bitPattern: ( UInt(bitPattern: self) & (0x1 << 7)) >> 7 )
     }
     /// Set bit 7 and return a new Int
     public func setb7(_ bit:Int)->Int{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << 7)) | (nv.toU64 << 7) ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << 7)) | (nv.toU32 << 7) ))
-        }
+        let nv: UInt = bit != 0 ? 1 : 0
+        return Int(bitPattern: ( UInt(bitPattern: self) & ~(0x1 << 7)) | (nv << 7) )
     }
  
 
@@ -192,21 +128,13 @@ extension Int{
     public subscript(index: Int) -> Int {
         get {
             precondition(index<Int.size,"Byte set index out of range")
-            if(Int.size == 8){
-                return Int(bitPattern: UInt((self.toU64 & (0xFF << (index.toU64*8))) >> (index.toU64*8)) )
-            }else{
-               return Int(bitPattern: UInt((self.toU32 & (0xFF << (index.toU32*8))) >> (index.toU32*8)) )
-            }
+            let idx: UInt = UInt(bitPattern: index) * 8
+            return Int(bitPattern: (UInt(bitPattern: self) & (0xFF << idx)) >> idx )
         }
         set(newValue) {
             precondition(index<Int.size,"Byte set index out of range")
-            if(Int.size == 8){
-                let idx: UInt64 = index.toU64*8
-                self = Int(bitPattern: UInt((self.toU64 & ~(0xFF << idx)) | (newValue.toU64 << idx)) )
-            }else{
-                let idx: UInt32 = index.toU32*8
-                self = Int(bitPattern: UInt((self.toU32 & ~(0xFF << idx)) | (newValue.toU32 << idx)) )
-            }
+            let idx: UInt = UInt(bitPattern: index) * 8
+            self = Int(bitPattern: (UInt(bitPattern: self) & ~(0xFF << idx)) | (UInt(bitPattern: newValue) << idx) )
         }
     }
 }
@@ -252,139 +180,75 @@ extension UInt{
 
     /// Get bit 0 value
     public var b0:UInt{
-        if(Int.size == 8){
-            return UInt( (self.toU64 & (0x1 << 0)) >> 0 )
-        } else {
-            return UInt( (self.toU32 & (0x1 << 0)) >> 0 )
-        }
+        return ( self & (0x1 << 0)) >> 0
     }
     /// Set bit 0 and return a new UInt
     public func setb0(_ bit:Int)->UInt{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return UInt( (self.toU64 & ~(0x1 << 0)) | (nv.toU64 << 0) )
-        } else {
-            return UInt( (self.toU32 & ~(0x1 << 0)) | (nv.toU32 << 0) )
-        }
+        let nv:UInt = bit != 0 ? 1 : 0
+        return ( self & ~(0x1 << 0)) | (nv << 0)
     }
     /// Get bit 1 value
     public var b1:UInt{
-        if(Int.size == 8){
-            return UInt( (self.toU64 & (0x1 << 1)) >> 1 )
-        } else {
-            return UInt( (self.toU32 & (0x1 << 1)) >> 1 )
-        }
+        return ( self & (0x1 << 1)) >> 1
     }
     /// Set bit 1 and return a new UInt
     public func setb1(_ bit:Int)->UInt{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return UInt( (self.toU64 & ~(0x1 << 1)) | (nv.toU64 << 1) )
-        } else {
-            return UInt( (self.toU32 & ~(0x1 << 1)) | (nv.toU32 << 1) )
-        }
+        let nv:UInt = bit != 0 ? 1 : 0
+        return ( self & ~(0x1 << 1)) | (nv << 1)
     }
     /// Get bit 2 value
     public var b2:UInt{
-        if(Int.size == 8){
-            return UInt( (self.toU64 & (0x1 << 2)) >> 2 )
-        } else {
-            return UInt( (self.toU32 & (0x1 << 2)) >> 2 )
-        }
+        return ( self & (0x1 << 2)) >> 2
     }
     /// Set bit 2 and return a new UInt
     public func setb2(_ bit:Int)->UInt{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return UInt( (self.toU64 & ~(0x1 << 2)) | (nv.toU64 << 2) )
-        } else {
-            return UInt( (self.toU32 & ~(0x1 << 2)) | (nv.toU32 << 2) )
-        }
+        let nv:UInt = bit != 0 ? 1 : 0
+        return ( self & ~(0x1 << 2)) | (nv << 2)
     }
     /// Get bit 3 value
     public var b3:UInt{
-        if(Int.size == 8){
-            return UInt( (self.toU64 & (0x1 << 3)) >> 3 )
-        } else {
-            return UInt( (self.toU32 & (0x1 << 3)) >> 3 )
-        }
+        return ( self & (0x1 << 3)) >> 3
     }
     /// Set bit 3 and return a new UInt
     public func setb3(_ bit:Int)->UInt{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return UInt( (self.toU64 & ~(0x1 << 3)) | (nv.toU64 << 3) )
-        } else {
-            return UInt( (self.toU32 & ~(0x1 << 3)) | (nv.toU32 << 3) )
-        }
+        let nv:UInt = bit != 0 ? 1 : 0
+        return ( self & ~(0x1 << 3)) | (nv << 3)
     }
     /// Get bit 4 value
     public var b4:UInt{
-        if(Int.size == 8){
-            return UInt( (self.toU64 & (0x1 << 4)) >> 4 )
-        } else {
-            return UInt( (self.toU32 & (0x1 << 4)) >> 4 )
-        }
+        return ( self & (0x1 << 4)) >> 4
     }
     /// Set bit 4 and return a new UInt
     public func setb4(_ bit:Int)->UInt{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return UInt( (self.toU64 & ~(0x1 << 4)) | (nv.toU64 << 4) )
-        } else {
-            return UInt( (self.toU32 & ~(0x1 << 4)) | (nv.toU32 << 4) )
-        }
+        let nv:UInt = bit != 0 ? 1 : 0
+        return ( self & ~(0x1 << 4)) | (nv << 4)
     }
     /// Get bit 5 value
     public var b5:UInt{
-        if(Int.size == 8){
-            return UInt( (self.toU64 & (0x1 << 5)) >> 5 )
-        } else {
-            return UInt( (self.toU32 & (0x1 << 5)) >> 5 )
-        }
+        return ( self & (0x1 << 5)) >> 5
     }
     /// Set bit 5 and return a new UInt
     public func setb5(_ bit:Int)->UInt{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return UInt( (self.toU64 & ~(0x1 << 5)) | (nv.toU64 << 5) )
-        } else {
-            return UInt( (self.toU32 & ~(0x1 << 5)) | (nv.toU32 << 5) )
-        }
+        let nv:UInt = bit != 0 ? 1 : 0
+        return ( self & ~(0x1 << 5)) | (nv << 5)
     }
     /// Get bit 6 value
     public var b6:UInt{
-        if(Int.size == 8){
-            return UInt( (self.toU64 & (0x1 << 6)) >> 6 )
-        } else {
-            return UInt( (self.toU32 & (0x1 << 6)) >> 6 )
-        }
+        return ( self & (0x1 << 6)) >> 6
     }
     /// Set bit 6 and return a new UInt
     public func setb6(_ bit:Int)->UInt{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return UInt( (self.toU64 & ~(0x1 << 6)) | (nv.toU64 << 6) )
-        } else {
-            return UInt( (self.toU32 & ~(0x1 << 6)) | (nv.toU32 << 6) )
-        }
+        let nv:UInt = bit != 0 ? 1 : 0
+        return ( self & ~(0x1 << 6)) | (nv << 6)
     }
     /// Get bit 7 value
     public var b7:UInt{
-        if(Int.size == 8){
-            return UInt( (self.toU64 & (0x1 << 7)) >> 7 )
-        } else {
-            return UInt( (self.toU32 & (0x1 << 7)) >> 7 )
-        }
+        return ( self & (0x1 << 7)) >> 7
     }
     /// Set bit 7 and return a new UInt
     public func setb7(_ bit:Int)->UInt{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return UInt( (self.toU64 & ~(0x1 << 7)) | (nv.toU64 << 7) )
-        } else {
-            return UInt( (self.toU32 & ~(0x1 << 7)) | (nv.toU32 << 7) )
-        }
+        let nv:UInt = bit != 0 ? 1 : 0
+        return ( self & ~(0x1 << 7)) | (nv << 7)
     }
  
 
@@ -394,21 +258,13 @@ extension UInt{
     public subscript(index: Int) -> UInt {
         get {
             precondition(index<Int.size,"Byte set index out of range")
-            if(UInt.size == 8){
-                return UInt(self.toU64 & (0xFF << (index.toU64*8))) >> (index*8).toUInt
-            }else{
-                return UInt(self.toU32 & (0xFF << (index.toU32*8))) >> (index*8).toUInt
-            }
+            let idx: UInt = UInt(bitPattern: index) * 8
+            return (self & (0xFF << idx)) >> idx
         }
         set(newValue) {
             precondition(index<Int.size,"Byte set index out of range")
-            if(UInt.size == 8){
-                let idx: UInt64 = index.toU64*8
-                self = UInt((self.toU64 & ~(0xFF << idx)) | (newValue.toU64 << idx) )
-            }else{
-                let idx: UInt32 = index.toU32*8
-                self = UInt((self.toU32 & ~(0xFF << idx)) | (newValue.toU32 << idx) )
-            }
+            let idx: UInt = UInt(bitPattern: index) * 8
+            self = (self & ~(0xFF << idx)) | (newValue << idx)
         }
     }
 }

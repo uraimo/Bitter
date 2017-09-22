@@ -61,38 +61,22 @@ extension ${sign}Int{
         %if sign == '':
     /// Get bit ${bitidx} value
     public var b${bitidx}:Int{
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & (0x1 << ${bitidx})) >> ${bitidx} ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & (0x1 << ${bitidx})) >> ${bitidx} ))
-        }
+        return Int(bitPattern: ( UInt(bitPattern: self) & (0x1 << ${bitidx})) >> ${bitidx} )
     }
     /// Set bit ${bitidx} and return a new ${sign}Int
     public func setb${bitidx}(_ bit:Int)->Int{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return Int(bitPattern: UInt( (self.toU64 & ~(0x1 << ${bitidx})) | (nv.toU64 << ${bitidx}) ))
-        } else {
-            return Int(bitPattern: UInt( (self.toU32 & ~(0x1 << ${bitidx})) | (nv.toU32 << ${bitidx}) ))
-        }
+        let nv: UInt = bit != 0 ? 1 : 0
+        return Int(bitPattern: ( UInt(bitPattern: self) & ~(0x1 << ${bitidx})) | (nv << ${bitidx}) )
     }
         %else:
     /// Get bit ${bitidx} value
     public var b${bitidx}:UInt{
-        if(Int.size == 8){
-            return UInt( (self.toU64 & (0x1 << ${bitidx})) >> ${bitidx} )
-        } else {
-            return UInt( (self.toU32 & (0x1 << ${bitidx})) >> ${bitidx} )
-        }
+        return ( self & (0x1 << ${bitidx})) >> ${bitidx}
     }
     /// Set bit ${bitidx} and return a new ${sign}Int
     public func setb${bitidx}(_ bit:Int)->UInt{
-        let nv = bit != 0 ? 1 : 0
-        if(Int.size == 8){
-            return UInt( (self.toU64 & ~(0x1 << ${bitidx})) | (nv.toU64 << ${bitidx}) )
-        } else {
-            return UInt( (self.toU32 & ~(0x1 << ${bitidx})) | (nv.toU32 << ${bitidx}) )
-        }
+        let nv:UInt = bit != 0 ? 1 : 0
+        return ( self & ~(0x1 << ${bitidx})) | (nv << ${bitidx})
     }
         %end
     %end
@@ -105,36 +89,24 @@ extension ${sign}Int{
     %if sign == '':
         get {
             precondition(index<Int.size,"Byte set index out of range")
-            if(Int.size == 8){
-                return Int(bitPattern: UInt((self.toU64 & (0xFF << (index.toU64*8))) >> (index.toU64*8)) )
-            }else{
-               return Int(bitPattern: UInt((self.toU32 & (0xFF << (index.toU32*8))) >> (index.toU32*8)) )
-            }
+            let idx: UInt = UInt(bitPattern: index) * 8
+            return Int(bitPattern: (UInt(bitPattern: self) & (0xFF << idx)) >> idx )
         }
         set(newValue) {
             precondition(index<Int.size,"Byte set index out of range")
-            if(Int.size == 8){
-                self = Int(bitPattern: UInt((self.toU64 & ~(0xFF << (index.toU64*8))) | (newValue.toU64 << (index.toU64*8))) )
-            }else{
-                self = Int(bitPattern: UInt((self.toU32 & ~(0xFF << (index.toU32*8))) | (newValue.toU32 << (index.toU32*8))) )
-            }
+            let idx: UInt = UInt(bitPattern: index) * 8
+            self = Int(bitPattern: (UInt(bitPattern: self) & ~(0xFF << idx)) | (UInt(bitPattern: newValue) << idx) )
         }
     %else:
         get {
             precondition(index<Int.size,"Byte set index out of range")
-            if(UInt.size == 8){
-                return UInt(self.toU64 & (0xFF << (index.toU64*8))) >> (index*8).toUInt
-            }else{
-                return UInt(self.toU32 & (0xFF << (index.toU32*8))) >> (index*8).toUInt
-            }
+            let idx: UInt = UInt(bitPattern: index) * 8
+            return (self & (0xFF << idx)) >> idx
         }
         set(newValue) {
             precondition(index<Int.size,"Byte set index out of range")
-            if(UInt.size == 8){
-                self = UInt((self.toU64 & ~(0xFF << (index.toU64*8))) | (newValue.toU64 << (index.toU64*8)))
-            }else{
-                self = UInt((self.toU32 & ~(0xFF << (index.toU32*8))) | (newValue.toU32 << (index.toU32*8)))
-            }
+            let idx: UInt = UInt(bitPattern: index) * 8
+            self = (self & ~(0xFF << idx)) | (newValue << idx)
         }
     %end
     }
