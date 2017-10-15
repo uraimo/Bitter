@@ -40,21 +40,26 @@ extension Int{
     public var toInt:Int{return self}
     /// Perform a bit pattern truncating conversion to UInt
     public var toUInt:UInt{return UInt(bitPattern:self)}
-
-    /// Returns a Int with all ones
-    public static var allOnes:Int{return Int(bitPattern: UInt.max)}
-
+    
+    /// Returns a Int with MSB or LSB masked with 1
+    ///
+    /// - Parameters:
+    ///   - bits: Bits to mask
+    ///   - msb: True if you want to mask the MSB
+    /// - Returns: A masked Int
     public func mask(bits: Int, msb: Bool) -> Int {
         var maskBits = bits
         let size = Int.size
+        let halfSize = size/2
         if msb {
-            for i in 0...((size/2) - 1) { maskBits[i] |= 0xFF }
+            for i in 0...(halfSize - 1) { maskBits[i] |= 0xFF }
             return maskBits.toInt
         } else {
-            for i in ((size/2))...(size - 1) { maskBits[i] |= 0xFF }
+            for i in halfSize...(size - 1) { maskBits[i] |= 0xFF }
             return maskBits.toInt
         }
     }
+
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return MemoryLayout<Int>.stride}
 
@@ -131,7 +136,7 @@ extension Int{
         let nv: UInt = bit != 0 ? 1 : 0
         return Int(bitPattern: ( UInt(bitPattern: self) & ~(0x1 << 7)) | (nv << 7) )
     }
-
+ 
 
     /// Subscript that returns or set one of the bytes of a Int
     /// at the given index.
@@ -181,10 +186,13 @@ extension UInt{
     public var toInt:Int{return Int(bitPattern:self)}
     /// Perform a bit pattern truncating conversion to UInt
     public var toUInt:UInt{return self}
-
-    /// Returns a UInt with all ones
-    public static var allOnes:UInt{return UInt.max}
-
+    
+    /// Returns a UInt with MSB or LSB masked with 1
+    ///
+    /// - Parameters:
+    ///   - bits: Bits to mask
+    ///   - msb: True if you want to mask the MSB
+    /// - Returns: A masked UInt
     public func mask(bits: UInt, msb: Bool) -> UInt {
         var maskBits = bits
         let size = UInt.size
@@ -201,6 +209,7 @@ extension UInt{
             return maskBits.toUInt
         }
     }
+
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return MemoryLayout<UInt>.stride}
 
@@ -277,7 +286,7 @@ extension UInt{
         let nv:UInt = bit != 0 ? 1 : 0
         return ( self & ~(0x1 << 7)) | (nv << 7)
     }
-
+ 
 
     /// Subscript that returns or set one of the bytes of a UInt
     /// at the given index.
@@ -404,7 +413,7 @@ extension Int8 {
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU8 & ~(0x1 << 7)) | (nv.toU8 << 7) ).to8
     }
-
+ 
 
 
     /// Subscript that returns or set one of the bytes of this integer
@@ -540,7 +549,7 @@ extension UInt8 {
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 7)) | (nv.toU8 << 7)
     }
-
+ 
 
 
     /// Subscript that returns or set one of the bytes of this integer
@@ -666,10 +675,10 @@ extension Int16 {
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU16 & ~(0x1 << 7)) | (nv.toU16 << 7) ).to16
     }
+ 
 
 
-
-    /// Subscript that returns or set one of the bytes of a Int16
+    /// Subscript that returns or set one of the bytes of a Int16 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> Int16 {
@@ -802,10 +811,10 @@ extension UInt16 {
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 7)) | (nv.toU16 << 7)
     }
+ 
 
 
-
-    /// Subscript that returns or set one of the bytes of a UInt16
+    /// Subscript that returns or set one of the bytes of a UInt16 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> UInt16 {
@@ -928,10 +937,10 @@ extension Int32 {
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU32 & ~(0x1 << 7)) | (nv.toU32 << 7) ).to32
     }
+ 
 
 
-
-    /// Subscript that returns or set one of the bytes of a Int32
+    /// Subscript that returns or set one of the bytes of a Int32 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> Int32 {
@@ -1068,10 +1077,10 @@ extension UInt32 {
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 7)) | (nv.toU32 << 7)
     }
+ 
 
 
-
-    /// Subscript that returns or set one of the bytes of a UInt32
+    /// Subscript that returns or set one of the bytes of a UInt32 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> UInt32 {
@@ -1194,10 +1203,10 @@ extension Int64 {
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU64 & ~(0x1 << 7)) | (nv.toU64 << 7) ).to64
     }
+ 
 
 
-
-    /// Subscript that returns or set one of the bytes of a Int64
+    /// Subscript that returns or set one of the bytes of a Int64 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> Int64 {
@@ -1334,10 +1343,10 @@ extension UInt64 {
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 7)) | (nv.toU64 << 7)
     }
+ 
 
 
-
-    /// Subscript that returns or set one of the bytes of a UInt64
+    /// Subscript that returns or set one of the bytes of a UInt64 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> UInt64 {

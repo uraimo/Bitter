@@ -45,23 +45,23 @@ extension ${sign}Int{
     /// Perform a bit pattern truncating conversion to UInt
     public var toUInt:UInt{return self}
     %end
-
-    /// Returns a ${sign}Int with all ones
-    %if sign == '':
-    public static var allOnes:Int{return Int(bitPattern: UInt.max)}
-    %else:
-    public static var allOnes:UInt{return UInt.max}
-    %end
-
+    
+    /// Returns a ${sign}Int with MSB or LSB masked with 1
+    ///
+    /// - Parameters:
+    ///   - bits: Bits to mask
+    ///   - msb: True if you want to mask the MSB
+    /// - Returns: A masked ${sign}Int
     %if sign == '':
     public func mask(bits: ${sign}Int, msb: Bool) -> ${sign}Int {
         var maskBits = bits
         let size = ${sign}Int.size
+        let halfSize = size/2
         if msb {
-            for i in 0...((size/2) - 1) { maskBits[i] |= 0xFF }
+            for i in 0...(halfSize - 1) { maskBits[i] |= 0xFF }
             return maskBits.to${sign}Int
         } else {
-            for i in ((size/2))...(size - 1) { maskBits[i] |= 0xFF }
+            for i in halfSize...(size - 1) { maskBits[i] |= 0xFF }
             return maskBits.to${sign}Int
         }
     }
@@ -83,6 +83,7 @@ extension ${sign}Int{
         }
     }
     %end
+
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return MemoryLayout<${sign}Int>.stride}
 
@@ -110,7 +111,7 @@ extension ${sign}Int{
     }
         %end
     %end
-
+ 
 
     /// Subscript that returns or set one of the bytes of a ${sign}Int
     /// at the given index.
@@ -254,7 +255,7 @@ extension ${sign}Int${intType} {
     }
             %end
         %end
-
+ 
 
         %if intType == 8:
 
@@ -273,7 +274,7 @@ extension ${sign}Int${intType} {
     }
         %else:
 
-    /// Subscript that returns or set one of the bytes of a ${sign}Int${intType}
+    /// Subscript that returns or set one of the bytes of a ${sign}Int${intType} 
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> ${sign}Int${intType} {
