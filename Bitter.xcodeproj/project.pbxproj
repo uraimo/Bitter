@@ -34,6 +34,7 @@
 		466264611C64B036007B43AB /* Bitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bitter.swift; sourceTree = "<group>"; };
 		46E387061CC555CF00CCBA76 /* Templates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Templates; sourceTree = "<group>"; };
 		D9038B081F7FA06D00DA257C /* BitterMaskTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitterMaskTest.swift; sourceTree = "<group>"; };
+		D90BD0DC1F97EF2000300056 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 		4662643B1C64AF01007B43AB = {
 			isa = PBXGroup;
 			children = (
+				D90BD0DC1F97EF2000300056 /* TestPlayground.playground */,
 				46E387061CC555CF00CCBA76 /* Templates */,
 				466264471C64AF01007B43AB /* Bitter */,
 				466264531C64AF01007B43AB /* BitterTests */,

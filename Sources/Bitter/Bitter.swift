@@ -40,29 +40,24 @@ extension Int{
     public var toInt:Int{return self}
     /// Perform a bit pattern truncating conversion to UInt
     public var toUInt:UInt{return UInt(bitPattern:self)}
-    
-    /// Returns a Int with MSB or LSB masked with 1
-    ///
-    /// - Parameters:
-    ///   - bits: Bits to mask
-    ///   - msb: True if you want to mask the MSB
-    /// - Returns: A masked Int
-    public func mask(bits: Int, msb: Bool) -> Int {
-        var maskBits = bits
-        let size = Int.size
-        let halfSize = size/2
-        if msb {
-            for i in 0...(halfSize - 1) { maskBits[i] |= 0xFF }
-            return maskBits.toInt
-        } else {
-            for i in halfSize...(size - 1) { maskBits[i] |= 0xFF }
-            return maskBits.toInt
+
+    /// Create bits mask with one
+    public func mask(_ bits: Int, _ msb: Bool) -> Int {
+        if (bits >> 3) == Int.size { return Int.max }
+
+        let mask = Int(truncating: NSDecimalNumber(decimal:(pow(2, bits.toInt) - 1)))
+
+        switch msb {
+        case false:
+            return mask
+        case true:
+            let shift = Int(Int.size << 3) - bits
+            return mask << shift
         }
     }
 
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return MemoryLayout<Int>.stride}
-
 
     /// Get bit 0 value
     public var b0:Int{
@@ -136,7 +131,7 @@ extension Int{
         let nv: UInt = bit != 0 ? 1 : 0
         return Int(bitPattern: ( UInt(bitPattern: self) & ~(0x1 << 7)) | (nv << 7) )
     }
- 
+
 
     /// Subscript that returns or set one of the bytes of a Int
     /// at the given index.
@@ -186,33 +181,24 @@ extension UInt{
     public var toInt:Int{return Int(bitPattern:self)}
     /// Perform a bit pattern truncating conversion to UInt
     public var toUInt:UInt{return self}
-    
-    /// Returns a UInt with MSB or LSB masked with 1
-    ///
-    /// - Parameters:
-    ///   - bits: Bits to mask
-    ///   - msb: True if you want to mask the MSB
-    /// - Returns: A masked UInt
-    public func mask(bits: UInt, msb: Bool) -> UInt {
-        var maskBits = bits
-        let size = UInt.size
-        let halfSize = size / 2
-        if msb {
-            for i in 0...(halfSize - 1) {
-                maskBits[i] |= 0xFF
-            }
-            return maskBits.toUInt
-        } else {
-            for i in (halfSize)...(size - 1) {
-                maskBits[i] |= 0xFF
-            }
-            return maskBits.toUInt
+
+    /// Create bits mask with one
+    public func mask(_ bits: UInt, _ msb: Bool) -> UInt {
+        if (bits >> 3) == UInt.size { return UInt.max }
+
+        let mask = UInt(truncating: NSDecimalNumber(decimal:(pow(2, bits.toInt) - 1)))
+
+        switch msb {
+        case false:
+            return mask
+        case true:
+            let shift = UInt(UInt.size << 3) - bits
+            return mask << shift
         }
     }
 
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return MemoryLayout<UInt>.stride}
-
 
     /// Get bit 0 value
     public var b0:UInt{
@@ -286,7 +272,7 @@ extension UInt{
         let nv:UInt = bit != 0 ? 1 : 0
         return ( self & ~(0x1 << 7)) | (nv << 7)
     }
- 
+
 
     /// Subscript that returns or set one of the bytes of a UInt
     /// at the given index.
@@ -333,10 +319,21 @@ extension Int8 {
     public var toInt:Int{return Int(bitPattern:UInt(self))}
     /// Perform a bit pattern truncating conversion to UInt
     public var toUInt:UInt{return UInt(self)}
-        /// Returns a Int8 with all ones
-    public static var allOnes:Int8{return Int8(bitPattern: UInt8.max)}
 
-        public static var mask:Int8{return Int8(bitPattern: UInt8.max)}
+    /// Create bits mask with one
+    public func mask(_ bits: Int8, _ msb: Bool) -> Int8 {
+        if (bits >> 3) == Int8.size { return Int8.max }
+
+        let mask = Int8(truncating: NSDecimalNumber(decimal:(pow(2, bits.toInt) - 1)))
+
+        switch msb {
+        case false:
+            return mask
+        case true:
+            let shift = Int8(Int8.size << 3) - bits
+            return mask << shift
+        }
+    }
 
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return MemoryLayout<Int8>.stride}
@@ -413,7 +410,7 @@ extension Int8 {
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU8 & ~(0x1 << 7)) | (nv.toU8 << 7) ).to8
     }
- 
+
 
 
     /// Subscript that returns or set one of the bytes of this integer
@@ -459,18 +456,19 @@ extension UInt8 {
     public var toInt:Int{return Int(bitPattern:UInt(self))}
     /// Perform a bit pattern truncating conversion to UInt
     public var toUInt:UInt{return UInt(self)}
-        /// Returns a UInt8 with all ones
-    public static var allOnes:UInt8{return UInt8.max}
 
-    public func mask(bits: UInt8, msb: Bool) -> UInt8 {
-        var maskBits = bits
+    /// Create bits mask with one
+    public func mask(_ bits: UInt8, _ msb: Bool) -> UInt8 {
+        if (bits >> 3) == UInt8.size { return UInt8.max }
 
-        if msb {
-            maskBits |= 0x0F
-            return maskBits
-        } else {
-            maskBits |= 0xF0
-            return maskBits
+        let mask = UInt8(truncating: NSDecimalNumber(decimal:(pow(2, bits.toInt) - 1)))
+
+        switch msb {
+        case false:
+            return mask
+        case true:
+            let shift = UInt8(UInt8.size << 3) - bits
+            return mask << shift
         }
     }
 
@@ -549,7 +547,7 @@ extension UInt8 {
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 7)) | (nv.toU8 << 7)
     }
- 
+
 
 
     /// Subscript that returns or set one of the bytes of this integer
@@ -595,10 +593,21 @@ extension Int16 {
     public var toInt:Int{return Int(bitPattern:UInt(self))}
     /// Perform a bit pattern truncating conversion to UInt
     public var toUInt:UInt{return UInt(self)}
-        /// Returns a Int16 with all ones
-    public static var allOnes:Int16{return Int16(bitPattern: UInt16.max)}
 
-        public static var mask:Int16{return Int16(bitPattern: UInt16.max)}
+    /// Create bits mask with one
+    public func mask(_ bits: Int16, _ msb: Bool) -> Int16 {
+        if (bits >> 3) == Int16.size { return Int16.max }
+
+        let mask = Int16(truncating: NSDecimalNumber(decimal:(pow(2, bits.toInt) - 1)))
+
+        switch msb {
+        case false:
+            return mask
+        case true:
+            let shift = Int16(Int16.size << 3) - bits
+            return mask << shift
+        }
+    }
 
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return MemoryLayout<Int16>.stride}
@@ -675,10 +684,10 @@ extension Int16 {
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU16 & ~(0x1 << 7)) | (nv.toU16 << 7) ).to16
     }
- 
 
 
-    /// Subscript that returns or set one of the bytes of a Int16 
+
+    /// Subscript that returns or set one of the bytes of a Int16
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> Int16 {
@@ -721,18 +730,19 @@ extension UInt16 {
     public var toInt:Int{return Int(bitPattern:UInt(self))}
     /// Perform a bit pattern truncating conversion to UInt
     public var toUInt:UInt{return UInt(self)}
-        /// Returns a UInt16 with all ones
-    public static var allOnes:UInt16{return UInt16.max}
 
-    public func mask(bits: UInt16, msb: Bool) -> UInt16 {
-        var maskBits = bits
+    /// Create bits mask with one
+    public func mask(_ bits: UInt16, _ msb: Bool) -> UInt16 {
+        if (bits >> 3) == UInt16.size { return UInt16.max }
 
-        if msb {
-            maskBits[0] |= 0xFF
-            return maskBits
-        } else {
-            maskBits[1] |= 0xFF
-            return maskBits
+        let mask = UInt16(truncating: NSDecimalNumber(decimal:(pow(2, bits.toInt) - 1)))
+
+        switch msb {
+        case false:
+            return mask
+        case true:
+            let shift = UInt16(UInt16.size << 3) - bits
+            return mask << shift
         }
     }
 
@@ -811,10 +821,10 @@ extension UInt16 {
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 7)) | (nv.toU16 << 7)
     }
- 
 
 
-    /// Subscript that returns or set one of the bytes of a UInt16 
+
+    /// Subscript that returns or set one of the bytes of a UInt16
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> UInt16 {
@@ -857,10 +867,21 @@ extension Int32 {
     public var toInt:Int{return Int(bitPattern:UInt(self))}
     /// Perform a bit pattern truncating conversion to UInt
     public var toUInt:UInt{return UInt(self)}
-        /// Returns a Int32 with all ones
-    public static var allOnes:Int32{return Int32(bitPattern: UInt32.max)}
 
-        public static var mask:Int32{return Int32(bitPattern: UInt32.max)}
+    /// Create bits mask with one
+    public func mask(_ bits: Int32, _ msb: Bool) -> Int32 {
+        if (bits >> 3) == Int32.size { return Int32.max }
+
+        let mask = Int32(truncating: NSDecimalNumber(decimal:(pow(2, bits.toInt) - 1)))
+
+        switch msb {
+        case false:
+            return mask
+        case true:
+            let shift = Int32(Int32.size << 3) - bits
+            return mask << shift
+        }
+    }
 
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return MemoryLayout<Int32>.stride}
@@ -937,10 +958,10 @@ extension Int32 {
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU32 & ~(0x1 << 7)) | (nv.toU32 << 7) ).to32
     }
- 
 
 
-    /// Subscript that returns or set one of the bytes of a Int32 
+
+    /// Subscript that returns or set one of the bytes of a Int32
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> Int32 {
@@ -983,22 +1004,19 @@ extension UInt32 {
     public var toInt:Int{return Int(bitPattern:UInt(self))}
     /// Perform a bit pattern truncating conversion to UInt
     public var toUInt:UInt{return UInt(self)}
-        /// Returns a UInt32 with all ones
-    public static var allOnes:UInt32{return UInt32.max}
 
-    public func mask(bits: UInt32, msb: Bool) -> UInt32 {
-        var maskBits = bits
+    /// Create bits mask with one
+    public func mask(_ bits: UInt32, _ msb: Bool) -> UInt32 {
+        if (bits >> 3) == UInt32.size { return UInt32.max }
 
-        if msb {
-            let size = UInt32.size
-            let halfSize = size/2
-            for i in 0...(halfSize - 1) { maskBits[i] |= 0xFF }
-            return maskBits
-        } else {
-            let size = UInt32.size
-            let halfSize = size/2
-            for i in (halfSize)...(size - 1) { maskBits[i] |= 0xFF }
-            return maskBits
+        let mask = UInt32(truncating: NSDecimalNumber(decimal:(pow(2, bits.toInt) - 1)))
+
+        switch msb {
+        case false:
+            return mask
+        case true:
+            let shift = UInt32(UInt32.size << 3) - bits
+            return mask << shift
         }
     }
 
@@ -1077,10 +1095,10 @@ extension UInt32 {
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 7)) | (nv.toU32 << 7)
     }
- 
 
 
-    /// Subscript that returns or set one of the bytes of a UInt32 
+
+    /// Subscript that returns or set one of the bytes of a UInt32
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> UInt32 {
@@ -1123,10 +1141,21 @@ extension Int64 {
     public var toInt:Int{return Int(truncatingIfNeeded:self)}
     /// Perform a bit pattern truncating conversion to UInt
     public var toUInt:UInt{return UInt(truncatingIfNeeded:self)}
-        /// Returns a Int64 with all ones
-    public static var allOnes:Int64{return Int64(bitPattern: UInt64.max)}
 
-        public static var mask:Int64{return Int64(bitPattern: UInt64.max)}
+    /// Create bits mask with one
+    public func mask(_ bits: Int64, _ msb: Bool) -> Int64 {
+        if (bits >> 3) == Int64.size { return Int64.max }
+
+        let mask = Int64(truncating: NSDecimalNumber(decimal:(pow(2, bits.toInt) - 1)))
+
+        switch msb {
+        case false:
+            return mask
+        case true:
+            let shift = Int64(Int64.size << 3) - bits
+            return mask << shift
+        }
+    }
 
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return MemoryLayout<Int64>.stride}
@@ -1203,10 +1232,10 @@ extension Int64 {
         let nv = bit != 0 ? 1 : 0
         return ( (self.toU64 & ~(0x1 << 7)) | (nv.toU64 << 7) ).to64
     }
- 
 
 
-    /// Subscript that returns or set one of the bytes of a Int64 
+
+    /// Subscript that returns or set one of the bytes of a Int64
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> Int64 {
@@ -1249,22 +1278,19 @@ extension UInt64 {
     public var toInt:Int{return Int(truncatingIfNeeded:self)}
     /// Perform a bit pattern truncating conversion to UInt
     public var toUInt:UInt{return UInt(truncatingIfNeeded:self)}
-        /// Returns a UInt64 with all ones
-    public static var allOnes:UInt64{return UInt64.max}
 
-    public func mask(bits: UInt64, msb: Bool) -> UInt64 {
-        var maskBits = bits
+    /// Create bits mask with one
+    public func mask(_ bits: UInt64, _ msb: Bool) -> UInt64 {
+        if (bits >> 3) == UInt64.size { return UInt64.max }
 
-        if msb {
-            let size = UInt64.size
-            let halfSize = size/2
-            for i in 0...(halfSize - 1) { maskBits[i] |= 0xFF }
-            return maskBits
-        } else {
-            let size = UInt64.size
-            let halfSize = size/2
-            for i in (halfSize)...(size - 1) { maskBits[i] |= 0xFF }
-            return maskBits
+        let mask = UInt64(truncating: NSDecimalNumber(decimal:(pow(2, bits.toInt) - 1)))
+
+        switch msb {
+        case false:
+            return mask
+        case true:
+            let shift = UInt64(UInt64.size << 3) - bits
+            return mask << shift
         }
     }
 
@@ -1343,10 +1369,10 @@ extension UInt64 {
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 7)) | (nv.toU64 << 7)
     }
- 
 
 
-    /// Subscript that returns or set one of the bytes of a UInt64 
+
+    /// Subscript that returns or set one of the bytes of a UInt64
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> UInt64 {
