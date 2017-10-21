@@ -45,17 +45,24 @@ extension ${sign}Int{
     /// Perform a bit pattern truncating conversion to UInt
     public var toUInt:UInt{return self}
     %end
-    
-    /// Returns a ${sign}Int with all ones
-    %if sign == '':
-    public static var allOnes:Int{return Int(bitPattern: UInt.max)}
-    %else:
-    public static var allOnes:UInt{return UInt.max}
-    %end
+
+    /// Create bits mask with one
+    public func mask(_ bits: ${sign}Int, _ msb: Bool) -> ${sign}Int {
+        if (bits >> 3) == ${sign}Int.size { return ${sign}Int.max }
+
+        let mask = ${sign}Int(truncating: NSDecimalNumber(decimal:(pow(2, bits.toInt) - 1)))
+
+        switch msb {
+        case false:
+            return mask
+        case true:
+            let shift = ${sign}Int(${sign}Int.size << 3) - bits
+            return mask << shift
+        }
+    }
 
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return MemoryLayout<${sign}Int>.stride}
-
 
     % for bitidx in [0,1,2,3,4,5,6,7]:
         %if sign == '':
@@ -80,7 +87,7 @@ extension ${sign}Int{
     }
         %end
     %end
- 
+
 
     /// Subscript that returns or set one of the bytes of a ${sign}Int
     /// at the given index.
@@ -159,12 +166,21 @@ extension ${sign}Int${intType} {
     /// Perform a bit pattern truncating conversion to UInt
     public var toUInt:UInt{return UInt(truncatingIfNeeded:self)}
         %end
-        /// Returns a ${sign}Int${intType} with all ones
-        %if sign == '':
-    public static var allOnes:Int${intType}{return Int${intType}(bitPattern: UInt${intType}.max)}
-        %else:
-    public static var allOnes:${sign}Int${intType}{return ${sign}Int${intType}.max}
-        %end
+
+    /// Create bits mask with one
+    public func mask(_ bits: ${sign}Int${intType}, _ msb: Bool) -> ${sign}Int${intType} {
+        if (bits >> 3) == ${sign}Int${intType}.size { return ${sign}Int${intType}.max }
+
+        let mask = ${sign}Int${intType}(truncating: NSDecimalNumber(decimal:(pow(2, bits.toInt) - 1)))
+
+        switch msb {
+        case false:
+            return mask
+        case true:
+            let shift = ${sign}Int${intType}(${sign}Int${intType}.size << 3) - bits
+            return mask << shift
+        }
+    }
 
     /// Returns the size of this type (number of bytes)
     public static var size:Int{return MemoryLayout<${sign}Int${intType}>.stride}
@@ -192,7 +208,7 @@ extension ${sign}Int${intType} {
     }
             %end
         %end
- 
+
 
         %if intType == 8:
 
@@ -211,7 +227,7 @@ extension ${sign}Int${intType} {
     }
         %else:
 
-    /// Subscript that returns or set one of the bytes of a ${sign}Int${intType} 
+    /// Subscript that returns or set one of the bytes of a ${sign}Int${intType}
     /// at the given index.
     /// Trying to access an out of index byte will result in an error.
     public subscript(index: Int) -> ${sign}Int${intType} {

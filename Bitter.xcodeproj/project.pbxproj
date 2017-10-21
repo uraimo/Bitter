@@ -11,6 +11,7 @@
 		466264501C64AF01007B43AB /* Bitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466264451C64AF01007B43AB /* Bitter.framework */; };
 		466264551C64AF01007B43AB /* BitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466264541C64AF01007B43AB /* BitterTests.swift */; };
 		466264621C64B036007B43AB /* Bitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466264611C64B036007B43AB /* Bitter.swift */; };
+		D9038B091F7FA06D00DA257C /* BitterMaskTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9038B081F7FA06D00DA257C /* BitterMaskTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,8 @@
 		466264561C64AF01007B43AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		466264611C64B036007B43AB /* Bitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bitter.swift; sourceTree = "<group>"; };
 		46E387061CC555CF00CCBA76 /* Templates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Templates; sourceTree = "<group>"; };
+		D9038B081F7FA06D00DA257C /* BitterMaskTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitterMaskTest.swift; sourceTree = "<group>"; };
+		D90BD0DC1F97EF2000300056 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 		4662643B1C64AF01007B43AB = {
 			isa = PBXGroup;
 			children = (
+				D90BD0DC1F97EF2000300056 /* TestPlayground.playground */,
 				46E387061CC555CF00CCBA76 /* Templates */,
 				466264471C64AF01007B43AB /* Bitter */,
 				466264531C64AF01007B43AB /* BitterTests */,
@@ -88,6 +92,7 @@
 			children = (
 				466264541C64AF01007B43AB /* BitterTests.swift */,
 				466264561C64AF01007B43AB /* Info.plist */,
+				D9038B081F7FA06D00DA257C /* BitterMaskTest.swift */,
 			);
 			name = BitterTests;
 			path = Tests/BitterTests;
@@ -212,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				466264551C64AF01007B43AB /* BitterTests.swift in Sources */,
+				D9038B091F7FA06D00DA257C /* BitterMaskTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
