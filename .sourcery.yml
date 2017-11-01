@@ -1,0 +1,7 @@
+sources: [.]
+templates: [Templates/Bitter.stencil]
+output: Sources/Bitter/Bitter.swift
+args:
+  signs: [Int, UInt]
+  bitWidths: [8, 16, 32, 64]
+  bitPositions: [0, 1, 2, 3, 4, 5, 6, 7]

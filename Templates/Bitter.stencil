@@ -1,0 +1,271 @@
+//
+//  Bitter.swift
+//  Bitter
+//
+//  Created by Umberto Raimondi on 01/02/16.
+//  Copyright © 2016 Umberto Raimondi. All rights reserved.
+//
+
+// MARK: Int types extensions
+
+{% for sign in argument.signs %}
+/**
+Extension that adds a few additional functionalities to {{ sign }}:
+- toIntN/toUIntN truncating bit pattern conversions
+- allOnes
+- size
+- Byte indexed subscript
+*/
+extension {{ sign }}{
+    {% for bitWidth in argument.bitWidths where bitWidth < 64 %}
+    /// Perform a bit pattern truncating conversion to UInt{{ bitWidth }}
+    public var toU{{ bitWidth }}: UInt{{ bitWidth }}{return UInt{{ bitWidth }}(truncatingIfNeeded:self)}
+    /// Perform a bit pattern truncating conversion to Int{{ bitWidth }}
+    public var to{{ bitWidth }}: Int{{ bitWidth }}{return Int{{ bitWidth }}(truncatingIfNeeded:self)}
+    {% endfor %}
+    /// Perform a bit pattern truncating conversion to UInt64
+    public var toU64: UInt64{
+        return UInt64(self) //No difference if the platform is 32 or 64
+        }
+    /// Perform a bit pattern truncating conversion to Int64
+    public var to64: Int64{
+        return Int64(self) //No difference if the platform is 32 or 64
+        }
+    {% if sign == "Int" %}
+    /// Perform a bit pattern truncating conversion to Int
+    public var toInt:Int{return self}
+    /// Perform a bit pattern truncating conversion to UInt
+    public var toUInt:UInt{return UInt(bitPattern:self)}
+    {% else %}
+    /// Perform a bit pattern truncating conversion to Int
+    public var toInt:Int{return Int(bitPattern:self)}
+    /// Perform a bit pattern truncating conversion to UInt
+    public var toUInt:UInt{return self}
+    {% endif %}
+
+    /// Create bits mask with one
+    public func mask(_ bits: {{ sign }}, _ msb: Bool) -> {{ sign }} {
+        if (bits >> 3) == {{ sign }}.size { return {{ sign }}.max }
+
+        let mask = {{ sign }}(truncating: NSDecimalNumber(decimal:(pow(2, bits.toInt) - 1)))
+
+        switch msb {
+        case false:
+            return mask
+        case true:
+            let shift = {{ sign }}({{ sign }}.size << 3) - bits
+            return mask << shift
+        }
+    }
+
+    /// Returns the size of this type (number of bytes)
+    public static var size:Int{return MemoryLayout<{{ sign }}>.stride}
+
+    {% for bitPosition in argument.bitPositions %}
+        {% if sign == "Int" %}
+    /// Get bit {{ bitPosition }} value
+    public var b{{ bitPosition }}:Int{
+        return Int(bitPattern: ( UInt(bitPattern: self) & (0x1 << {{ bitPosition }})) >> {{ bitPosition }} )
+    }
+    /// Set bit {{ bitPosition }} and return a new {{ sign }}
+    public func setb{{ bitPosition }}(_ bit:Int)->Int{
+        let nv: UInt = bit != 0 ? 1 : 0
+        return Int(bitPattern: ( UInt(bitPattern: self) & ~(0x1 << {{ bitPosition }})) | (nv << {{ bitPosition }}) )
+    }
+        {% else %}
+    /// Get bit {{ bitPosition }} value
+    public var b{{ bitPosition }}:UInt{
+        return ( self & (0x1 << {{ bitPosition }})) >> {{ bitPosition }}
+    }
+    /// Set bit {{ bitPosition }} and return a new {{ sign }}
+    public func setb{{ bitPosition }}(_ bit:Int)->UInt{
+        let nv:UInt = bit != 0 ? 1 : 0
+        return ( self & ~(0x1 << {{ bitPosition }})) | (nv << {{ bitPosition }})
+    }
+        {% endif %}
+    {% endfor %}
+
+
+    /// Subscript that returns or set one of the bytes of a {{ sign }}
+    /// at the given index.
+    /// Trying to access an out of index byte will result in an error.
+    public subscript(index: Int) -> {{ sign }} {
+    {% if sign == "Int" %}
+        get {
+            precondition(index<Int.size,"Byte set index out of range")
+            let idx: UInt = UInt(bitPattern: index) * 8
+            return Int(bitPattern: (UInt(bitPattern: self) & (0xFF << idx)) >> idx )
+        }
+        set(newValue) {
+            precondition(index<Int.size,"Byte set index out of range")
+            let idx: UInt = UInt(bitPattern: index) * 8
+            self = Int(bitPattern: (UInt(bitPattern: self) & ~(0xFF << idx)) | (UInt(bitPattern: newValue) << idx) )
+        }
+    {% else %}
+        get {
+            precondition(index<Int.size,"Byte set index out of range")
+            let idx: UInt = UInt(bitPattern: index) * 8
+            return (self & (0xFF << idx)) >> idx
+        }
+        set(newValue) {
+            precondition(index<Int.size,"Byte set index out of range")
+            let idx: UInt = UInt(bitPattern: index) * 8
+            self = (self & ~(0xFF << idx)) | (newValue << idx)
+        }
+    {% endif %}
+    }
+}
+{% endfor %}
+
+{% for bitWidth in argument.bitWidths %}
+    {% for sign in argument.signs %}
+/**
+Extension that adds a few additional functionalities to {{ sign }}{{ bitWidth }}:
+- toIntN/toUIntN truncating bit pattern conversions
+- allOnes
+- size
+- Byte indexed subscript
+*/
+extension {{ sign }}{{ bitWidth }} {
+        {% for otherBitWidth in argument.bitWidths %}
+            {% if bitWidth > otherBitWidth %}
+    /// Perform a bit pattern truncating conversion to UInt{{ otherBitWidth }}
+    public var toU{{ otherBitWidth }}: UInt{{ otherBitWidth }}{return UInt{{ otherBitWidth }}(truncatingIfNeeded:self)}
+    /// Perform a bit pattern truncating conversion to Int{{ otherBitWidth }}
+    public var to{{ otherBitWidth }}: Int{{ otherBitWidth }}{return Int{{ otherBitWidth }}(truncatingIfNeeded:self)}
+            {% elif bitWidth == otherBitWidth %}
+                {% if sign == "Int" %}
+    /// Perform a bit pattern truncating conversion to UInt{{ otherBitWidth }}
+    public var toU{{ otherBitWidth }}: UInt{{ otherBitWidth }}{return UInt{{ otherBitWidth }}(bitPattern:self)}
+    /// Perform a bit pattern truncating conversion to Int{{ otherBitWidth }}
+    public var to{{ otherBitWidth }}: Int{{ otherBitWidth }}{return self}
+                {% else %}
+    /// Perform a bit pattern truncating conversion to UInt{{ otherBitWidth }}
+    public var toU{{ otherBitWidth }}: UInt{{ otherBitWidth }}{return self}
+    /// Perform a bit pattern truncating conversion to Int{{ otherBitWidth }}
+    public var to{{ otherBitWidth }}: Int{{ otherBitWidth }}{return Int{{ otherBitWidth }}(bitPattern:self)}
+                {% endif %}
+            {% else %}
+    /// Perform a bit pattern truncating conversion to UInt{{ otherBitWidth }}
+    public var toU{{ otherBitWidth }}: UInt{{ otherBitWidth }}{return UInt{{ otherBitWidth }}(self)}
+    /// Perform a bit pattern truncating conversion to Int{{ otherBitWidth }}
+    public var to{{ otherBitWidth }}: Int{{ otherBitWidth }}{return Int{{ otherBitWidth }}(self)}
+            {% endif %}
+        {% endfor %}
+        {% if bitWidth < 64 %}
+    /// Perform a bit pattern truncating conversion to Int
+    public var toInt:Int{return Int(bitPattern:UInt(self))}
+    /// Perform a bit pattern truncating conversion to UInt
+    public var toUInt:UInt{return UInt(self)}
+        {% else %}
+    /// Perform a bit pattern truncating conversion to Int
+    public var toInt:Int{return Int(truncatingIfNeeded:self)}
+    /// Perform a bit pattern truncating conversion to UInt
+    public var toUInt:UInt{return UInt(truncatingIfNeeded:self)}
+        {% endif %}
+
+    /// Create bits mask with one
+    public func mask(_ bits: {{ sign }}{{ bitWidth }}, _ msb: Bool) -> {{ sign }}{{ bitWidth }} {
+        if (bits >> 3) == {{ sign }}{{ bitWidth }}.size { return {{ sign }}{{ bitWidth }}.max }
+
+        let mask = {{ sign }}{{ bitWidth }}(truncating: NSDecimalNumber(decimal:(pow(2, bits.toInt) - 1)))
+
+        switch msb {
+        case false:
+            return mask
+        case true:
+            let shift = {{ sign }}{{ bitWidth }}({{ sign }}{{ bitWidth }}.size << 3) - bits
+            return mask << shift
+        }
+    }
+
+    /// Returns the size of this type (number of bytes)
+    public static var size:Int{return MemoryLayout<{{ sign }}{{ bitWidth }}>.stride}
+
+        {% for bitPosition in argument.bitPositions %}
+            {% if sign == "Int" %}
+    /// Get bit {{ bitPosition }} value
+    public var b{{ bitPosition }}:{{ sign }}{{ bitWidth }}{
+        return ( (self.toU{{ bitWidth }} & (0x1 << {{ bitPosition }})) >> {{ bitPosition }} ).to{{ bitWidth }}
+    }
+    /// Set bit {{ bitPosition }} and return a new {{ sign }}
+    public func setb{{ bitPosition }}(_ bit:Int)->{{ sign }}{{ bitWidth }}{
+        let nv = bit != 0 ? 1 : 0
+        return ( (self.toU{{ bitWidth }} & ~(0x1 << {{ bitPosition }})) | (nv.toU{{ bitWidth }} << {{ bitPosition }}) ).to{{ bitWidth }}
+    }
+            {% else %}
+    /// Get bit {{ bitPosition }} value
+    public var b{{ bitPosition }}:{{ sign }}{{ bitWidth }}{
+        return (self & (0x1 << {{ bitPosition }})) >> {{ bitPosition }}
+    }
+    /// Set bit {{ bitPosition }} and return a new {{ sign }}
+    public func setb{{ bitPosition }}(_ bit:Int)->{{ sign }}{{ bitWidth }}{
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << {{ bitPosition }})) | (nv.toU{{ bitWidth }} << {{ bitPosition }})
+    }
+            {% endif %}
+        {% endfor %}
+
+
+        {% if bitWidth == 8 %}
+
+    /// Subscript that returns or set one of the bytes of this integer
+    /// at the given index.
+    /// Trying to access an out of index byte will result in an error.
+    public subscript(index: Int) -> {{ sign }}8 {
+        get {
+            precondition(index<Int8.size,"Byte set index out of range")
+            return self
+        }
+        set(newValue) {
+            precondition(index<Int8.size,"Byte set index out of range")
+            self = newValue
+        }
+    }
+        {% else %}
+
+    /// Subscript that returns or set one of the bytes of a {{ sign }}{{ bitWidth }}
+    /// at the given index.
+    /// Trying to access an out of index byte will result in an error.
+    public subscript(index: Int) -> {{ sign }}{{ bitWidth }} {
+            {% if sign == "Int" %}
+        get {
+            precondition(index<Int{{ bitWidth }}.size,"Byte set index out of range")
+            return ((self.toU{{ bitWidth }} & (0xFF << (index.toU{{ bitWidth }}*8))) >> (index.toU{{ bitWidth }}*8)).to{{ bitWidth }}
+        }
+        set(newValue) {
+            precondition(index<Int{{ bitWidth }}.size,"Byte set index out of range")
+            self = ( (self.toU{{ bitWidth }} & ~(0xFF << (index.toU{{ bitWidth }}*8))) | (newValue.toU{{ bitWidth }} << (index.toU{{ bitWidth }}*8)) ).to{{ bitWidth }}
+        }
+            {% else %}
+        get {
+            precondition(index<Int{{ bitWidth }}.size,"Byte set index out of range")
+            return (self & (0xFF << (index.toU{{ bitWidth }}*8))) >> (index.toU{{ bitWidth }}*8)
+        }
+        set(newValue) {
+            precondition(index<Int{{ bitWidth }}.size,"Byte set index out of range")
+            self = (self & ~(0xFF << (index.toU{{ bitWidth }}*8))) | (newValue.toU{{ bitWidth }} << (index.toU{{ bitWidth }}*8))
+        }
+            {% endif %}
+    }
+        {% endif %}
+}
+
+    {% endfor %}
+{% endfor %}
+
+
+// MARK: Operators
+
+/// Double negation operator
+prefix operator ~~
+
+{% for bitWidth in argument.bitWidths %}
+    {% for sign in argument.signs %}
+/// Double negation operator for {{ sign }}{{ bitWidth }}
+/// Returns 1 if value is not equal to 0, 0 otherwise
+prefix func ~~(value: {{ sign }}{{ bitWidth }})->{{ sign }}{{ bitWidth }}{
+    return (value>0) ? 1 : 0
+}
+    {% endfor %}
+{% endfor %}
