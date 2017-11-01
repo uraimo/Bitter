@@ -147,21 +147,18 @@ Bitter also adds a few other extensions to Int types:
 
 * `size` static property for Int types: Shorthand for `MemoryLayout<IntN>.stride`  
 
-* `.allOnes` static property: We already have `.allZeros` in `BitwiseOperationsType`, now we have this too.
+* `mask(bits:msb:)` static method: It creates a bitmask with the requested number of bits set, starting from the most significant bit or not. For example, calling `Int16.mask(5,msb:true)` will return `0xF800` or `1111100000000000` in binary, while `Int16.mask(5,msb:false)` will return `0x001F`, since the five bits will be set starting from the less significant position. 
 
 #### Bitwise operations
 
-To learn more about bitwise operations in Swift, see the article "[Dealing with Bit Sets in Swift](https://www.uraimo.com/2016/02/05/Dealing-With-Bit-Sets-In-Swift/)" on my blog (updated to Swift 3.0).
+To learn more about bitwise operations in Swift, see the article "[Dealing with Bit Sets in Swift](https://www.uraimo.com/2016/02/05/Dealing-With-Bit-Sets-In-Swift/)" on my blog (updated to Swift 4.0).
 
 ## Contributing
 
 First of all, thanks for considering contributing to this project, all PRs are welcome!
 
-Please notice that the sources for this library are not written directly in Swift but are generated using the GYB tool from the Swift project. The main Bitter template is located at `Templates/Bitter.swift.gyb` and if you need directions on how to modify GYB templates, check out my [tutorial](https://www.uraimo.com/2016/02/09/a-short-swift-gyb-tutorial/).
+Please notice that the sources for this library are not written directly in Swift but are generated using [Sourcery](https://github.com/krzysztofzablocki/Sourcery).
 
-To compile the template and save the result as `Sources/Bitter/Bitter.swift` run `./compile.sh` from the `Templates/` directory, GYB will be downloaded and used to compile the template.
+ The main Bitter template is located at `Templates/Bitter.stencil` and the `compile.sh` script will take care of downloading Sourcery and compiling the stencil template to Swift sources.
 
-Modifying .gyb templates requires minimal knowledge of python and GYB itself provide just a few flow control directive but, lickily, examples of all the directives you could need are already in the template.
-
-When your template has an error, GYB will show the specific line where the error occurred, remove `--line-directive ''` from the compile script to enable this debug mode.
-
+Releases older than 3.x use the [GYB](https://www.uraimo.com/2016/02/09/a-short-swift-gyb-tutorial/) template compiler.
