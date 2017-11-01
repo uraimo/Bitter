@@ -10,6 +10,8 @@
 //  Copyright © 2016 Umberto Raimondi. All rights reserved.
 //
 
+import Foundation
+
 // MARK: Int types extensions
 
 /**
