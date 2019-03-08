@@ -13,7 +13,7 @@
 
 ## Summary
 
-The Bitter library extends all the basic Swift 4.0 Int types with some useful methods for manipulating bits.
+The Bitter library extends all the basic Swift-4 Int types with some useful methods for manipulating bits.
 The objective of the library is to make the code dealing with bits and bitwise operations more concise and readable, through the use of shorthand methods where they make sense.
 With Bitter you'll be able for example, to replace this:
 
@@ -33,7 +33,6 @@ i[1] = i[1].setb3(1) // Set the 4th bit of the 2nd byte
 i[1] = i[1].setb3(0).setb4(1).setb5(0).setb6(1) // Let's set some other bit
 ```
 
-For a Swift 3.x compatible version, check out release 2.0.5 or the [swift-3](https://github.com/uraimo/Bitter/tree/swift-3) branch.
 
 ## Installation
 
@@ -42,30 +41,33 @@ If you want to install Bitter manually just include all the Swift files in `Sour
 Bitter also supports all the major dependency managers: CocoaPods, Carthage and SwiftPM.
 
 To use Bitter in your project with [CocoaPods](https://www.cocoapods.org/), add it to your `PodFile`:
+
 ```
 use_frameworks!
 
 pod 'Bitter'
-
 ```
+
 And update your workspace with `pod install`. 
 
 Bitter is also available through Carthage. To install just write into your Cartfile:
+
 ```
 github "uraimo/Bitter"
 ```
+
 Download the framework with `carthage update` and add it to your embedded binaries.
 
 And if you are using the Swift Package Manager just add it to the dependencies of your `Package.swift`:
 
 ```
+// swift-tools-version:4.0
 import PackageDescription
 
 let package = Package(
     ...
     dependencies: [
-        ...
-        .Package(url: "https://github.com/uraimo/Bitter.git", majorVersion: 1, minor: 1)
+        .package(url: "https://github.com/uraimo/Bitter.git", from: "4.0.0")
     ]
 )
 ```
