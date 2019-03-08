@@ -1,9 +1,22 @@
+// swift-tools-version:4.0
 import PackageDescription
 
 let package = Package(
     name: "Bitter",
+    products: [
+        .library(
+            name: "Bitter", 
+            targets: ["Bitter"]
+        ),
+    ],
     targets: [
-        Target(name: "Bitter", dependencies: []),
-        Target(name: "BitterTests", dependencies: ["Bitter"])
+        .target(
+            name: "Bitter", 
+            dependencies: []
+        ),
+        .testTarget(
+            name: "BitterTests", 
+            dependencies: ["Bitter"]
+        )
     ]
 )

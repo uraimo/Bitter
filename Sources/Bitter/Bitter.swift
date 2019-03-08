@@ -213,6 +213,7 @@ extension UInt{
     /// Set bit 0 and return a new UInt
     public func setb0(_ bit:Int)->UInt{
         let nv:UInt = bit != 0 ? 1 : 0
+        let _ = 1 << Int16(3)
         return ( self & ~(0x1 << 0)) | (nv << 0)
     }
     /// Get bit 1 value
