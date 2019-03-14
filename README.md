@@ -1,18 +1,15 @@
 <div align="center">
 	<img width="500" height="200" src="logo.svg" alt="Bitter"/>
 	<br>
+	<p>
+		<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Swift4-compatible-orange.svg?style=flat" alt="Swift 4 compatible" /></a>
+		<a href="https://raw.githubusercontent.com/uraimo/Bitter/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
+		<a href="https://github.com/apple/swift-package-manager"><img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg"/></a>
+		<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-brightgreen.svg"/></a>
+		<a href="https://cocoapods.org/pods/Bitter"><img src="https://img.shields.io/cocoapods/v/Bitter.svg"/></a>
+		<a href="https://travis-ci.org/uraimo/Bitter"><img src="https://api.travis-ci.org/uraimo/Bitter.svg" alt="Travis CI"></a>
+	</p>
 </div>
-
-**A Swift Bits Manipulation Toolkit**
-
-<p>
-<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Swift4-compatible-orange.svg?style=flat" alt="Swift 4 compatible" /></a>
-<a href="https://raw.githubusercontent.com/uraimo/Bitter/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
-<a href="https://github.com/apple/swift-package-manager"><img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg"/></a>
-<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-brightgreen.svg"/></a>
-<a href="https://cocoapods.org/pods/Bitter"><img src="https://img.shields.io/cocoapods/v/Bitter.svg"/></a>
-<a href="https://travis-ci.org/uraimo/Bitter"><img src="https://api.travis-ci.org/uraimo/Bitter.svg" alt="Travis CI"></a>
-</p>
 
 ## Summary
 
