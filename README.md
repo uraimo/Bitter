@@ -1,4 +1,7 @@
-![Bitter](https://github.com/uraimo/Bitter/raw/master/logo.png)
+<div align="center">
+	<img width="500" height="200" src="logo.svg" alt="Bitter"/>
+	<br>
+</div>
 
 **A Swift Bits Manipulation Toolkit**
 
