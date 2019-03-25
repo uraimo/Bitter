@@ -24,8 +24,8 @@
             <stop stop-color="#ED3333" offset="49.3055552%"></stop>
             <stop stop-color="#650E0E" offset="100%"></stop>
         </linearGradient>
-        <path d="M19.3624415,76.0812634 L81.3624415,76.0812634 L100.362442,187.105702 L100.362442,298.832533 C100.362442,298.832533 93.3259831,310.819137 87.3624415,310.819137 C68.633281,310.819137 31.9293041,314.238838 13.3624415,309.820252 C5.12713071,307.860394 1.36244153,298.832533 1.36244153,298.832533 L1.36244153,187.105702 L19.3624415,76.0812634 Z" id="path-6"></path>
-        <filter x="-9.6%" y="-2.3%" width="119.2%" height="108.1%" filterUnits="objectBoundingBox" id="filter-7">
+        <path d="M20.1270056,68.1425354 L76.7906293,42.9142647 L96.7166669,165.659744 L99.9759509,296.559034 C99.9759509,296.559034 93.2917813,310.617948 87.3304577,310.630995 C68.6082626,310.671968 31.9487374,314.353152 13.3544466,309.773223 C5.12244839,307.832851 1.36244153,298.832533 1.36244153,298.832533 L1.36244153,187.105702 L20.1270056,68.1425354 Z" id="path-6"></path>
+        <filter x="-9.6%" y="-2.0%" width="119.3%" height="107.1%" filterUnits="objectBoundingBox" id="filter-7">
             <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
@@ -47,18 +47,18 @@
         <text id="text-12" font-family="Intro, Intro " font-size="48" font-weight="normal" fill="#FFFFFF">
             <tspan x="11.4624958" y="57.5329044">O1</tspan>
         </text>
-        <filter x="-9.2%" y="-9.5%" width="121.7%" height="122.4%" filterUnits="objectBoundingBox" id="filter-13">
+        <filter x="-14.2%" y="-14.7%" width="135.0%" height="136.2%" filterUnits="objectBoundingBox" id="filter-13">
             <feOffset dx="1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <filter x="-9.2%" y="-9.5%" width="121.7%" height="122.4%" filterUnits="objectBoundingBox" id="filter-14">
+        <filter x="-14.2%" y="-14.7%" width="135.0%" height="136.2%" filterUnits="objectBoundingBox" id="filter-14">
             <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
             <feOffset dx="0" dy="-2" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
             <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
             <feColorMatrix values="0 0 0 0 0.898782951   0 0 0 0 0.898782951   0 0 0 0 0.898782951  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
         </filter>
-        <filter x="-9.2%" y="-9.5%" width="121.7%" height="122.4%" filterUnits="objectBoundingBox" id="filter-15">
+        <filter x="-14.2%" y="-14.7%" width="135.0%" height="136.2%" filterUnits="objectBoundingBox" id="filter-15">
             <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
             <feOffset dx="0" dy="-2" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
             <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
@@ -67,7 +67,7 @@
     </defs>
     <g id="Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <rect fill="#FFFFFF" x="0" y="0" width="957" height="376"></rect>
-        <g id="bottle" transform="translate(163.373362, 178.995444) rotate(24.000000) translate(-163.373362, -178.995444) translate(112.873362, 21.995444)">
+        <g id="bottle" transform="translate(162.916590, 178.792076) rotate(24.000000) translate(-162.916590, -178.792076) translate(112.916590, 21.792076)">
             <path d="M73.9534115,15.0402634 C73.9534115,15.0402634 74.6184982,16.8227714 74.9534115,19.0402634 C75.1896919,20.6046981 73.7058552,21.3914147 73.9534115,23.0402634 C82.4352192,79.5333484 99.9534121,187.188681 99.9534121,187.188681 L99.9534121,299.040274 C99.9534121,299.040274 93.9169535,312.040263 87.9534118,312.040263 L49.9534121,313.040263 L49.9534121,15.0402634" id="Polygon-1" fill="url(#linearGradient-1)"></path>
             <path d="M12.7091337,311.072505 C4.47382283,309.110458 0.709133651,299.072515 0.709133651,299.072515 L0.709133651,187.220922 C0.709133651,187.220922 17.7061765,80.3118099 25.7091356,24.0725032 C26.0902797,21.3940837 23.3520734,21.5311974 23.7091337,19.0725032 C24.1881421,15.7740816 25.7091356,15.0725032 25.7091356,15.0725032 L49.7091337,15.0725032 L49.7091337,313.072503" id="Path" fill="url(#linearGradient-2)"></path>
             <g id="Rectangle-1">
@@ -105,7 +105,7 @@
                 <use fill="black" fill-opacity="1" filter="url(#filter-11)" xlink:href="#path-10"></use>
                 <use fill-opacity="0.350000024" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-10"></use>
             </g>
-            <g id="O1-+-O1" transform="translate(5.018474, 191.579574)" fill="#FFFFFF">
+            <g id="O1-+-O1" opacity="0.216285342" transform="translate(5.018474, 191.579574)" fill="#FFFFFF">
                 <g id="O1" style="mix-blend-mode: darken;" transform="translate(41.462496, 40.532904) rotate(-32.000000) translate(-41.462496, -40.532904) " fill-opacity="1">
                     <use filter="url(#filter-13)" xlink:href="#text-12"></use>
                     <use filter="url(#filter-14)" xlink:href="#text-12"></use>
@@ -115,31 +115,43 @@
                     <tspan x="11.4624958" y="57.5329044">O1</tspan>
                 </text>
             </g>
-            <g id="bubbles" opacity="0.328533116" transform="translate(27.010720, 125.926943)" stroke="#FFFFFF">
-                <g id="Bubble" transform="translate(7.000000, 21.000000)">
+            <g id="bubbles" opacity="0.328533116" transform="translate(22.010720, 82.926943)" stroke="#FFFFFF">
+                <g id="Bubble" transform="translate(12.000000, 64.000000)">
                     <circle id="Oval-11" cx="6" cy="6" r="6"></circle>
                     <path d="M4.28080494,3.88040266 C4.38233005,2.59284248 5.45933326,1.57964573 6.77298126,1.57964573 C8.15369313,1.57964573 9.27298126,2.69893385 9.27298126,4.07964573 C9.27298126,4.6512488 9.08114756,5.17804671 8.75834875,5.59917089 C8.76353178,5.53343883 8.76617244,5.46699171 8.76617244,5.39992783 C8.76617244,4.01921595 7.64688432,2.89992783 6.26617244,2.89992783 C5.45706364,2.89992783 4.73772929,3.28429796 4.28080494,3.88040266 Z" id="Oval-12" fill="#FFFFFF"></path>
                 </g>
-                <g id="Bubble" transform="translate(27.598361, 0.882656)">
+                <g id="Bubble" transform="translate(0.298262, 25.424498)">
+                    <circle id="Oval-11" cx="6" cy="6" r="6"></circle>
+                    <path d="M4.28080494,3.88040266 C4.38233005,2.59284248 5.45933326,1.57964573 6.77298126,1.57964573 C8.15369313,1.57964573 9.27298126,2.69893385 9.27298126,4.07964573 C9.27298126,4.6512488 9.08114756,5.17804671 8.75834875,5.59917089 C8.76353178,5.53343883 8.76617244,5.46699171 8.76617244,5.39992783 C8.76617244,4.01921595 7.64688432,2.89992783 6.26617244,2.89992783 C5.45706364,2.89992783 4.73772929,3.28429796 4.28080494,3.88040266 Z" id="Oval-12" fill="#FFFFFF"></path>
+                </g>
+                <g id="Bubble" transform="translate(32.772713, 0.019578)">
+                    <circle id="Oval-11" cx="6" cy="6" r="6"></circle>
+                    <path d="M4.28080494,3.88040266 C4.38233005,2.59284248 5.45933326,1.57964573 6.77298126,1.57964573 C8.15369313,1.57964573 9.27298126,2.69893385 9.27298126,4.07964573 C9.27298126,4.6512488 9.08114756,5.17804671 8.75834875,5.59917089 C8.76353178,5.53343883 8.76617244,5.46699171 8.76617244,5.39992783 C8.76617244,4.01921595 7.64688432,2.89992783 6.26617244,2.89992783 C5.45706364,2.89992783 4.73772929,3.28429796 4.28080494,3.88040266 Z" id="Oval-12" fill="#FFFFFF"></path>
+                </g>
+                <g id="Bubble" transform="translate(32.598361, 43.882656)">
                     <circle id="Oval-11" cx="6.5" cy="6.5" r="6.5"></circle>
                     <path d="M4.63753869,4.20376955 C4.74752423,2.80891269 5.9142777,1.71128287 7.33739636,1.71128287 C8.83316756,1.71128287 10.0457297,2.92384501 10.0457297,4.41961621 C10.0457297,5.03885287 9.83790986,5.6095506 9.48821115,6.06576847 C9.49382609,5.99455874 9.49668681,5.92257435 9.49668681,5.84992181 C9.49668681,4.35415062 8.28412468,3.14158848 6.78835348,3.14158848 C5.91181894,3.14158848 5.13254006,3.55798945 4.63753869,4.20376955 Z" id="Oval-12" fill="#FFFFFF"></path>
                 </g>
-                <g id="Bubble" transform="translate(35.645918, 41.085104)">
+                <g id="Bubble" transform="translate(40.645918, 84.085104)">
                     <circle id="Oval-11" cx="5" cy="5" r="5"></circle>
                     <path d="M3.56733745,3.23366889 C3.65194171,2.16070207 4.54944439,1.31637144 5.64415105,1.31637144 C6.79474428,1.31637144 7.72748438,2.24911154 7.72748438,3.39970477 C7.72748438,3.87604067 7.56762297,4.31503893 7.29862396,4.66597574 C7.30294315,4.61119903 7.3051437,4.55582643 7.3051437,4.49993986 C7.3051437,3.34934663 6.3724036,2.41660652 5.22181037,2.41660652 C4.54755303,2.41660652 3.94810774,2.73691496 3.56733745,3.23366889 Z" id="Oval-12" fill="#FFFFFF"></path>
                 </g>
-                <g id="Bubble" transform="translate(0.324309, 60.095206)">
+                <g id="Bubble" transform="translate(5.324309, 103.095206)">
+                    <circle id="Oval-11" cx="5" cy="5" r="5"></circle>
+                    <path d="M3.56733745,3.23366889 C3.65194171,2.16070207 4.54944439,1.31637144 5.64415105,1.31637144 C6.79474428,1.31637144 7.72748438,2.24911154 7.72748438,3.39970477 C7.72748438,3.87604067 7.56762297,4.31503893 7.29862396,4.66597574 C7.30294315,4.61119903 7.3051437,4.55582643 7.3051437,4.49993986 C7.3051437,3.34934663 6.3724036,2.41660652 5.22181037,2.41660652 C4.54755303,2.41660652 3.94810774,2.73691496 3.56733745,3.23366889 Z" id="Oval-12" fill="#FFFFFF"></path>
+                </g>
+                <g id="Bubble" transform="translate(41.930607, 185.314297)">
                     <circle id="Oval-11" cx="5" cy="5" r="5"></circle>
                     <path d="M3.56733745,3.23366889 C3.65194171,2.16070207 4.54944439,1.31637144 5.64415105,1.31637144 C6.79474428,1.31637144 7.72748438,2.24911154 7.72748438,3.39970477 C7.72748438,3.87604067 7.56762297,4.31503893 7.29862396,4.66597574 C7.30294315,4.61119903 7.3051437,4.55582643 7.3051437,4.49993986 C7.3051437,3.34934663 6.3724036,2.41660652 5.22181037,2.41660652 C4.54755303,2.41660652 3.94810774,2.73691496 3.56733745,3.23366889 Z" id="Oval-12" fill="#FFFFFF"></path>
                 </g>
             </g>
         </g>
         <text id="Bitter" font-family="AvenirNextCondensed-Bold, Avenir Next Condensed" font-size="230" font-style="condensed" font-weight="bold" letter-spacing="7" fill="#808080">
-            <tspan x="295" y="254">Bitte</tspan>
-            <tspan x="769.53" y="254">r</tspan>
+            <tspan x="295" y="264">Bitte</tspan>
+            <tspan x="769.53" y="264">r</tspan>
         </text>
-        <text id="Swift-Bits-Manipulat" font-family="AvenirNextCondensed-Bold, Avenir Next Condensed" font-size="36" font-style="condensed" font-weight="bold" letter-spacing="0.5" fill="#BFBFBF">
-            <tspan x="310.601032" y="312">Swift Bits Manipulation Toolkit</tspan>
+        <text id="Swift-Bits-Manipulat" font-family="mononokiNerdFontCompleteM-Regular, mononoki Nerd Font Mono" font-size="29" font-weight="normal" letter-spacing="0.402777731" fill="#BFBFBF">
+            <tspan x="306.601032" y="305">Swift Bits Manipulation Toolkit</tspan>
         </text>
     </g>
 </svg>
