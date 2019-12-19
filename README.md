@@ -2,7 +2,7 @@
 	<img width="500" height="200" src="logo.svg" alt="Bitter"/>
 	<br>
 	<p>
-		<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Swift4-compatible-orange.svg?style=flat" alt="Swift 4 compatible" /></a>
+		<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat" alt="Swift 4 compatible" /></a>
 		<a href="https://raw.githubusercontent.com/uraimo/Bitter/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
 		<a href="https://github.com/apple/swift-package-manager"><img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg"/></a>
 		<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-brightgreen.svg"/></a>
@@ -13,7 +13,7 @@
 
 ## Summary
 
-The Bitter library extends all the basic Swift-4 Int types with some useful methods for manipulating bits.
+The Bitter library extends all the basic Swift Int types with some useful methods for manipulating bits.
 The objective of the library is to make the code dealing with bits and bitwise operations more concise and readable, through the use of shorthand methods where they make sense.
 With Bitter you'll be able for example, to replace this:
 
