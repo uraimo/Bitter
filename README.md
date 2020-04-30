@@ -120,7 +120,7 @@ i[1] = tmp               //                i = (i & ~(0xFF << 8)) | (tmp << 8)
 i[1] &= 0b11111101       //Without Bitter: i = i & (0b11111101 << 8)
 
 // Let's change the third byte
-i[3] = 0xAA   //Error! There is no 3rd byte!
+i[4] = 0xAA   //Error! There is no 4th byte!
 ``` 
 The subscript index start from the LSB to the MSB for little endian multi-byte Ints and in the opposite direction if a big endian conversion has been applied to the Int.
 
